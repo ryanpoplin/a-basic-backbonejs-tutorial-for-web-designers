@@ -6,18 +6,18 @@ I will refactor this later for modularity...
 
 (function($) { 
         
-    	var AppRouter,
-			appRouter,
-			HomeView,
-			homeView,
-			ItemListView,
-			itemListView,
-			ItemDisplayView,
-			itemDisplayView,
-			facebookSignUpModal,
-			emailSignUpModal,
-			biLoginModal,
-			messageModal;
+    var AppRouter,
+		appRouter,
+		HomeView,
+		homeView,
+		ItemListView,
+		itemListView,
+		ItemDisplayView,
+		itemDisplayView,
+		facebookSignUpModal,
+		emailSignUpModal,
+		biLoginModal,
+		messageModal;
 
 	// Backbone Views...
 
