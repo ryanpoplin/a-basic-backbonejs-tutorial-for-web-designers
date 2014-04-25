@@ -20,11 +20,17 @@
 		el: '#spa',
 		template: _.template($('#home-view-template').html()),
 		events: {
-			'click .home-view-facebook-button': 'facebookModalShow'
+			'click .home-view-facebook-button': 'facebookModalShow',
+			'click .close-x': 'closeFacebookSignUpModal'
 		},
 		facebookModalShow: function() {
 			$(function() {
 				$('.facebook-sign-up-modal').show();
+			});
+		},
+		closeFacebookSignUpModal: function() {
+			$(function() {
+				$('.facebook-sign-up-modal').hide();
 			});
 		},
 		render: function() {
