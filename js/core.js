@@ -19,7 +19,16 @@
 		el: '#spa',
 		template: _.template($('#home-view-template').html()),
 		events: {
-			// ...
+			'click #home-view-footer': 'footerAnimation'
+		},
+		footerAnimation: function() {
+			// if () {
+
+			// } else {
+				$(function() {
+					$('.display-none').removeClass();
+				});
+			// }
 		},
 		render: function() {
 			$(this.el).html(this.template());

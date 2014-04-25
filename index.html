@@ -19,7 +19,7 @@
         <div id="spa"></div>
         
         <script type="text/template" id="home-view-template">
-            <main>
+            <div class="home-view-container text-align-center">
                 <div id="social-media-icon-container">
                     <span>Facebook</span>
                     <span>Twitter</span>
@@ -31,17 +31,19 @@
                     <h1 id="primary-heading">Primary Heading...</h1>
                     <h2 id="primary-sub-heading">Primary Sub Heading</h2>
                 </hgroup>
-                <a href="/#item-list">Quest Now!</a>
-                <footer id="home-view-footer">
+                <a href="/#item-list" id="quest-button">Quest Now!</a>
+            </div>
+            <div class="home-view-container">
+                <footer id="home-view-footer" class="text-align-center">
                     <span>Log In / Sign Up</span>
-                    <button>Sign In with Facebook</button>
-                    <span>OR</span>
-                    <button>Sign In with Email</button>
-                    <span>We will not post on your profile or email you about updates without your permission.</span>
-                    <span>Already Signed Up?</span>
-                    <button>Log In</button>
+                    <button class="display-none">Sign In with Facebook</button>
+                    <span class="display-none">OR</span>
+                    <button class="display-none">Sign In with Email</button>
+                    <span class="display-none">We will not post on your profile or email you about updates without your permission.</span>
+                    <span class="display-none">Already Signed Up?</span>
+                    <button class="display-none">Log In</button>
                 </footer>
-            </main>
+            </div>
 
         </script>
 

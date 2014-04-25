@@ -45,8 +45,27 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+/* Utility Classes... */
+.text-align-center {
+	text-align: center;
+}
+.display-none {
+	display: none;
+}
+.position-relative {
+	position: relative;
+}
 /* Home View Styles... */
+.home-view-container {
+	width: 100%;
+	border: .2em solid red;
+}
+#social-media-icon-container {
+	position: absolute;
+	right: 0;
+}
 #logo-container span {
 	font-size: 7em;
 	color: #10b5b8;
+	text-decoration: underline;
 }
