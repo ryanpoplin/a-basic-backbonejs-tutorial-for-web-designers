@@ -1,7 +1,3 @@
-/***
-I will refactor this later for modularity... 
-*/
-
 'use strict';
 
 (function($) { 
@@ -18,8 +14,6 @@ I will refactor this later for modularity...
 		emailSignUpModal,
 		biLoginModal,
 		messageModal;
-
-	// Backbone Views...
 
 	HomeView = Backbone.View.extend({
 		el: '#spa',
@@ -56,8 +50,6 @@ I will refactor this later for modularity...
 			console.log('ItemDisplayView init...');
 		}
 	});
-
-	// Backbone Router...
 
 	AppRouter = Backbone.Router.extend({
 		routes: {
