@@ -55,6 +55,14 @@ table {
 .position-relative {
 	position: relative;
 }
+/* Modals... */
+.facebook-sign-up-modal {
+	height: 150px;
+	display: none;
+	border: .1em solid red;
+	width: 150px;
+	background-color: #fefefe;
+}
 /* Home View Styles... */
 .home-view-container {
 	width: 100%;

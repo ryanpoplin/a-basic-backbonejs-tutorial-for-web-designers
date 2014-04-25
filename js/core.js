@@ -13,22 +13,19 @@
 		facebookSignUpModal,
 		emailSignUpModal,
 		biLoginModal,
-		messageModal;
+		messageModal,
+		testFunc;
 
 	HomeView = Backbone.View.extend({
 		el: '#spa',
 		template: _.template($('#home-view-template').html()),
 		events: {
-			'click #home-view-footer': 'footerAnimation'
+			'click .home-view-facebook-button': 'facebookModalShow'
 		},
-		footerAnimation: function() {
-			// if () {
-
-			// } else {
-				$(function() {
-					$('.display-none').removeClass();
-				});
-			// }
+		facebookModalShow: function() {
+			$(function() {
+				$('.facebook-sign-up-modal').show();
+			});
 		},
 		render: function() {
 			$(this.el).html(this.template());
