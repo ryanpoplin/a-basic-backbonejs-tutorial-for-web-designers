@@ -24,6 +24,9 @@ I will refactor this later for modularity...
 	HomeView = Backbone.View.extend({
 		el: '#spa',
 		template: _.template($('#home-view-template').html()),
+		events: {
+			// ...
+		},
 		render: function() {
 			$(this.el).html(this.template());
 		},
