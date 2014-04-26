@@ -66,6 +66,9 @@ table {
 .display-block {
 	display: block;
 }
+.notice {
+	font-size: 0.8em;
+}
 /* Modals... */
 .facebook-sign-up-modal {
 	height: 150px;
@@ -160,6 +163,8 @@ table {
 }
 #home-view-footer button {
 	margin: 0 auto;
+	height: 30px;
+	width: 300px;
 }
 #home-view-footer h4 {
 	font-size: 0.9em;
