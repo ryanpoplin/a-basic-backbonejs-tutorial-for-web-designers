@@ -63,11 +63,9 @@ table {
 .position-relative {
 	position: relative;
 }
-/*.take-the-cake {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-}*/
+.display-block {
+	display: block;
+}
 /* Modals... */
 .facebook-sign-up-modal {
 	height: 150px;
@@ -75,6 +73,12 @@ table {
 	border: .1em solid red;
 	width: 150px;
 	background-color: #fefefe;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 99999;
 }
 /* Home View Styles... */
 .view-container {
@@ -84,7 +88,7 @@ table {
 	/*border: .2em solid red;*/
 }
 .home-view-container-full-background-image {
-	background: url(http://www.wallpaprz.com/wp-content/uploads/2013/09/assasins_creed_logo_typography_wallpaer.jpg) no-repeat center center fixed; 
+	background: url(http://cullogo.com/full/wallpapers-texture-wood-simple-hd-free-in-for-1600x1000.jpg) no-repeat center center fixed; 
   	-webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
@@ -97,6 +101,9 @@ table {
 	padding: 1em 1em 0 0;
 	color: #fefefe;
 	font-size: .5em;
+}
+#social-media-icon-container img {
+	display: inline;
 }
 #logo-container {
 	padding-top: 2em;
@@ -135,21 +142,26 @@ table {
 	background-color: #b0b0b0;
 }
 #footer-button {
-	line-height: 80px;
-	font-size: 2em;
+	line-height: 70px;
+	font-size: 1.8em;
 	font-weight: bolder;
 	text-align: center;
 	cursor: pointer;
 	border-radius: 100px;
-	height: 70px;
-	width: 70px;
+	height: 60px;
+	width: 60px;
 	background-color: #b0b0b0;
 	position: absolute;
-	bottom: 0.6em;
+	bottom: 0.9em;
 	left: 0;
 	right: 0;
 	margin: 0 auto 0 auto;
-}
-#footer-button-arrow {
 	color: #fefefe;
+}
+#home-view-footer button {
+	margin: 0 auto;
+}
+#home-view-footer h4 {
+	font-size: 0.9em;
+	margin-top: 2.3em;
 }

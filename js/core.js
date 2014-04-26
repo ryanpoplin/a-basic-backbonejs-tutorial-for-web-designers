@@ -22,6 +22,7 @@
 			'click .close-x': 'closeFacebookSignUpModal'
 		},
 		footerAnimation: function() {
+			// Animations for Mobile...
 			homeViewFooterHeight = $('#home-view-footer').height();
 			if (homeViewFooterHeight === 60) {
 				$('#quest-button').fadeOut(50);
@@ -35,13 +36,12 @@
 				$('#footer-button')
 				.stop()
 				.animate({
-					bottom: 155
+					bottom: 165
 				})
 				.end();
-				/*$('#log-sign-container button').css('display', 'inline-block');
-				$('#log-sign-container button, .log-sign-span').fadeIn(100);
-				$('p.extra-span, p#facebook-hell').css('display', 'block');
-				$('span.extra-color').css('display', 'inline');*/
+				$('#home-view-footer span, button').show();
+				$('#home-view-footer button').addClass('display-block');
+				$('#home-view-footer button').css('display', 'block');
 				return true; 
 			} else if (homeViewFooterHeight >= 195) {
 				$('#quest-button').fadeIn(500);
@@ -55,12 +55,10 @@
 				$('#footer-button')
 				.stop()
 				.animate({
-					bottom: 15
+					bottom: 25
 				})
 				.end();
-				/*$('#log-sign-container button').fadeOut();
-				$('#log-sign-container button, span.log-sign-span').css('display', 'none');
-				$('p.extra-span, p#facebook-hell, span.extra-color').css('display', 'none');*/
+				$('#home-view-footer span, button').hide();
 				return true;
 			}
 			return false; 
