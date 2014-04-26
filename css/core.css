@@ -67,7 +67,7 @@ table {
 	display: block;
 }
 .notice {
-	font-size: 0.8em;
+	font-size: 0.5em;
 }
 /* Modals... */
 .facebook-sign-up-modal {
@@ -86,17 +86,16 @@ table {
 /* Home View Styles... */
 .view-container {
 	width: 100%;
-	/* I'll be... */
 	height: 100vh;
 	/*border: .2em solid red;*/
 }
 .home-view-container-full-background-image {
-	background: url(http://cullogo.com/full/wallpapers-texture-wood-simple-hd-free-in-for-1600x1000.jpg) no-repeat center center fixed; 
+	background: url(http://funstoc.com/wp-content/uploads/2013/12/grunge-background-wallpaper-backgrounds-black-red-white-blue-hd.jpg) no-repeat center center fixed; 
   	-webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
   	background-size: cover;
-  	/*padding-bottom: 2.5em;*/
+  	/*background-color: #efefef;*/
 }
 #social-media-icon-container {
 	position: absolute;
@@ -113,15 +112,16 @@ table {
 }
 #logo-container span {
 	color: #fefefe;
-	font-size: 4.5em;
+	font-size: 5.5em;
 }
 #primary-heading {
-	color: #fefefe;
+	color: #10b5b8;
 	padding: 1.2em 0 1.2em 0;
+	text-shadow: 2px 1px 1px #efefef;
 	font-size: 1.5em;
 }
 #primary-sub-heading {
-	color: #fefefe;
+	color: #131313;
 	padding: 0 0 1.2em 0;
 	font-size: 1em;
 }
@@ -129,7 +129,7 @@ table {
 	display: block;
 	margin: 0 auto;
 	width: 9em;
-	background-color: #131313;
+	background-color: #10b5b8;
 	padding: 1em;
 	font-size: 1em;
 	border-radius: .5em;
@@ -141,8 +141,8 @@ table {
 	position: fixed;
 	bottom: 0;
 	width: 100%;
-	height: 60px;
-	background-color: #b0b0b0;
+	height: 80px;
+	background-color: #e0e0e0;
 }
 #footer-button {
 	line-height: 70px;
@@ -153,9 +153,9 @@ table {
 	border-radius: 100px;
 	height: 60px;
 	width: 60px;
-	background-color: #b0b0b0;
+	background-color: #e0e0e0;
 	position: absolute;
-	bottom: 0.9em;
+	bottom: 1.7em;
 	left: 0;
 	right: 0;
 	margin: 0 auto 0 auto;
@@ -164,9 +164,20 @@ table {
 #home-view-footer button {
 	margin: 0 auto;
 	height: 30px;
+	border-radius: 0;
 	width: 300px;
 }
 #home-view-footer h4 {
 	font-size: 0.9em;
 	margin-top: 2.3em;
+}
+#home-view-footer button {
+	border: 1px solid #10b5b8;
+	border-radius: 5px;
+	font-size: 0.7em;
+	color: #fefefe;
+	width: 200px;
+	height: 50px;
+	background-color: #10b5b8;
+	margin: 0.5em auto 0.5em auto;
 }
