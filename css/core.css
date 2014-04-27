@@ -49,6 +49,7 @@ table {
 	border-spacing: 0;
 }
 * {
+  vertical-align: top;
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
@@ -70,6 +71,15 @@ table {
 	font-size: 0.5em;
 }
 /* Modals... */
+.overlay {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    opacity: 0.5;
+}
 .facebook-sign-up-modal {
 	height: 150px;
 	display: none;
@@ -90,7 +100,7 @@ table {
 	/*border: .2em solid red;*/
 }
 .home-view-container-full-background-image {
-	background: url(http://funstoc.com/wp-content/uploads/2013/12/grunge-background-wallpaper-backgrounds-black-red-white-blue-hd.jpg) no-repeat center center fixed; 
+	background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAyMgxhMukCimXCQkIM2dmJu9CMAsPt81b_fHZHGmqn-AwRfJl) no-repeat center center fixed; 
   	-webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
@@ -117,7 +127,6 @@ table {
 #primary-heading {
 	color: #10b5b8;
 	padding: 1.2em 0 1.2em 0;
-	text-shadow: 2px 1px 1px #efefef;
 	font-size: 1.5em;
 }
 #primary-sub-heading {
