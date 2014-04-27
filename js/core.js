@@ -1,5 +1,9 @@
 'use strict';
+
 (function($) { 
+    
+	// Full Access Vars...
+
     var AppRouter,
 		appRouter,
 		HomeView,
@@ -13,6 +17,9 @@
 		biLoginModal,
 		messageModal,
 		homeViewFooterHeight;
+	
+	// Home View...
+
 	HomeView = Backbone.View.extend({
 		el: '#spa',
 		template: _.template($('#home-view-template').html()),
@@ -93,6 +100,9 @@
 			console.log('HomeView init...');
 		}
 	});
+
+	// Item List View...
+
 	ItemListView = Backbone.View.extend({
 		el: '#spa',
 		template: _.template($('#item-list-view-template').html()),
@@ -103,6 +113,9 @@
 			console.log('ItemListView init...');
 		}
 	});
+
+	// Item Display View...
+
 	ItemDisplayView = Backbone.View.extend({
 		el: '#spa',
 		template: _.template($('#item-display-view-template').html()),
@@ -113,6 +126,9 @@
 			console.log('ItemDisplayView init...');
 		}
 	});
+
+	// AppRouter Router...
+
 	AppRouter = Backbone.Router.extend({
 		routes: {
 			'': 'homeRoute',
@@ -135,8 +151,12 @@
 			console.log('AppRouter init...');
 		}
 	});
+
+	// Are you ready?
+
 	$(function() {
 		appRouter = new AppRouter;
 		Backbone.history.start();
 	});
+	
 }(jQuery));
