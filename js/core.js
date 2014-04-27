@@ -18,11 +18,12 @@
 		template: _.template($('#home-view-template').html()),
 		events: {
 			'click #footer-button': 'footerAnimation',
-			'click .home-view-facebook-button': 'facebookModalShow',
-			'click .close-x': 'closeFacebookSignUpModal'
+			'click #facebook-sign-up-btn': 'facebookModalShow',
+			'click #email-sign-up-btn': 'emailModalShow',
+			'click #bi-log-in-modal': 'biLogInModalShow',
+			'click .modal-btn': 'closeModal'
 		},
 		footerAnimation: function() {
-			// Animations for Mobile...
 			homeViewFooterHeight = $('#home-view-footer').height();
 			if (homeViewFooterHeight === 80) {
 				$('hgroup h1, h2').fadeOut(50);
@@ -70,14 +71,20 @@
 			return false; 
 		},
 		facebookModalShow: function() {
-			$(function() {
-				$('.facebook-sign-up-modal').show();
-			});
+			$('.overlay').fadeIn(300);
+			$('#facebook-modal').fadeIn(300);
 		},
-		closeFacebookSignUpModal: function() {
-			$(function() {
-				$('.facebook-sign-up-modal').hide();
-			});
+		emailModalShow: function() {
+			$('.overlay').fadeIn(300);
+			$('#email-modal').fadeIn(300);
+		},
+		biLogInModalShow: function() {
+			$('.overlay').fadeIn(300);
+			$('#bi-modal').fadeIn(300);
+		},
+		closeModal: function() {
+			$('.overlay').fadeOut(300);
+			$('.modal').fadeOut(300);
 		},
 		render: function() {
 			$(this.el).html(this.template());

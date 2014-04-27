@@ -20,9 +20,29 @@
         <div id="spa"></div>
         
         <script type="text/template" id="home-view-template">
-            <div class="facebook-sign-up-modal">
-                <span class="close-x">X</span>
-                <span>Hello...</span>
+            <div class="overlay"></div>
+            <div id="facebook-modal" class="modal">
+                <button class="modal-btn">X</button>
+                <span>Facebook Sign Up</span>
+                <input type="text" name="" value="">
+                <input type="text" name="" value="">
+            </div>
+            <div id="email-modal" class="modal">
+                <h2>Email...</h2>
+                <button class="modal-btn">X</button>
+                <span>Email Sign Up</span>
+                <input type="text" name="" value="">
+                <input type="text" name="" value="">
+            </div>
+            <div id="bi-modal" class="modal">
+                <h2>Log In...</h2>
+                <button class="modal-btn">X</button>
+                <span>Email Log In</span>
+                <input type="text" name="" value="">
+                <input type="text" name="" value="">
+                <span>Facebook Log In</span>
+                <input type="text" name="" value="">
+                <input type="text" name="" value="">
             </div>
             <div class="home-view-container-full-background-image view-container text-align-center">
                 <div id="social-media-icon-container">
@@ -42,11 +62,11 @@
                         <div style="display: inline-block;">^</div>
                     </div>
                     <h4>Log In / Sign Up</h4>
-                    <button class="display-none home-view-facebook-button">Sign Up with Facebook</button>
+                    <button id="facebook-sign-up-btn" class="display-none home-view-facebook-button">Sign Up with Facebook</button>
                     <span class="display-none or-padding">OR</span>
-                    <button class="display-none">Sign Up with Email</button>
+                    <button id="email-sign-up-btn" class="display-none">Sign Up with Email</button>
                     <span class="notice display-none">We will not post on your profile or email you about updates without your permission.</span>
-                    <button class="display-none">Log In</button>
+                    <button id="bi-log-in-modal" class="display-none">Log In</button>
                 </footer>
             </div>
         
