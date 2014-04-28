@@ -15,6 +15,8 @@
 		questView,
 		// Replace with a DB...
 		questData,
+		Quest,
+		quest,
 		Quests,
 		quests,
 		questModel,
@@ -106,16 +108,10 @@
 		}
 	});
 
-	// Replace with a DB...
-
-	questData = [
-		{
-			name: 'One'
-		},
-		{
-			name: 'Two'
-		}
-	];
+	$(function() {
+		appRouter = new AppRouter;
+		Backbone.history.start();
+	});
 
 	// AppRouter Router...
 
@@ -143,9 +139,28 @@
 		loadQuests: function() {
 			questsView.render();
 		},
-		loadQuest: function(questName) {
-			questView.render(questName);
+		loadQuest: function() {
+			questView.render();
 		}
+	});
+
+	/* TESTING... */
+
+	// Quests Model...
+
+	Quest = Backbone.Model.extend({
+		defaults: {
+			name: 'Park Hop'
+		},
+		initialize: function() {
+			console.log('Quest init...');
+		}
+	});
+
+	// Quests Collection...
+
+	Quests = Backbone.Collection.extend({
+		model: Quest 
 	});
 
 	// Quests View...
@@ -154,17 +169,9 @@
 		el: '#spa',
 		template: _.template($('#quests-view-template').html()),
 		render: function() {
-			this.$el.html(this.template({
-				data: JSON.stringify(this.collection.models)
-			}));
+			this.$el.html(this.template({}));
 		}
 		// Need Sub Views?
-	});
-
-	// Quests Collection...
-
-	Quests = Backbone.Collection.extend({
-		// ...
 	});
 
 	// Quest View...
@@ -172,20 +179,9 @@
 	QuestView = Backbone.View.extend({
 		el: '#spa',
 		template: _.template($('#quest-view-template').html()),
-		render: function(questName) {
-			questModel = this.collection.where({
-				name: questName
-			})[0];
-			questHtml = this.template(questModel);
-			$(this.el).html(questHtml);
+		render: function() {
+			$(this.el).html(this.template({}));
 		}
-	});
-
-	// Are you ready?
-
-	$(function() {
-		appRouter = new AppRouter;
-		Backbone.history.start();
 	});
 
 }(jQuery));
