@@ -1,3 +1,5 @@
+// Will refactor DRY and Messy code soon...
+
 'use strict';
 
 (function($) { 
@@ -14,24 +16,19 @@
 			'click #bi-log-in-modal': 'biLogInModalShow',
 			'click .modal-btn': 'closeModal'
 		},
+		// TODO: jQuery animations need to be replaced with requestAnimationFrame() functionalities for performance reasons...
 		footerAnimation: function() {
 			var homeViewFooterHeight = $('#home-view-footer').height();
 			if (homeViewFooterHeight === 80) {
 				$('hgroup h1, h2').fadeOut(50);
 				$('#quest-button').fadeOut(50);
 				$('#footer-button').css('transform', 'rotate(180deg) scaleX(-1)');
-				$('#home-view-footer')
-				.stop()
-				.animate({
+				$('#home-view-footer').animate({
 					height: 285
-				})
-				.end();
-				$('#footer-button')
-				.stop()
-				.animate({
+				});
+				$('#footer-button').animate({
 					bottom: 255
-				})
-				.end();
+				});
 				$('#home-view-footer span, button').show();
 				$('#home-view-footer button').addClass('display-block');
 				$('#home-view-footer button').css('display', 'block');
@@ -42,18 +39,12 @@
 				$('hgroup h1, h2').fadeIn(50);
 				$('#quest-button').fadeIn(500);
 				$('#footer-button').css('transform', 'rotate(360deg) scaleX(-1)');
-				$('#home-view-footer')
-				.stop()
-				.animate({
+				$('#home-view-footer').animate({
 					height: 80
 				})
-				.end();
-				$('#footer-button')
-				.stop()
-				.animate({
+				$('#footer-button').animate({
 					bottom: 45
 				})
-				.end();
 				$('#home-view-footer span, button').hide();
 				$('#home-view-footer h4').show();
 				$('#home-view-footer').css('padding-top', '0');
@@ -85,7 +76,20 @@
 		}
 	});
 
-	// Is all ready to go?
+	// Temp. DB to be replaced by Parse.com...
+
+	var questData = [
+		{
+			name: 'Park Hop',
+			info: 'A Quest...'
+		},
+		{
+			name: 'Lantern Quest',
+			info: 'A Quest...'
+		}
+	];
+
+
 
 	var router;
 
