@@ -8,6 +8,12 @@
 		appRouter,
 		HomeView,
 		homeView,
+		// Replace with a DB...
+		itemListData,
+		ItemListModel,
+		itemListModel,
+		ItemListCollection,
+		itemListCollection,
 		ItemListView,
 		itemListView,
 		ItemDisplayView,
@@ -94,12 +100,38 @@
 			$('.modal').fadeOut(300);
 		},
 		render: function() {
-			$(this.el).html(this.template());
+			$(this.el).html(this.template({}));
 		},
 		initialize: function() {
 			console.log('HomeView init...');
 		}
 	});
+
+	// Replace with a DB...
+	// Item List Data...
+
+	itemListData = [
+		{
+			test: 'One...'
+		},
+		{
+			test: 'Two...'
+		}
+	];
+
+	// Item List Model...
+
+	/*ItemListModel = Backbone.Model.extend({
+		initialize: function() {
+			console.log('ItemListModel init...');
+		}
+	});*/
+
+	// Item List Collection...
+
+	/*ItemListCollection = Backbone.Collection.extend({
+		model: ItemListModel
+	});*/
 
 	// Item List View...
 
@@ -107,7 +139,7 @@
 		el: '#spa',
 		template: _.template($('#item-list-view-template').html()),
 		render: function() {
-			$(this.el).html(this.template());
+			$(this.el).html(this.template({}));
 		},
 		initialize: function() {
 			console.log('ItemListView init...');
@@ -120,7 +152,7 @@
 		el: '#spa',
 		template: _.template($('#item-display-view-template').html()),
 		render: function() {
-			$(this.el).html(this.template());
+			$(this.el).html(this.template({}));
 		},
 		initialize: function() {
 			console.log('ItemDisplayView init...');
@@ -132,21 +164,27 @@
 	AppRouter = Backbone.Router.extend({
 		routes: {
 			'': 'homeRoute',
-			'item-list': 'itemListRoute',
-			'item-display': 'itemDisplayRoute'
+			/*'item-list': 'itemListRoute',*/
+			'quest/:questName': 'loadQuest'
+			/*'item-display': 'itemDisplayRoute'*/
 		},
 		homeRoute: function() {
 			homeView = new HomeView;
 			homeView.render();
 		},
-		itemListRoute: function() {
+		loadQuest: function(questName) {
 			itemListView = new ItemListView;
 			itemListView.render();
+
 		},
-		itemDisplayRoute: function() {
+		/*itemListRoute: function() {
+			itemListView = new ItemListView;
+			itemListView.render();
+		},*/
+		/*itemDisplayRoute: function() {
 			itemDisplayView = new ItemDisplayView;
 			itemDisplayView.render();
-		},
+		},*/
 		initialize: function() {
 			console.log('AppRouter init...');
 		}
@@ -158,5 +196,5 @@
 		appRouter = new AppRouter;
 		Backbone.history.start();
 	});
-	
+
 }(jQuery));
