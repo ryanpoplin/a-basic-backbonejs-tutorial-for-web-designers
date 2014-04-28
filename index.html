@@ -62,7 +62,7 @@
                     <h1 id="primary-heading">Questalot</h1>
                     <h2 style="color: #131313;" id="primary-sub-heading">Real World Quests</h2>
                 </hgroup>
-                <a href="/#item-list" id="quest-button">Quest Now!</a>
+                <a href="/#load-quests" id="quest-button">Quest Now!</a>
                 <footer id="home-view-footer" class="text-align-center">
                     <div id="footer-button">
                         <div style="display: inline-block;">^</div>
@@ -78,15 +78,17 @@
         
         </script>
 
-        <script id="item-list-view-template" type="text/template">
+        <script id="quests-view-template" type="text/template">
 
-            <h1>asdfjkl;</h1>
+            <h1>Quests View...</h1>
+            <p><%= data %></p>
             
         </script>
 
-        <script id="item-display-view-template" type="text/template">
+        <script id="quest-view-template" type="text/template">
 
-            <h1>ItemDisplayView...</h1>
+            <h1>Quest View...</h1>
+            <p><%= attributes.name %></p>
 
         </script>
 

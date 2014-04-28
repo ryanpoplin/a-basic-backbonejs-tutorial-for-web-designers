@@ -4,24 +4,23 @@
     
 	// Full Access Vars...
 
-    var AppRouter,
+    var app,
+    	AppRouter,
 		appRouter,
 		HomeView,
 		homeView,
+		QuestsView,
+		questsView,
+		QuestView,
+		questView,
 		// Replace with a DB...
-		itemListData,
-		ItemListModel,
-		itemListModel,
-		ItemListCollection,
-		itemListCollection,
-		ItemListView,
-		itemListView,
-		ItemDisplayView,
-		itemDisplayView,
-		facebookSignUpModal,
-		emailSignUpModal,
-		biLoginModal,
-		messageModal,
+		questData,
+		Quests,
+		quests,
+		questModel,
+		questHtml,
+		// ...
+		// Check...
 		homeViewFooterHeight;
 	
 	// Home View...
@@ -108,85 +107,77 @@
 	});
 
 	// Replace with a DB...
-	// Item List Data...
 
-	itemListData = [
+	questData = [
 		{
-			test: 'One...'
+			name: 'One'
 		},
 		{
-			test: 'Two...'
+			name: 'Two'
 		}
 	];
-
-	// Item List Model...
-
-	/*ItemListModel = Backbone.Model.extend({
-		initialize: function() {
-			console.log('ItemListModel init...');
-		}
-	});*/
-
-	// Item List Collection...
-
-	/*ItemListCollection = Backbone.Collection.extend({
-		model: ItemListModel
-	});*/
-
-	// Item List View...
-
-	ItemListView = Backbone.View.extend({
-		el: '#spa',
-		template: _.template($('#item-list-view-template').html()),
-		render: function() {
-			$(this.el).html(this.template({}));
-		},
-		initialize: function() {
-			console.log('ItemListView init...');
-		}
-	});
-
-	// Item Display View...
-
-	ItemDisplayView = Backbone.View.extend({
-		el: '#spa',
-		template: _.template($('#item-display-view-template').html()),
-		render: function() {
-			$(this.el).html(this.template({}));
-		},
-		initialize: function() {
-			console.log('ItemDisplayView init...');
-		}
-	});
 
 	// AppRouter Router...
 
 	AppRouter = Backbone.Router.extend({
 		routes: {
 			'': 'homeRoute',
-			/*'item-list': 'itemListRoute',*/
+			'load-quests': 'loadQuests',
 			'quest/:questName': 'loadQuest'
-			/*'item-display': 'itemDisplayRoute'*/
+		},
+		initialize: function() {
+			console.log('AppRouter init...');
+			quests = new Quests();
+			quests.reset(questData);
+			questsView = new QuestsView({
+				collection: quests
+			});
+			questView = new QuestView({
+				collection: quests
+			});
 		},
 		homeRoute: function() {
 			homeView = new HomeView;
 			homeView.render();
 		},
-		loadQuest: function(questName) {
-			itemListView = new ItemListView;
-			itemListView.render();
-
+		loadQuests: function() {
+			questsView.render();
 		},
-		/*itemListRoute: function() {
-			itemListView = new ItemListView;
-			itemListView.render();
-		},*/
-		/*itemDisplayRoute: function() {
-			itemDisplayView = new ItemDisplayView;
-			itemDisplayView.render();
-		},*/
-		initialize: function() {
-			console.log('AppRouter init...');
+		loadQuest: function(questName) {
+			questView.render(questName);
+		}
+	});
+
+	// Quests View...
+
+	QuestsView = Backbone.View.extend({
+		el: '#spa',
+		template: _.template($('#quests-view-template').html()),
+		render: function() {
+			this.$el.html(this.template({
+				data: JSON.stringify(this.collection.models)
+			}));
+		}
+		// Need Sub Views?
+	});
+
+	// Quests Collection...
+
+	Quests = Backbone.Collection.extend({
+		// ...
+	});
+
+	// Quest View...
+
+	QuestView = Backbone.View.extend({
+		el: '#spa',
+		template: _.template($('#quest-view-template').html()),
+		render: function(questName) {
+			questModel = this.collection.where({
+				name: questName
+			})[0];
+			questHtml = this.template(questModel);
+			$(this.el).html(questHtml);
 		}
 	});
 
