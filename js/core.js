@@ -80,10 +80,12 @@
 
 	var questData = [
 		{
+			hash: '1',
 			name: 'Park Hop',
 			info: 'A Quest...'
 		},
 		{
+			hash: '2',
 			name: 'Lantern Quest',
 			info: 'A Quest...'
 		}
@@ -91,18 +93,13 @@
 
 	var router;
 
-	$(function() {
-		router = new Router;
-		Backbone.history.start();
-	});
-
 	// Router Router...
 
 	var Router = Backbone.Router.extend({
 		routes: {
 			'': 'homeRoute',
 			'load-quests': 'loadQuestsRoute',
-			'quests/:questName': 'loadQuestRoute'
+			'load-quest/:questName': 'loadQuestRoute'
 		},
 		initialize: function() {
 			console.log('AppRouter init...');
@@ -126,14 +123,8 @@
 			console.log(this.questsListView);
 		},
 		loadQuestRoute: function(questName) {
-			this.questView.render(questName);
+			this.questDisplayView.render(questName);
 		}
-	});
-
-	// Quests Collection...
-
-	var Quests = Backbone.Collection.extend({
-		// ...
 	});
 
 	// Quests List View...
@@ -146,6 +137,29 @@
 				data: JSON.stringify(this.collection.models)
 			}));
 		}
+		// Add Subviews...
+	});
+
+	// Quests Collection...
+
+	var Quests = Backbone.Collection.extend({
+		// ...
+	});
+
+	var QuestDisplayView = Backbone.View.extend({
+		template: _.template($('#quest-display-view-template').html()),
+		render: function(questName) {
+			var questModel = this.collection.where({
+				name: questName
+			})[0];
+			var questTemplate = this.template(questModel);
+			$('#spa').html(questTemplate);
+		}
+	});
+
+	$(function() {
+		router = new Router;
+		Backbone.history.start();
 	});
 
 }(jQuery));
