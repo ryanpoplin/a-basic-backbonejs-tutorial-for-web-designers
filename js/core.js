@@ -23,12 +23,12 @@
 				$('hgroup h1, h2').fadeOut(50);
 				$('#quest-button').fadeOut(50);
 				$('#footer-button').css('transform', 'rotate(180deg) scaleX(-1)');
-				$('#home-view-footer').animate({
+				$('#home-view-footer').stop().animate({
 					height: 285
-				});
-				$('#footer-button').animate({
+				}).end();
+				$('#footer-button').stop().animate({
 					bottom: 255
-				});
+				}).end();
 				$('#home-view-footer span, button').show();
 				$('#home-view-footer button').addClass('display-block');
 				$('#home-view-footer button').css('display', 'block');
@@ -39,12 +39,12 @@
 				$('hgroup h1, h2').fadeIn(50);
 				$('#quest-button').fadeIn(500);
 				$('#footer-button').css('transform', 'rotate(360deg) scaleX(-1)');
-				$('#home-view-footer').animate({
+				$('#home-view-footer').stop().animate({
 					height: 80
-				})
-				$('#footer-button').animate({
+				}).end();
+				$('#footer-button').stop().animate({
 					bottom: 45
-				})
+				}).end();
 				$('#home-view-footer span, button').hide();
 				$('#home-view-footer h4').show();
 				$('#home-view-footer').css('padding-top', '0');
