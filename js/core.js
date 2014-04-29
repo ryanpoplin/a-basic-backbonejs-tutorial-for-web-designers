@@ -122,14 +122,18 @@
 			// Testing...
 			// console.log(this.questsListView);
 		},
+		// Changed up for events...
 		loadQuestRoute: function(questHash) {
-			this.questDisplayView.render(questHash);
+			this.questDisplayView.loadQuest(questHash);
 		}
 	});
 
 	// Quests List View...
 
 	var QuestsListView = Backbone.View.extend({
+		initialize: function() {
+			console.log('QuestsListView init...');
+		},
 		el: '#spa',
 		template: _.template($('#quests-list-view-template').html()),
 		render: function() {
@@ -147,13 +151,30 @@
 	});
 
 	var QuestDisplayView = Backbone.View.extend({
+		initialize: function() {
+			console.log('QuestDisplayView init...');
+			this.model = new (Backbone.Model.extend({}));
+			this.model.on('change', this.render, this);
+			this.on('spinner', this.showSpinner, this);
+		},
 		template: _.template($('#quest-display-view-template').html()),
-		render: function(questHash) {
-			var questModel = this.collection.where({
-				hash: questHash
-			})[0];
-			var questTemplate = this.template(questModel);
+		templateSpinner: _.template($('#template-spinner').html()),
+		loadQuest: function(questHash) {
+			this.trigger('spinner');
+			var view = this;
+			// Configure real DB wait...
+			setTimeout(function() {
+				view.model.set(view.collection.where({
+					hash: questHash
+				})[0].attributes);
+			}, 500);
+		},
+		render: function(questName) {	
+			var questTemplate = this.template(this.model);
 			$('#spa').html(questTemplate);
+		},
+		showSpinner: function() {
+			$('#spa').html(this.templateSpinner);
 		}
 	});
 
