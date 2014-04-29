@@ -120,7 +120,7 @@
 			// Refer to the object being created which will be called questsListView...
 			this.questsListView.render();
 			// Testing...
-			console.log(this.questsListView);
+			// console.log(this.questsListView);
 		},
 		loadQuestRoute: function(questHash) {
 			this.questDisplayView.render(questHash);
