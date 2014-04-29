@@ -89,8 +89,6 @@
 		}
 	];
 
-
-
 	var router;
 
 	$(function() {
@@ -104,18 +102,38 @@
 		routes: {
 			'': 'homeRoute',
 			'load-quests': 'loadQuestsRoute',
+			'quests/:questName': 'loadQuestRoute'
 		},
 		initialize: function() {
 			console.log('AppRouter init...');
+			var quests = new Quests();
+			quests.reset(questData);
+			this.questsListView = new QuestsListView({
+				collection: quests
+			});
+			this.questDisplayView = new QuestDisplayView({
+				collection: quests
+			});
 		},
 		homeRoute: function() {
 			var homeView = new HomeView;
 			homeView.render();
 		},
 		loadQuestsRoute: function() {
-			this.questsListView = new QuestsListView;
+			// Refer to the object being created which will be called questsListView...
 			this.questsListView.render();
+			// Testing...
+			console.log(this.questsListView);
+		},
+		loadQuestRoute: function(questName) {
+			this.questView.render(questName);
 		}
+	});
+
+	// Quests Collection...
+
+	var Quests = Backbone.Collection.extend({
+		// ...
 	});
 
 	// Quests List View...
@@ -124,7 +142,9 @@
 		el: '#spa',
 		template: _.template($('#quests-list-view-template').html()),
 		render: function() {
-			this.$el.html(this.template({}));
+			this.$el.html(this.template({
+				data: JSON.stringify(this.collection.models)
+			}));
 		}
 	});
 
