@@ -83,13 +83,21 @@
         <script id="quests-list-view-template" type="text/template">
 
             <span>Quest Data: <%= data %></span>
+            <br>
+            <a href="/#">Home...</a>
+            <br>
+            <a href="#/load-quest/parkhop">Park Hop Quest...</a>
+            <br>
+            <a href="#/load-quest/lantern">Lantern Quest...</a>
 
         </script>
 
         <script id="quest-display-view-template" type="text/template">
 
             <span><%= attributes.name %></span>
+            <br>
             <span><%= attributes.info %></span>
+            <a href="/#load-quests">Back...</a>
 
         </script>
 

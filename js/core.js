@@ -82,12 +82,12 @@
 		{
 			hash: 'parkhop',
 			name: 'Park Hop',
-			info: 'A Quest...'
+			info: 'A Quest Where You Park Hop Bitch!...'
 		},
 		{
 			hash: 'lantern',
 			name: 'Lantern Quest',
-			info: 'A Quest...'
+			info: 'A Quest Where You Smash Lanterns!...'
 		}
 	];
 
@@ -99,7 +99,7 @@
 		routes: {
 			'': 'homeRoute',
 			'load-quests': 'loadQuestsRoute',
-			'load-quest/:questName': 'loadQuestRoute'
+			'load-quest/:questHash': 'loadQuestRoute'
 		},
 		initialize: function() {
 			console.log('AppRouter init...');
@@ -122,8 +122,8 @@
 			// Testing...
 			console.log(this.questsListView);
 		},
-		loadQuestRoute: function(questName) {
-			this.questDisplayView.render(questName);
+		loadQuestRoute: function(questHash) {
+			this.questDisplayView.render(questHash);
 		}
 	});
 
@@ -148,9 +148,9 @@
 
 	var QuestDisplayView = Backbone.View.extend({
 		template: _.template($('#quest-display-view-template').html()),
-		render: function(questName) {
+		render: function(questHash) {
 			var questModel = this.collection.where({
-				name: questName
+				hash: questHash
 			})[0];
 			var questTemplate = this.template(questModel);
 			$('#spa').html(questTemplate);
