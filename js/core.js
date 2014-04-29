@@ -80,12 +80,12 @@
 
 	var questData = [
 		{
-			hash: '1',
+			hash: 'parkhop',
 			name: 'Park Hop',
 			info: 'A Quest...'
 		},
 		{
-			hash: '2',
+			hash: 'lantern',
 			name: 'Lantern Quest',
 			info: 'A Quest...'
 		}
