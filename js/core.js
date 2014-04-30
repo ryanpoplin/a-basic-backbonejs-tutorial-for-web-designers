@@ -60,22 +60,6 @@
 		}
 	});
 
-	// Quest Item View / Subviews...
-
-	var QuestItemView = Backbone.View.extend({
-		tagName: 'div',
-		template: _.template($('#quest-item-view-template').html()),
-		events: {
-			'click .add-to-library': 'addToLibrary' 
-		},
-		render: function() {
-			this.$el.html(this.template(this.model.attributes));
-		},
-		addToLibrary: function() {
-			this.model.collection.trigger('addToLibrary', this.model);
-		}
-	});
-
 	// Home View...
 
 	var HomeView = Backbone.View.extend({
@@ -90,6 +74,7 @@
 		},
 		footerAnimation: function() {
 			var homeViewFooterHeight = $('#home-view-footer').height();
+			// Need more animation conditions...
 			if (homeViewFooterHeight === 80) {
 				$('hgroup h1, h2, #quest-button').fadeOut(50);
 				$('#footer-button').css('transform', 'rotate(180deg) scaleX(-1)');
@@ -171,8 +156,22 @@
 
 	// Quests Collection...
 
-	var Quests = Backbone.Collection.extend({
-		// ...
+	var Quests = Backbone.Collection.extend({});
+
+	// Quest Item View / Subviews...
+
+	var QuestItemView = Backbone.View.extend({
+		tagName: 'div',
+		template: _.template($('#quest-item-view-template').html()),
+		events: {
+			'click .add-to-library': 'addToLibrary' 
+		},
+		render: function() {
+			this.$el.html(this.template(this.model.attributes));
+		},
+		addToLibrary: function() {
+			this.model.collection.trigger('addToLibrary', this.model);
+		}
 	});
 
 	// Quest Display View...
