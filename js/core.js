@@ -6,6 +6,60 @@
 
 	// Home View...
 
+	// Temp. DB to be replaced by Parse.com...
+
+	var questData = [
+		{
+			hash: 'parkhop',
+			name: 'Park Hop',
+			info: 'A Quest Where You Park Hop Bitch!...'
+		},
+		{
+			hash: 'lantern',
+			name: 'Lantern Quest',
+			info: 'A Quest Where You Smash Lanterns!...'
+		}
+	];
+
+	var router;
+
+	// Router Router...
+
+	var Router = Backbone.Router.extend({
+		routes: {
+			'': 'homeRoute',
+			'load-quests': 'loadQuestsRoute',
+			'load-quest/:questHash': 'loadQuestRoute'
+		},
+		initialize: function() {
+			console.log('AppRouter init...');
+			var quests = new Quests();
+			quests.reset(questData);
+			this.questsListView = new QuestsListView({
+				collection: quests
+			});
+			this.questDisplayView = new QuestDisplayView({
+				collection: quests
+			});
+		},
+		homeRoute: function() {
+			var homeView = new HomeView;
+			homeView.render();
+		},
+		loadQuestsRoute: function() {
+			// Refer to the object being created which will be called questsListView...
+			this.questsListView.render();
+			// Testing...
+			// console.log(this.questsListView);
+		},
+		// Changed up for events...
+		loadQuestRoute: function(questHash) {
+			this.questDisplayView.loadQuest(questHash);
+		}
+	});
+
+	// Home View...
+
 	var HomeView = Backbone.View.extend({
 		el: '#spa',
 		template: _.template($('#home-view-template').html()),
@@ -74,58 +128,6 @@
 		}
 	});
 
-	// Temp. DB to be replaced by Parse.com...
-
-	var questData = [
-		{
-			hash: 'parkhop',
-			name: 'Park Hop',
-			info: 'A Quest Where You Park Hop Bitch!...'
-		},
-		{
-			hash: 'lantern',
-			name: 'Lantern Quest',
-			info: 'A Quest Where You Smash Lanterns!...'
-		}
-	];
-
-	var router;
-
-	// Router Router...
-
-	var Router = Backbone.Router.extend({
-		routes: {
-			'': 'homeRoute',
-			'load-quests': 'loadQuestsRoute',
-			'load-quest/:questHash': 'loadQuestRoute'
-		},
-		initialize: function() {
-			console.log('AppRouter init...');
-			var quests = new Quests();
-			quests.reset(questData);
-			this.questsListView = new QuestsListView({
-				collection: quests
-			});
-			this.questDisplayView = new QuestDisplayView({
-				collection: quests
-			});
-		},
-		homeRoute: function() {
-			var homeView = new HomeView;
-			homeView.render();
-		},
-		loadQuestsRoute: function() {
-			// Refer to the object being created which will be called questsListView...
-			this.questsListView.render();
-			// Testing...
-			// console.log(this.questsListView);
-		},
-		// Changed up for events...
-		loadQuestRoute: function(questHash) {
-			this.questDisplayView.loadQuest(questHash);
-		}
-	});
-
 	// Quests List View...
 
 	var QuestsListView = Backbone.View.extend({
@@ -167,7 +169,7 @@
 				})[0].attributes);
 			}, 500);
 		},
-		render: function(questName) {	
+		render: function(questName) {
 			var questTemplate = this.template(this.model);
 			$('#spa').html(questTemplate);
 		},
@@ -176,11 +178,14 @@
 		}
 	});
 
-	var QuestItemView = Backbone.View.extend({
+	// Subviews...
+	// Quest Item View...
+
+	/*var QuestItemView = Backbone.View.extend({
 		tagName: 'div',
 		template: _.template($('#quest-item-view-template').html()),
 
-	});
+	});*/
 
 	$(function() {
 		router = new Router;
