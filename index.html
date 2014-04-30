@@ -78,15 +78,18 @@
         
         </script>
 
+        <!-- Most should be removed from here... -->
+
         <script id="quests-list-view-template" type="text/template">
 
-            <span>Quest Data: <%= data %></span>
-            <br>
-            <a href="/#">Home...</a>
-            <br>
-            <a href="#/load-quest/parkhop">Park Hop Quest...</a>
-            <br>
-            <a href="#/load-quest/lantern">Lantern Quest...</a>
+            <div class="quest-list-container">   
+                <div class="quests-list">
+                
+                </div>
+                <div class="library-box">
+                
+                </div>
+            </div>
 
         </script>
 
@@ -99,9 +102,13 @@
 
         </script>
 
+        <!-- Refactor as subview... -->
+
         <script id="template-spinner" type="text/template">
 
-            <img src="ajax_loader_gray_48.gif" alt="Spinner...">
+            <div id="spinner-container">
+                <img src="ajax_loader_gray_48.gif" alt="Spinner...">
+            </div>
 
         </script>
 
@@ -109,7 +116,7 @@
 
             <h1><%= name %></h1>
             <a href="#load-quest/<%= hash %>">More info...</a>
-            <a href="#" class="add-to-library">Add to Quest Library</a>
+            <a class="add-to-library">Add to Quest Library</a>
 
         </script>
 

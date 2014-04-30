@@ -1,10 +1,6 @@
-// Will refactor DRY and Messy code soon...
-
 'use strict';
 
 (function($) { 
-
-	// Home View...
 
 	// Temp. DB to be replaced by Parse.com...
 
@@ -18,10 +14,20 @@
 			hash: 'lantern',
 			name: 'Lantern Quest',
 			info: 'A Quest Where You Smash Lanterns!...'
+		},
+		{
+			hash: 'mouse',
+			name: 'Mice of Main',
+			info: 'Find those damn mice!'
+		},
+		{
+			hash: 'Pumpkin',
+			name: 'Pumpkin Quest',
+			info: 'Find a pumpkin fool!'
 		}
 	];
 
-	var router;
+	var app;
 
 	// Router Router...
 
@@ -47,14 +53,26 @@
 			homeView.render();
 		},
 		loadQuestsRoute: function() {
-			// Refer to the object being created which will be called questsListView...
-			this.questsListView.render();
-			// Testing...
-			// console.log(this.questsListView);
+			this.questsListView.coreRender();
 		},
-		// Changed up for events...
 		loadQuestRoute: function(questHash) {
 			this.questDisplayView.loadQuest(questHash);
+		}
+	});
+
+	// Quest Item View / Subviews...
+
+	var QuestItemView = Backbone.View.extend({
+		tagName: 'div',
+		template: _.template($('#quest-item-view-template').html()),
+		events: {
+			'click .add-to-library': 'addToLibrary' 
+		},
+		render: function() {
+			this.$el.html(this.template(this.model.attributes));
+		},
+		addToLibrary: function() {
+			this.model.collection.trigger('addToLibrary', this.model);
 		}
 	});
 
@@ -70,14 +88,11 @@
 			'click #bi-log-in-modal': 'biLogInModalShow',
 			'click .modal-btn': 'closeModal'
 		},
-		// TODO: jQuery animations need to be replaced with requestAnimationFrame() functionalities for performance reasons...
 		footerAnimation: function() {
 			var homeViewFooterHeight = $('#home-view-footer').height();
 			if (homeViewFooterHeight === 80) {
 				$('hgroup h1, h2, #quest-button').fadeOut(50);
-				// Rotation...
 				$('#footer-button').css('transform', 'rotate(180deg) scaleX(-1)');
-				// Animation...
 				$('#home-view-footer').stop().animate({
 					height: 285
 				}).end();
@@ -92,9 +107,7 @@
 				return true; 
 			} else if (homeViewFooterHeight >= 163) {
 				$('hgroup h1, h2, #quest-button').fadeIn(500);
-				// Rotation...
 				$('#footer-button').css('transform', 'rotate(360deg) scaleX(-1)');
-				// Animation...
 				$('#home-view-footer').stop().animate({
 					height: 80
 				}).end();
@@ -131,17 +144,29 @@
 	// Quests List View...
 
 	var QuestsListView = Backbone.View.extend({
+		el: '#spa',
+		listEl: '.quests-list',
+		libraryEl: '.library-box',
+		template: _.template($('#quests-list-view-template').html()),
 		initialize: function() {
 			console.log('QuestsListView init...');
+			this.$el.html(this.template);
+			this.collection.on('addToLibrary', this.showLibrary, this);
 		},
-		el: '#spa',
-		template: _.template($('#quests-list-view-template').html()),
-		render: function() {
-			this.$el.html(this.template({
-				data: JSON.stringify(this.collection.models)
-			}));
+		showLibrary: function(questModel) {
+			$(this.libraryEl).append(questModel.attributes.name + '<br>');
+		},
+		coreRender: function() {
+			this.$el.html(this.template({}));
+			var view = this;
+			this.collection.each(function(quest) {
+				var questSubView = new QuestItemView({
+					model: quest
+				});	
+				questSubView.render();
+				$(view.listEl).append(questSubView.$el);
+			});
 		}
-		// Add Subviews...
 	});
 
 	// Quests Collection...
@@ -149,6 +174,8 @@
 	var Quests = Backbone.Collection.extend({
 		// ...
 	});
+
+	// Quest Display View...
 
 	var QuestDisplayView = Backbone.View.extend({
 		initialize: function() {
@@ -162,12 +189,11 @@
 		loadQuest: function(questHash) {
 			this.trigger('spinner');
 			var view = this;
-			// Configure real DB wait...
 			setTimeout(function() {
 				view.model.set(view.collection.where({
 					hash: questHash
 				})[0].attributes);
-			}, 500);
+			}, 1000);
 		},
 		render: function(questName) {
 			var questTemplate = this.template(this.model);
@@ -178,17 +204,8 @@
 		}
 	});
 
-	// Subviews...
-	// Quest Item View...
-
-	/*var QuestItemView = Backbone.View.extend({
-		tagName: 'div',
-		template: _.template($('#quest-item-view-template').html()),
-
-	});*/
-
 	$(function() {
-		router = new Router;
+		app = new Router;
 		Backbone.history.start();
 	});
 

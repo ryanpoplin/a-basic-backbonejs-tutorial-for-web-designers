@@ -58,6 +58,10 @@ table {
           box-sizing: border-box;
 }
 
+#spa {
+	position: relative;
+}
+
 /* Utility Classes... */
 
 .text-align-center {
@@ -270,4 +274,12 @@ table {
 	height: 50px;
 	background-color: #10b5b8;
 	margin: 0.5em auto 0.5em auto;
+}
+
+/* Spinner */
+
+#spinner-container {
+	position: absolute;
+    top: 45%;
+    left: 50%;
 }
