@@ -1,3 +1,5 @@
+// TODO: Add a reuseable class for the drawer footer and animation functions...
+
 'use strict';
 
 (function($) { 
@@ -133,6 +135,59 @@
 		listEl: '.quests-list',
 		libraryEl: '.library-box',
 		template: _.template($('#quests-list-view-template').html()),
+		events: {
+			'click #footer-button': 'footerAnimation',
+			'click #facebook-sign-up-btn': 'facebookModalShow',
+			'click #email-sign-up-btn': 'emailModalShow',
+			'click #bi-log-in-modal': 'biLogInModalShow',
+			'click .modal-btn': 'closeModal'
+		},
+		footerAnimation: function() {
+			var homeViewFooterHeight = $('#home-view-footer').height();
+			// Need more animation conditions...
+			if (homeViewFooterHeight === 80) {
+				$('hgroup h1, h2, #quest-button').fadeOut(50);
+				$('#footer-button').css('transform', 'rotate(180deg) scaleX(-1)');
+				$('#home-view-footer').stop().animate({
+					height: 285
+				}).end();
+				$('#footer-button').stop().animate({
+					bottom: 255
+				}).end();
+				$('#home-view-footer span, button').show();
+				$('#home-view-footer button').addClass('display-block');
+				$('#home-view-footer button').css('display', 'block');
+				$('#home-view-footer h4').hide();
+				$('#home-view-footer').css('padding-top', '2em');
+				return true; 
+			} else if (homeViewFooterHeight >= 163) {
+				$('hgroup h1, h2, #quest-button').fadeIn(500);
+				$('#footer-button').css('transform', 'rotate(360deg) scaleX(-1)');
+				$('#home-view-footer').stop().animate({
+					height: 80
+				}).end();
+				$('#footer-button').stop().animate({
+					bottom: 45
+				}).end();
+				$('#home-view-footer span, button').hide();
+				$('#home-view-footer h4').show();
+				$('#home-view-footer').css('padding-top', '0');
+				return true;
+			}
+			return false; 
+		},
+		facebookModalShow: function() {
+			$('.overlay, #facebook-modal').fadeIn(300);
+		},
+		emailModalShow: function() {
+			$('.overlay, #email-modal').fadeIn(300);
+		},
+		biLogInModalShow: function() {
+			$('.overlay, #bi-modal').fadeIn(300);
+		},
+		closeModal: function() {
+			$('.overlay, .modal').fadeOut(300);
+		},
 		initialize: function() {
 			console.log('QuestsListView init...');
 			this.$el.html(this.template);
