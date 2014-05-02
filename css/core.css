@@ -382,10 +382,12 @@ table {
 	border-radius: 1px solid #10b5b10;
 }
 
-/* Spinner */
+/* Spinner... */
+
+/* For Testing... */
 
 #spinner-container {
 	position: absolute;
-    top: 45%;
-    left: 50%;
+	top: 35%;
+    left: 44%;
 }
