@@ -27,9 +27,12 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+@font-face {
+	font-family: 'Martell';
+	src: url(../reg.otf);	
+}
 body {
-	/* Google Fonts... */
-	font-family: 'Open Sans', 'sans-serif';
+	font-family: 'Martell', sans-serif;
 	position: relative;
 	line-height: 1;
 }
@@ -176,12 +179,11 @@ table {
 }
 
 .home-view-container-full-background-image {
-	background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAyMgxhMukCimXCQkIM2dmJu9CMAsPt81b_fHZHGmqn-AwRfJl) no-repeat center center fixed; 
+	background: url(../background.png) no-repeat center center fixed; 
   	-webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
   	background-size: cover;
-  	background-color: #efefef;
 }
 
 #social-media-icon-container {

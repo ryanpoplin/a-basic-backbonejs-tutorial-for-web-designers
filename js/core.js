@@ -12,15 +12,7 @@
 			rules: 'Rules: Lorem ipsum dolor...',
 			prizes: 'Prizes: Lorem ipsum dolor...'
 		},
-		{
-			hash: 'lanternaa',
-			name: 'Lanternaa',
-			info: 'Information: Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor.',
-			img: 'http://hdwallpaper.freehdw.com/0006/3d-abstract_widewallpaper_floating-lanterns_51601.jpg',
-			link: 'https://www.google.com/lantern',
-			rules: 'Rules: Lorem ipsum dolor...',
-			prizes: 'Prizes: Lorem ipsum dolor...'
-		}
+		
 	];
 
 	var app;
@@ -69,7 +61,7 @@
 		footerAnimation: function() {
 			var homeViewFooterHeight = $('#home-view-footer').height();
 			if (homeViewFooterHeight === 80) {
-				$('hgroup h1, h2, #quest-button').fadeOut(50);
+				// $('hgroup h1, h2, #quest-button').fadeOut(50);
 				$('#footer-button').css('transform', 'rotate(180deg) scaleX(-1)');
 				$('#home-view-footer').stop().animate({
 					height: 285
@@ -84,7 +76,7 @@
 				$('#home-view-footer').css('padding-top', '2em');
 				return true; 
 			} else if (homeViewFooterHeight >= 163) {
-				$('hgroup h1, h2, #quest-button').fadeIn(500);
+				// $('hgroup h1, h2, #quest-button').fadeIn(500);
 				$('#footer-button').css('transform', 'rotate(360deg) scaleX(-1)');
 				$('#home-view-footer').stop().animate({
 					height: 80
@@ -134,7 +126,7 @@
 		footerAnimation: function() {
 			var homeViewFooterHeight = $('#home-view-footer').height();
 			if (homeViewFooterHeight === 80) {
-				$('hgroup h1, h2, #quest-button').fadeOut(50);
+				// $('hgroup h1, h2, #quest-button').fadeOut(50);
 				$('#footer-button').css('transform', 'rotate(180deg) scaleX(-1)');
 				$('#home-view-footer').stop().animate({
 					height: 285
@@ -149,7 +141,7 @@
 				$('#home-view-footer').css('padding-top', '2em');
 				return true; 
 			} else if (homeViewFooterHeight >= 163) {
-				$('hgroup h1, h2, #quest-button').fadeIn(500);
+				// $('hgroup h1, h2, #quest-button').fadeIn(500);
 				$('#footer-button').css('transform', 'rotate(360deg) scaleX(-1)');
 				$('#home-view-footer').stop().animate({
 					height: 80
