@@ -1,10 +1,6 @@
-// TODO: Add a reuseable class for the drawer footer and animation functions...
-
 'use strict';
 
 (function($) { 
-
-	// Temp. DB to be replaced by Parse.com...
 
 	var questData = [
 		{
@@ -16,7 +12,6 @@
 			rules: 'Rules: Lorem ipsum dolor...',
 			prizes: 'Prizes: Lorem ipsum dolor...'
 		},
-		// Just for demonstration...
 		{
 			hash: 'lanternaa',
 			name: 'Lanternaa',
@@ -29,8 +24,6 @@
 	];
 
 	var app;
-
-	// Router Router...
 
 	var Router = Backbone.Router.extend({
 		routes: {
@@ -63,8 +56,6 @@
 		}
 	});
 
-	// Home View...
-
 	var HomeView = Backbone.View.extend({
 		el: '#spa',
 		template: _.template($('#home-view-template').html()),
@@ -77,7 +68,6 @@
 		},
 		footerAnimation: function() {
 			var homeViewFooterHeight = $('#home-view-footer').height();
-			// Need more animation conditions...
 			if (homeViewFooterHeight === 80) {
 				$('hgroup h1, h2, #quest-button').fadeOut(50);
 				$('#footer-button').css('transform', 'rotate(180deg) scaleX(-1)');
@@ -129,8 +119,6 @@
 		}
 	});
 
-	// Quests List View...
-
 	var QuestsListView = Backbone.View.extend({
 		el: '#spa',
 		listEl: '.quests-list',
@@ -145,7 +133,6 @@
 		},
 		footerAnimation: function() {
 			var homeViewFooterHeight = $('#home-view-footer').height();
-			// Need more animation conditions...
 			if (homeViewFooterHeight === 80) {
 				$('hgroup h1, h2, #quest-button').fadeOut(50);
 				$('#footer-button').css('transform', 'rotate(180deg) scaleX(-1)');
@@ -210,11 +197,7 @@
 		}
 	});
 
-	// Quests Collection...
-
 	var Quests = Backbone.Collection.extend({});
-
-	// Quest Item View / Subviews...
 
 	var QuestItemView = Backbone.View.extend({
 		template: _.template($('#quest-item-view-template').html()),
@@ -228,8 +211,6 @@
 			this.model.collection.trigger('addToLibrary', this.model);
 		}
 	});
-
-	// Quest Display View...
 
 	var QuestDisplayView = Backbone.View.extend({
 		initialize: function() {

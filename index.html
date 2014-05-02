@@ -137,10 +137,13 @@
 
         <script id="quest-display-view-template" type="text/template">
 
-            <span><%= attributes.name %></span>
-            <br>
-            <span><%= attributes.info %></span>
-            <a href="/#load-quests">Back...</a>
+            <div class="overlay" style="display: block;"></div>
+            <div style="display: block; position: absolute; left: 45%; width: 280px; height: 280px; margin-left: -125px; color: #131313; text-align: center; z-index: 10; color: #fefefe;">
+                <p style="font-size: 0.9em;" class="text-align-center">Congratulations, you just registered for</p>
+                <h1 style="font-size: 1.2em;" class="text-align-center"><%= attributes.name %></h1>
+                <h2 style="font-size: 1.5em;" class="text-align-center">Your Quest has just begun!</h2>
+                <a class="quest-register-btn text-align-center" style="" href="/#load-quests">Back to Quest Library</a>
+            </div>
 
         </script>
 
@@ -148,9 +151,7 @@
 
         <script id="template-spinner" type="text/template">
 
-            <div id="spinner-container">
-                <img src="ajax_loader_gray_48.gif" alt="Spinner...">
-            </div>
+            <img src="ajax_loader_gray_48.gif" alt="Spinner...">
 
         </script>
 
