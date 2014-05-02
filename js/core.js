@@ -10,22 +10,21 @@
 		{
 			hash: 'parkhop',
 			name: 'Park Hop',
-			info: 'A Quest Where You Park Hop Bitch!...'
+			info: 'Information: Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor.',
+			img: 'http://www.naportals.com/wp-content/uploads/2014/02/orange-thighed-frog-tree-green-nature-animals-wallpaper-1920x1080-857671.jpg',
+			link: 'https://www.google.com/parkhop',
+			rules: 'Rules: Lorem ipsum dolor...',
+			prizes: 'Prizes: Lorem ipsum dolor...'
 		},
+		// Just for demonstration...
 		{
-			hash: 'lantern',
-			name: 'Lantern Quest',
-			info: 'A Quest Where You Smash Lanterns!...'
-		},
-		{
-			hash: 'mouse',
-			name: 'Mice of Main',
-			info: 'Find those damn mice!'
-		},
-		{
-			hash: 'Pumpkin',
-			name: 'Pumpkin Quest',
-			info: 'Find a pumpkin fool!'
+			hash: 'lanternaa',
+			name: 'Lanternaa',
+			info: 'Information: Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor.',
+			img: 'http://hdwallpaper.freehdw.com/0006/3d-abstract_widewallpaper_floating-lanterns_51601.jpg',
+			link: 'https://www.google.com/lantern',
+			rules: 'Rules: Lorem ipsum dolor...',
+			prizes: 'Prizes: Lorem ipsum dolor...'
 		}
 	];
 
@@ -53,9 +52,11 @@
 		homeRoute: function() {
 			var homeView = new HomeView;
 			homeView.render();
+			$('#spa').css('margin-bottom', '0');
 		},
 		loadQuestsRoute: function() {
 			this.questsListView.coreRender();
+			$('#spa').css('margin-bottom', '120px');
 		},
 		loadQuestRoute: function(questHash) {
 			this.questDisplayView.loadQuest(questHash);
@@ -216,7 +217,6 @@
 	// Quest Item View / Subviews...
 
 	var QuestItemView = Backbone.View.extend({
-		tagName: 'div',
 		template: _.template($('#quest-item-view-template').html()),
 		events: {
 			'click .add-to-library': 'addToLibrary' 

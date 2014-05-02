@@ -135,18 +135,22 @@ table {
 .modal {
 	background-color: #f0f0f0;
 	display: none;
-    position: absolute;
-    top: 45%;
+    position: fixed;
     left: 50%;
     width: 250px;
     height: 250px;
     margin-left: -125px;
-    margin-top: -100px;
     color: #131313;
     text-align: center;
     /* needed styles for the overlay */
     z-index: 10; /* keep on top of other elements on the page */
     box-shadow: 0 0 0 9999px rgba(0,0,0,0.5);
+}
+
+/* Home View Modal Extras... */
+
+.extra-margin-top {
+	margin-top: 60px;
 }
 
 .modal input[type=text] {
@@ -178,7 +182,7 @@ table {
   	-moz-background-size: cover;
   	-o-background-size: cover;
   	background-size: cover;
-  	/*background-color: #efefef;*/
+  	background-color: #efefef;
 }
 
 #social-media-icon-container {
@@ -225,6 +229,8 @@ table {
 	color: #fefefe;
 	text-decoration: none;
 }
+
+/* Drawer Footer... */
 
 #home-view-footer {
 	overflow: visible !important;
@@ -274,6 +280,106 @@ table {
 	height: 50px;
 	background-color: #10b5b8;
 	margin: 0.5em auto 0.5em auto;
+}
+
+/* Quest List View... */
+
+.header-back-btn {
+	position: absolute;
+	top: 13px;
+	font-weight: 900;
+	text-align: center;
+	left: 10px;
+	display: block;
+	width: 5em;
+	background-color: #10b5b8;
+	padding: 0.8em;
+	font-size: 0.9em;
+	border-radius: 0.5em;
+	color: #fefefe;
+	text-decoration: none;	
+	border: 1px solid #10b5b8;
+}
+
+#quest-list-view-header {
+	width: 100%;
+	position: fixed;
+	top: 0;
+	height: 65px;
+	background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAyMgxhMukCimXCQkIM2dmJu9CMAsPt81b_fHZHGmqn-AwRfJl) no-repeat center center fixed; 
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+	background-color: #e0e0e0;
+}
+
+#quest-list-view-heading {
+	font-size: 1.5em;
+	color: #10b5b8;
+	text-align: center;
+	margin-top: 75px;
+}
+
+.dashed-line-div {
+	border: 1px dashed #c0c0c0;
+	margin: 15px 10px 15px 10px;
+}
+
+.quests-list {
+	margin: 15px 6px 15px 6px;
+}
+
+.quests-list-slider-img {
+	height: 150px;
+	border: 1px solid #e0e0e0;
+	background-color: #e0e0e0;
+}
+
+.library-box {
+	margin: 15px 10px 15px 10px;
+}
+
+.quests-list div {
+	border: 1px solid #e0e0e0;
+	margin: 10px 5px 10px 5px;
+}
+
+.quest-heading {
+	margin-top: -38px;
+	margin-left: 5px;
+	font-size: 1.6em;
+	color: #10b5b8;
+}
+
+.quest-stats-container-slider {
+	height: 40px;
+	background-color: #10b5b8;
+	color: #fefefe;
+	margin: 5px 0 5px 0;
+}
+
+.quest-info {
+	padding: 0 8px 12px 8px;
+}
+
+.quest-info a {
+	color: #10b5b8;
+	text-decoration: none;
+}
+
+.quest-register-btn {
+	width: 200px;
+	text-decoration: none;
+	display: block;
+	margin: 5px auto 15px auto;
+	padding: 1.5em;
+	background-color: #10b5b8;
+	color: #fefefe;
+	text-align: center;
+	font-size: 0.9em;
+	border-radius: 5px;
+	border-radius: 1px solid #10b5b10;
 }
 
 /* Spinner */

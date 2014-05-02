@@ -21,7 +21,7 @@
         
         <script type="text/template" id="home-view-template">
             <div class="overlay"></div>
-            <div id="facebook-modal" class="modal">
+            <div id="facebook-modal" class="modal extra-margin-top">
                 <header class="modal-header">
                     <button class="modal-btn">Back</button>
                 </header>
@@ -30,7 +30,7 @@
                 <input placeholder="Password" type="text">
                 <button class="submit-modal-btn">Sign Up</button>
             </div>
-            <div id="email-modal" class="modal sign-up-modal">
+            <div id="email-modal" class="modal extra-margin-top">
                 <header class="modal-header">
                     <button class="modal-btn">Back</button>
                 </header>
@@ -40,7 +40,7 @@
                 <input placeholder="Password" type="text">
                 <button class="submit-modal-btn">Sign Up</button>
             </div>
-            <div id="bi-modal" class="modal">
+            <div id="bi-modal" class="modal extra-margin-top">
                 <header class="modal-header">
                     <button class="modal-btn">Back</button>
                 </header>
@@ -92,7 +92,7 @@
                 <input placeholder="Password" type="text">
                 <button class="submit-modal-btn">Sign Up</button>
             </div>
-            <div id="email-modal" class="modal sign-up-modal">
+            <div id="email-modal" class="modal">
                 <header class="modal-header">
                     <button class="modal-btn">Back</button>
                 </header>
@@ -112,10 +112,14 @@
                 <input placeholder="Password" type="text">
                 <button class="submit-modal-btn">Log In</button>
             </div>
-            <a href="/#">Home</a>
+            <header id="quest-list-view-header">
+                <a href="/#" style="text-decoration: none;" class="header-back-btn">Back</a>
+            </header>
+            <h1 id="quest-list-view-heading">Register for a Quest!</h1>
+            <div class="dashed-line-div"></div>
             <div class="quest-list-container">   
                 <div class="quests-list"></div>
-                <div class="library-box"></div>
+                <!--<div class="library-box"></div>-->
             </div>
             <footer id="home-view-footer" class="text-align-center">
                 <div id="footer-button">
@@ -152,9 +156,18 @@
 
         <script id="quest-item-view-template" type="text/template">
 
-            <h1><%= name %></h1>
-            <a href="#load-quest/<%= hash %>">More info...</a>
-            <span class="add-to-library">Add to Quest Library</span>
+            <div style="margin-bottom: 3em; background: url(<%= img %>) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; background-color: #e0e0e0; height: 200px;" class="quests-list-slider-img">
+            </div>
+            <h1 class="quest-heading"><%= name %></h1>
+            <div class="quest-stats-container-slider">
+                
+            </div>
+            <p class="quest-info"><%= info %></p>
+            <p class="quest-info"><a href=""><%= link %></a></p>
+            <p class="quest-info"><%= rules %></p>
+            <p class="quest-info"><%= prizes %></p>
+            <!--<span class="add-to-library">Add to Quest Library</span>-->
+            <a class="quest-register-btn" href="#/load-quest/<%= hash %>">Register for <%= name %></a>
 
         </script>
 
