@@ -2,7 +2,7 @@
 
 (function($) { 
 
-	var questData = [
+	/*var questData = [
 		{
 			hash: 'parkhop',
 			name: 'Park Hop',
@@ -11,57 +11,65 @@
 			link: 'https://www.google.com/parkhop',
 			rules: 'Rules: Lorem ipsum dolor...',
 			prizes: 'Prizes: Lorem ipsum dolor...'
-		},
-		
-	];
+		}
+	];*/
 
 	var app;
 
 	var Router = Backbone.Router.extend({
 		routes: {
-			'': 'homeRoute',
-			'load-quests': 'loadQuestsRoute',
-			'load-quest/:questHash': 'loadQuestRoute'
+			'': 'defaultRoute',
+			/*'load-quests': 'loadQuestsRoute',
+			'load-quest/:questHash': 'loadQuestRoute'*/
 		},
 		initialize: function() {
-			console.log('AppRouter init...');
-			var quests = new Quests();
+			/*var quests = new Quests();
 			quests.reset(questData);
 			this.questsListView = new QuestsListView({
 				collection: quests
 			});
 			this.questDisplayView = new QuestDisplayView({
 				collection: quests
-			});
+			});*/
 		},
-		homeRoute: function() {
-			var homeView = new HomeView;
-			homeView.render();
-			$('#spa').css('margin-bottom', '0');
+		defaultRoute: function() {
+			var defaultView = new DefaultView;
+			defaultView.render();
+			// $('#spa').css('margin-bottom', '0');
 		},
-		loadQuestsRoute: function() {
+		/*loadQuestsRoute: function() {
 			this.questsListView.coreRender();
 			$('#spa').css('margin-bottom', '120px');
 		},
 		loadQuestRoute: function(questHash) {
 			this.questDisplayView.loadQuest(questHash);
+		}*/
+	});
+
+	var FooterDrawerView = Backbone.View.extend({
+		template: _.template($('#footer-drawer-template').html()),
+		render: function() {
+			this.$el.html(this.template({}));
+		},
+		initialize: function() {
 		}
 	});
 
-	var HomeView = Backbone.View.extend({
+	var DefaultView = Backbone.View.extend({
+		tagName: 'div',
 		el: '#spa',
-		template: _.template($('#home-view-template').html()),
-		events: {
+		footerSubEl: '.footer-subview',
+		template: _.template($('#default-template').html()),
+		/*events: {
 			'click #footer-button': 'footerAnimation',
 			'click #facebook-sign-up-btn': 'facebookModalShow',
 			'click #email-sign-up-btn': 'emailModalShow',
 			'click #bi-log-in-modal': 'biLogInModalShow',
 			'click .modal-btn': 'closeModal'
-		},
-		footerAnimation: function() {
+		},*/
+		/*footerAnimation: function() {
 			var homeViewFooterHeight = $('#home-view-footer').height();
 			if (homeViewFooterHeight === 80) {
-				// $('hgroup h1, h2, #quest-button').fadeOut(50);
 				$('#footer-button').css('transform', 'rotate(180deg) scaleX(-1)');
 				$('#home-view-footer').stop().animate({
 					height: 285
@@ -76,7 +84,6 @@
 				$('#home-view-footer').css('padding-top', '2em');
 				return true; 
 			} else if (homeViewFooterHeight >= 163) {
-				// $('hgroup h1, h2, #quest-button').fadeIn(500);
 				$('#footer-button').css('transform', 'rotate(360deg) scaleX(-1)');
 				$('#home-view-footer').stop().animate({
 					height: 80
@@ -102,16 +109,20 @@
 		},
 		closeModal: function() {
 			$('.overlay, .modal').fadeOut(300);
-		},
+		},*/
 		render: function() {
 			$(this.el).html(this.template({}));
+			var footerDrawerView = new FooterDrawerView({
+				// model: quest
+			});	
+			footerDrawerView.render();
+			$(this.footerSubEl).append(footerDrawerView.$el);
 		},
 		initialize: function() {
-			console.log('HomeView init...');
 		}
 	});
 
-	var QuestsListView = Backbone.View.extend({
+	/*var QuestsListView = Backbone.View.extend({
 		el: '#spa',
 		listEl: '.quests-list',
 		libraryEl: '.library-box',
@@ -229,7 +240,7 @@
 		showSpinner: function() {
 			$('#spa').html(this.templateSpinner);
 		}
-	});
+	});*/
 
 	$(function() {
 		app = new Router;

@@ -4,95 +4,124 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Questalot...</title>
-        <meta name="description" content="Questalot | Real World Quests">
+        <meta name="description" content="Questalot">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="css/core.css">
         <script src="bower_components/jquery/dist/jquery.min.js"></script>
         <script src="bower_components/underscore/underscore.js"></script>
         <script src="bower_components/backbone/backbone.js"></script>
     </head>
     <body>
+        
         <!--[if lt IE 8]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-
+        
         <div id="spa"></div>
         
-        <script type="text/template" id="home-view-template">
-            <div class="overlay"></div>
-            <div id="facebook-modal" class="modal extra-margin-top">
-                <header class="modal-header">
-                    <button class="modal-btn">Back</button>
-                </header>
-                <!-- color: #fff; 14pt Gotham all cap Reg... -->
-                <span>Facebook Sign Up</span>
-                <input placeholder="Email" type="text">
-                <input placeholder="Password" type="text">
-                <button class="submit-modal-btn">Sign Up</button>
-            </div>
-            <div id="email-modal" class="modal extra-margin-top">
-                <header class="modal-header">
-                    <button class="modal-btn">Back</button>
-                </header>
-                <h2>Email...</h2>
-                <!-- color: #888; 14pt Gotham all cap Reg...  -->
-                <!-- text under facebook button 12pt color: #fff; gotham reg. 
-                <span>Email Sign Up</span>
-                <input placeholder="Email" type="text">
-                <input placeholder="Password" type="text">
-                <button class="submit-modal-btn">Sign Up</button>
-            </div>
-
-            <!-- footer 'OR' 24pt gotham reg #6b6a6a; -->
-
-            <!-- Make just a text link yo... -->
-            <!-- 12pt Gotham reg color: #6b6a6b;... -->
-            <!-- 12pt Gotham reg all cap color: #027970; -->
-            <div id="bi-modal" class="modal extra-margin-top">
-                <header class="modal-header">
-                    <button class="modal-btn">Back</button>
-                </header>
-                <h2>Log In...</h2>
-                <span>Facebook or Email</span>
-                <input placeholder="Email" type="text">
-                <input placeholder="Password" type="text">
-                <button class="submit-modal-btn">Log In</button>
-            </div>
-            <div class="home-view-container-full-background-image view-container text-align-center">
+        <script type="text/template" id="default-template">
+            
+            <div class="default-full-background-image view-container text-align-center">
+                
                 <div id="social-media-icon-container">
-                    <a href="https://www.twitter.com"><img src="twitter.png" alt="Twitter"></a>
-                    <a href="https://www.facebook.com"><img src="facebook_1.png" alt="Facebook"></a>
+                    
+                    <a href="https://www.twitter.com"><img src="social-media-icons/twit-icon.png" alt="Twitter"></a>
+                    
+                    <a href="https://www.facebook.com"><img style="padding-left: 8px;" src="social-media-icons/fbook-icon.png" alt="Facebook"></a>
+                
                 </div>
-                <div id="logo-container">
-                    <img height="100" width="100" src="questalot-icon.png" alt="Questalot">
-                </div>
-                <hgroup>
-                    <h1 style="color: #888;" id="primary-heading">Explore More</h1>
-                    <!-- 14pt Gotham Light... -->
-                    <h2 style="color: #fefefe;" id="primary-sub-heading">Real World Quests...</h2>
+                
+                <img id="default-logo" src="q-logo.png" alt="Questalot">
+
+                <hgroup>    
+                    
+                    <h1 id="primary-heading">Explore More</h1>
+                    
+                    <h2 style="color: #fefefe;" id="primary-sub-heading">...Questalot is the best damn thing ever!</h2>
+                
                 </hgroup>
-                <!-- 24pt Gotham All Cap... -->
+                
                 <a href="/#load-quests" id="quest-button">Quest Now!</a>
-                <footer style="color: #888;" id="home-view-footer" class="text-align-center">
-                    <div id="footer-button">
-                        <div style="display: inline-block;">^</div>
-                    </div>
-                    <!-- 14pt all cap Gotham Light -->
-                    <h4>Log In / Sign Up</h4>
-                    <button id="facebook-sign-up-btn" class="display-none home-view-facebook-button">Sign Up with Facebook</button>
-                    <span class="display-none or-padding">OR</span>
-                    <button id="email-sign-up-btn" class="display-none">Sign Up with Email</button>
-                    <span class="notice display-none">We will not post on your profile or email you about updates without your permission.</span>
-                    <button id="bi-log-in-modal" class="display-none">Log In</button>
+                
+                <footer class="footer-subview text-align-center">
+                         
                 </footer>
+            
             </div>
         
         </script>
 
-        <!-- Most should be removed from here... -->
+        <script type="text/template" id="footer-drawer-template">
+            
+            <div id="footer-button">
+            
+                <img src="down-arrow.png" alt="^">
+            
+            </div>
+            
+            <h4>Log In / Sign Up</h4>
+            
+            <!--<button id="facebook-sign-up-btn" class="display-none home-view-facebook-button">Sign Up with Facebook</button>
+            
+            <span class="display-none or-padding">OR</span>
+            
+            <button id="email-sign-up-btn" class="display-none">Sign Up with Email</button>
+            
+            <span class="notice display-none">We will not post on your profile or email you about updates without your permission.</span>
+            
+            <button id="bi-log-in-modal" class="display-none">Log In</button>-->
+        
+        </script>
 
-        <script id="quests-list-view-template" type="text/template">
+        <!-- Modal -->
+        <!--
+
+        - top bar color: #212121;
+        - background-color: #616b6e 0.95;
+        - box-shadow:
+        - spread/size: 20...
+        - blur: 46...
+        - back-btn: color: #fff; Gotham reg 14pt...
+        - modal-heading: martell reg 29pt...
+        - same as footer 'OR' color: #fff;
+        - forget-pwd: 12pt gotham color: #fefefe text-decoration: underline...
+        - login-btn: 18pt Gotham reg color: #fff;
+        - Placeholders: color: #888;
+
+        -->
+
+        <!--
+
+        Sign Up Please Modal...
+
+        - Same footer styles...
+        - Heading: 58pt...
+        - link color: #fefefe and Top bar color...
+
+        -->
+
+        <!-- Quest list footer view -->
+
+        <!-- 
+    
+        - Quest list view background-color: #f7f5f5;
+        - Quest model background-color: #fff;
+        - Border: #aab3b6;
+        #232323;
+
+        -->
+
+        <!-- 
+
+        Registration view...
+
+        - congrats: 14pt gotham light #fff;
+        - name: Gotham Italic 16pt #88b3b6;
+        - Heading: Martell 18pt 
+    
+        --> 
+
+        <!--<script id="quests-list-view-template" type="text/template">
 
             <div class="overlay"></div>
             <div id="facebook-modal" class="modal">
@@ -130,9 +159,9 @@
             <h1 id="quest-list-view-heading">Register for a Quest!</h1>
             <div class="dashed-line-div"></div>
             <div class="quest-list-container">   
-                <div class="quests-list"></div>
+                <div class="quests-list"></div>-->
                 <!--<div class="library-box"></div>-->
-            </div>
+            <!--</div>
             <footer id="home-view-footer" class="text-align-center">
                 <div id="footer-button">
                     <div style="display: inline-block;">^</div>
@@ -145,29 +174,31 @@
                 <button id="bi-log-in-modal" class="display-none">Log In</button>
             </footer>
 
-        </script>
+        </script>-->
 
-        <script id="quest-display-view-template" type="text/template">
+        <!--<script id="quest-display-view-template" type="text/template">
 
             <div class="overlay" style="display: block;"></div>
-            <div style="display: block; position: absolute; left: 45%; width: 280px; height: 280px; margin-left: -125px; color: #131313; text-align: center; z-index: 10; color: #fefefe;">
+            <div style="background: url(<%= attributes.img %>) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; background-color: #e0e0e0;">
+            <div style="display: block; position: absolute; left: 45%; width: 280px; height: 280px; margin-left: -125px; color: #131313; text-align: center; z-index: 10; color: #fefefe; ">
                 <p style="font-size: 0.9em;" class="text-align-center">Congratulations, you just registered for</p>
                 <h1 style="font-size: 1.2em;" class="text-align-center"><%= attributes.name %></h1>
                 <h2 style="font-size: 1.5em;" class="text-align-center">Your Quest has just begun!</h2>
                 <a class="quest-register-btn text-align-center" style="" href="/#load-quests">Back to Quest Library</a>
             </div>
+            </div>
 
-        </script>
+        </script>-->
 
         <!-- Refactor as subview... -->
 
-        <script id="template-spinner" type="text/template">
+        <!--<script id="template-spinner" type="text/template">
 
             <img src="ajax_loader_gray_48.gif" alt="Spinner...">
 
-        </script>
+        </script>-->
 
-        <script id="quest-item-view-template" type="text/template">
+        <!--<script id="quest-item-view-template" type="text/template">
 
             <div style="margin-bottom: 3em; background: url(<%= img %>) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; background-color: #e0e0e0; height: 200px;" class="quests-list-slider-img">
             </div>
@@ -178,11 +209,11 @@
             <p class="quest-info"><%= info %></p>
             <p class="quest-info"><a href=""><%= link %></a></p>
             <p class="quest-info"><%= rules %></p>
-            <p class="quest-info"><%= prizes %></p>
+            <p class="quest-info"><%= prizes %></p>-->
             <!--<span class="add-to-library">Add to Quest Library</span>-->
-            <a class="quest-register-btn" href="#/load-quest/<%= hash %>">Register for <%= name %></a>
+            <!--<a class="quest-register-btn" href="#/load-quest/<%= hash %>">Register for <%= name %></a>
 
-        </script>
+        </script>-->
 
         <script src="js/core.js"></script>
 
@@ -197,3 +228,4 @@
         </script>-->
     </body>
 </html>
+

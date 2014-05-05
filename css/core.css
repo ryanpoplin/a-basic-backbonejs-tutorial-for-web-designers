@@ -1,3 +1,5 @@
+/* HTML5, CSS3 RESET... */
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -27,12 +29,27 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+
+/* Custom Fonts... */
+
 @font-face {
 	font-family: 'Martell';
 	src: url(../reg.otf);	
 }
+
+@font-face {
+	font-family: 'Gotham-Light';
+	src: url(../gotham-light.ttf);
+}
+
+@font-face {
+	font-family: 'Gotham-Bolder';
+	src: url(../gotham-bolder.otf);
+}
+
+/* Custom Fonts End... */
+
 body {
-	font-family: 'Martell', sans-serif;
 	position: relative;
 	line-height: 1;
 }
@@ -52,7 +69,7 @@ table {
 	border-spacing: 0;
 }
 
-/* Custom Styles... */
+/* Custom Styles Start... */
 
 * {
   vertical-align: top;
@@ -61,8 +78,10 @@ table {
           box-sizing: border-box;
 }
 
+/* SPA Container... */
+
 #spa {
-	position: relative;
+	/*position: relative;*/
 }
 
 /* Utility Classes... */
@@ -87,9 +106,11 @@ table {
 	font-size: 0.5em;
 }
 
+/* Utility Classes End... */
+
 /* Modals... */
 
-.modal-header {
+/*.modal-header {
 	background-color: #c0c0c0;
 	height: 65px;
 	margin-bottom: 0.4em;
@@ -132,7 +153,7 @@ table {
   	width: 100%;
   	height: 100%;
   	z-index: 10;
-  	background-color: rgba(0,0,0,0.7); /*dim the background*/
+  	background-color: rgba(0,0,0,0.7); 
 }
 
 .modal {
@@ -145,14 +166,15 @@ table {
     margin-left: -125px;
     color: #131313;
     text-align: center;
-    /* needed styles for the overlay */
-    z-index: 10; /* keep on top of other elements on the page */
+    z-index: 10;
     box-shadow: 0 0 0 9999px rgba(0,0,0,0.5);
-}
+}*/
+
+/* Modals End... */
 
 /* Home View Modal Extras... */
 
-.extra-margin-top {
+/*.extra-margin-top {
 	margin-top: 60px;
 }
 
@@ -169,16 +191,16 @@ table {
 	color: #131313;
 	padding-top: 3em;
 	padding-bottom: 3em;
-}
+}*/
 
-/* Home View Styles... */
+/* Default View Styles... */
 
 .view-container {
 	width: 100%;
 	height: 100vh;
 }
 
-.home-view-container-full-background-image {
+.default-full-background-image {
 	background: url(../background.png) no-repeat center center fixed; 
   	-webkit-background-size: cover;
   	-moz-background-size: cover;
@@ -189,7 +211,7 @@ table {
 #social-media-icon-container {
 	position: absolute;
 	right: 0;
-	padding: 1em 1em 0 0;
+	padding: 18px 18px 18px 18px;
 	color: #fefefe;
 	font-size: .5em;
 }
@@ -198,48 +220,102 @@ table {
 	display: inline;
 }
 
-#logo-container {
-	padding-top: 2em;
-}
-
-#logo-container span {
-	color: #fefefe;
-	font-size: 5.5em;
+#default-logo {
+	margin: 4.5em auto 0 auto;
+	height: 250px;
+	width: 250px;
 }
 
 #primary-heading {
-	color: #10b5b8;
-	padding: 1.2em 0 1.2em 0;
-	font-size: 1.5em;
+	font-family: 'Martell', sans-serif;
+	padding: 0.4em 0 0.4em 0;
+	font-size: 4em; 
+	color: #888888;
 }
 
 #primary-sub-heading {
-	color: #131313;
-	padding: 0 0 1.2em 0;
-	font-size: 1em;
+	color: #fefefe;
+	padding: 0 0 0.5em 0;
+	font-size: 0.9em;
+	font-family: 'Gotham-Light';
 }
 
 #quest-button {
+	text-align: center;
 	display: block;
-	margin: 0 auto;
+	margin: 1.2em auto;
 	width: 9em;
+	font-size: 17pt;
+	padding: 0.8em 0.5em 0.8em 0.5em;
+	font-family: 'Gotham-Bolder', sans-serif;
 	background-color: #10b5b8;
-	padding: 1em;
-	font-size: 1em;
-	border-radius: .5em;
-	color: #fefefe;
+	color: #ffffff;
 	text-decoration: none;
 }
 
-/* Drawer Footer... */
+@media screen and (max-width:768px) {
+  
+	#default-logo {
+  		height: 200px;
+  		width: 200px;
+  	}
 
-#home-view-footer {
+  	#primary-heading {
+  		padding: 0.3em 0 0.3em 0;
+		font-size: 3.2em; 
+  	}	
+
+  	#primary-sub-heading {
+  		padding: 0.8em 0 0.8em 0;
+		font-size: 0.7em;
+  	}
+
+  	#quest-button {
+  		margin: 1em auto;
+		width: 7em;
+		font-size: 15pt;
+		padding: 0.7em 0.3em 0.7em 0.3em;
+  	}
+
+}
+
+@media screen and (max-width:500px) {
+
+	#default-logo {
+  		height: 150px;
+  		width: 150px;
+  	}
+
+  	#primary-heading {
+  		padding: 0.2em 0 0.2em 0;
+		font-size: 1.8em; 
+  	}
+
+  	#primary-sub-heading {
+  		padding: 0 0 0.5em 0;
+		font-size: 0.5em;
+  	}	
+
+  	#quest-button {
+  		margin: 1em auto;
+		width: 7em;
+		font-size: 13pt;
+		padding: 0.5em 0.3em 0.5em 0.3em;
+  	}
+
+}
+
+/* Default View Styles End... */
+
+/* Footer Drawer Styles... */
+
+.footer-subview {
 	overflow: visible !important;
 	position: fixed;
 	bottom: 0;
 	width: 100%;
 	height: 80px;
-	background-color: #e0e0e0;
+	background-color: #888888;
 }
 
 #footer-button {
@@ -249,30 +325,42 @@ table {
 	text-align: center;
 	cursor: pointer;
 	border-radius: 100px;
-	height: 60px;
-	width: 60px;
-	background-color: #e0e0e0;
+	height: 70px;
+	width: 70px;
+	background-color: #888888;
 	position: absolute;
-	bottom: 1.7em;
+	bottom: 1.1em;
 	left: 0;
 	right: 0;
 	margin: 0 auto 0 auto;
 	color: #fefefe;
 }
 
-#home-view-footer button {
+#footer-button img {
+	padding-bottom: 0.15em;
+}
+
+.footer-subview button {
 	margin: 0 auto;
 	height: 30px;
 	border-radius: 0;
 	width: 300px;
 }
 
-#home-view-footer h4 {
-	font-size: 0.9em;
-	margin-top: 2.3em;
+.footer-subview h4 {
+	font-family: 'Gotham-Light', sans-serif;
+	position: fixed;
+	z-index: 10;
+	bottom: 30px;
+	color: #ffffff;
+	width: 200px;
+	left: 50%;
+	margin-left: -95px;
+	font-size: 1.2em;
+	/*margin-top: 2.3em;*/
 }
 
-#home-view-footer button {
+.footer-subview button {
 	border: 1px solid #10b5b8;
 	border-radius: 5px;
 	font-size: 0.7em;
@@ -283,9 +371,91 @@ table {
 	margin: 0.5em auto 0.5em auto;
 }
 
+@media screen and (max-width:768px) {
+  
+	.footer-subview {
+		overflow: visible !important;
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+		height: 55px;
+		background-color: #888888;
+	}
+
+	#footer-button {
+		line-height: 70px;
+		font-size: 1.8em;
+		font-weight: bolder;
+		text-align: center;
+		cursor: pointer;
+		border-radius: 100px;
+		height: 55px;
+		width: 55px;
+		background-color: #888888;
+		position: absolute;
+		bottom: 0.8em;
+		left: 0;
+		right: 0;
+		margin: 0 auto 0 auto;
+		color: #fefefe;
+	}
+
+	#footer-button img {
+		padding-bottom: 0.15em;
+	}
+
+	.footer-subview h4 {
+		font-size: 1em;
+		bottom: 13px;
+	}
+
+}
+
+@media screen and (max-width:500px) {
+
+	.footer-subview {
+		overflow: visible !important;
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+		height: 55px;
+		background-color: #888888;
+	}
+
+	#footer-button {
+		line-height: 70px;
+		font-size: 1.8em;
+		font-weight: bolder;
+		text-align: center;
+		cursor: pointer;
+		border-radius: 100px;
+		height: 55px;
+		width: 55px;
+		background-color: #888888;
+		position: absolute;
+		bottom: 0.8em;
+		left: 0;
+		right: 0;
+		margin: 0 auto 0 auto;
+		color: #fefefe;
+	}
+
+	#footer-button img {
+		padding-bottom: 0.15em;
+	}
+
+	.footer-subview h4 {
+		font-size: 0.8em;
+		bottom: 15px;
+	}
+
+}
+
+/* Footer Drawer Styles End... */
+
 /* Quest List View... */
 
-.header-back-btn {
+/*.header-back-btn {
 	position: absolute;
 	top: 13px;
 	font-weight: 900;
@@ -307,7 +477,7 @@ table {
 	position: fixed;
 	top: 0;
 	height: 65px;
-	background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAyMgxhMukCimXCQkIM2dmJu9CMAsPt81b_fHZHGmqn-AwRfJl) no-repeat center center fixed; 
+	background: url(../list-view-header.png) no-repeat center center fixed; 
   	-webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
@@ -385,7 +555,7 @@ table {
 
 quest-display-block {
 
-}
+}*/
 
 /* Spinner... */
 
