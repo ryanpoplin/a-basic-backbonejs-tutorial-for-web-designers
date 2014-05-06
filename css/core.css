@@ -457,6 +457,52 @@ table {
 		bottom: 6.5px;
 	}
 
+	.or {
+		display: block;
+		font-size: 1em;
+		color: #ffffff;
+		margin-top: 2em;
+		margin-left: 0.6em;
+		margin-right: 0.6em;
+		font-size: 2.4em;
+	}
+
+	.white-background-color {
+		background-color: #ffffff;
+	}
+
+	.blue-background-color {
+		background-color: #3b5598;
+	}
+
+	#footer-subview-container-one {
+		padding-top: 9px;
+	}
+
+	#footer-subview-container-two {
+		padding-top: 15px;
+	}
+
+	#footer-subview-container-two span {
+		display: block;
+		padding-top: 10px;
+		font-size: 1em;
+	}
+
+	#footer-subview-container-two a {
+		color: #10a5e8;
+	}
+
+	.notice-msg {
+		position: fixed;
+		left: 50%;
+		margin-left: -372px;
+		color: #fefefe;
+		font-size: 0.7em;
+		width: 330px;
+		display: none;
+	}
+
 }
 
 /* Footer Drawer Styles End... */

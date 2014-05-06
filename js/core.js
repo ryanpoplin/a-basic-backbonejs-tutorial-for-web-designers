@@ -95,17 +95,17 @@
 			} else if (footerSubviewHeight === 55) {
 				// $('#footer-button').css('transform', 'rotate(180deg) scaleX(-1)');
 				$('.footer-subview').stop().animate({
-					height: 160
+					height: 200
 				}).end();
 				$('#footer-button').stop().animate({
-					bottom: 120
+					bottom: 160
 				}).end();
 				$('.notice-msg').removeClass('display-none');
 				$('.footer-subview span, button').show();
 				$('.footer-subview button').css('display', 'inline-block');
 				$('.footer-subview h4').hide();
 				return true;
-			} else if (footerSubviewHeight === 160) {
+			} else if (footerSubviewHeight === 200) {
 				$('.footer-subview').stop().animate({
 					height: 55
 				}).end();
