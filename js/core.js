@@ -2,8 +2,6 @@
 
 (function($) { 
 
-	// FUTURE JSON DATA...
-
 	var questData = [
 		{
 			hash: 'parkhop',
@@ -16,10 +14,8 @@
 		}
 	];
 
-	// APPLICATION...
 	var app;
 
-	// ROUTER...
 	var Router = Backbone.Router.extend({
 		routes: {
 			'': 'defaultRoute',
@@ -50,7 +46,6 @@
 		}
 	});
 
-	// FOOTER MODEL...
 	var FooterDrawerModel = Backbone.Model.extend({
 		defaults: {
 
@@ -59,7 +54,6 @@
 		}
 	});
 
-	// FOOTER SUBVIEW...
 	var FooterDrawerView = Backbone.View.extend({
 		template: _.template($('#footer-drawer-template').html()),
 		events: {
@@ -70,14 +64,15 @@
 			'click .modal-btn': 'closeModal'
 		},
 		footerAnimation: function() {
-			var footerSubviewHeight = $('.footer-subview').height();
+			// FIGURE OUT THE MEDIA QUERY ISSUE WITH ANIMATIONS...
+			var footerSubviewHeight = $('.footer-subview').outerHeight();
 			if (footerSubviewHeight === 80) {
 				// $('#footer-button').css('transform', 'rotate(180deg) scaleX(-1)');
 				$('.footer-subview').stop().animate({
 					height: 260
 				}).end();
 				$('#footer-button').stop().animate({
-					bottom: 210
+					bottom: 208
 				}).end();
 				$('.notice-msg').removeClass('display-none');
 				$('.footer-subview span, button').show();
@@ -85,42 +80,42 @@
 				$('.footer-subview h4').hide();
 				$('.footer-subview').css('padding-top', '2em');
 				return true; 
-			} else if (footerSubviewHeight === 55) {
-				$('.footer-subview').stop().animate({
-					height: 160
-				}).end();
-				$('#footer-button').stop().animate({
-					bottom: 130
-				}).end();
-				$('.notice-msg').removeClass('display-none');
-				$('.footer-subview span, button').show();
-				$('.footer-subview button').css('display', 'inline-block');
-				$('.footer-subview h4').hide();
-				$('.footer-subview').css('padding-top', '2em');
-			} else if (footerSubviewHeight === 228) {
+			} else if (footerSubviewHeight === 260) {
 				// $('#footer-button').css('transform', 'rotate(360deg) scaleX(-1)');
 				$('.footer-subview').stop().animate({
 					height: 80
 				}).end();
 				$('#footer-button').stop().animate({
-					bottom: 25
+					bottom: 30
 				}).end();
 				$('.footer-subview span, button').hide();
 				$('.footer-subview h4').fadeIn(300);
 				$('.footer-subview').css('padding-top', '0');
 				return true;
-			} else if (footerSubviewHeight === 128) {
+			} else if (footerSubviewHeight === 55) {
+				// $('#footer-button').css('transform', 'rotate(180deg) scaleX(-1)');
 				$('.footer-subview').stop().animate({
-					height: 55
+					height: 160
 				}).end();
 				$('#footer-button').stop().animate({
-					bottom: 25
+					bottom: 120
 				}).end();
 				$('.notice-msg').removeClass('display-none');
 				$('.footer-subview span, button').show();
 				$('.footer-subview button').css('display', 'inline-block');
 				$('.footer-subview h4').hide();
-				$('.footer-subview').css('padding-top', '2em');
+				return true;
+			} else if (footerSubviewHeight === 160) {
+				$('.footer-subview').stop().animate({
+					height: 55
+				}).end();
+				$('#footer-button').stop().animate({
+					bottom: 15
+				}).end();
+				$('.notice-msg').removeClass('display-none');
+				$('.footer-subview span, button').show();
+				$('.footer-subview button').css('display', 'inline-block');
+				$('.footer-subview h4').hide();
 			}
 			return false; 
 		},
@@ -143,7 +138,6 @@
 		}
 	});
 
-	// DEFAULT MODEL...
 	var DefaultModel = Backbone.Model.extend({
 		defaults: {
 			socialTwitterLink: 'https://www.twitter.com',
@@ -160,7 +154,6 @@
 		}
 	});
 
-	// DEFAULT VIEW...
 	var DefaultView = Backbone.View.extend({
 		tagName: 'div',
 		el: '#spa',
@@ -184,12 +177,14 @@
 			});	
 			footerDrawerView.render();
 			$(this.footerSubEl).append(footerDrawerView.$el);
+			/*$(window).resize(function() {
+		
+			});*/
 		},
 		initialize: function() {
 		}
 	});
 
-	// QUEST LIST VIEW...
 	var QuestsListView = Backbone.View.extend({
 		el: '#spa',
 		listEl: '.quests-list',
@@ -216,10 +211,8 @@
 		}
 	});
 
-	// QUESTS COLLECTION...
 	var Quests = Backbone.Collection.extend({});
 
-	// QUESTS ITEM VIEW...
 	var QuestItemView = Backbone.View.extend({
 		template: _.template($('#quest-item-view-template').html()),
 		events: {
@@ -233,7 +226,6 @@
 		}
 	});
 
-	// QUEST DISPLAY VIEW...
 	var QuestDisplayView = Backbone.View.extend({
 		initialize: function() {
 			console.log('QuestDisplayView init...');
@@ -261,7 +253,6 @@
 		}
 	});
 
-	// ARE YOU READY?
 	$(function() {
 		app = new Router;
 		Backbone.history.start();
