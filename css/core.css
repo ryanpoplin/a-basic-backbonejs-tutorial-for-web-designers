@@ -126,8 +126,8 @@ table {
 
 #default-logo {
 	margin: 3.5em auto 0 auto;
-	height: 180px;
-	width: 210px;
+	height: 200px;
+	width: 200px;
 }
 
 #primary-heading {
@@ -148,7 +148,7 @@ table {
 	text-align: center;
 	display: block;
 	margin: 1.1em auto 1.2em auto;
-	width: 9em;
+	width: 13em;
 	font-size: 22pt;
 	padding: 0.4em 0.8em 0.6em 0.8em;
 	font-family: 'Gotham-Bolder', sans-serif;
@@ -208,6 +208,8 @@ table {
   	}*/
 
 }
+
+/* FOOTER STYLES... */
 
 .footer-subview {
 	font-family: 'Gotham-Light', sans-serif;
@@ -282,7 +284,6 @@ table {
 	cursor: pointer;
 	font-size: 1.2em;
 	border: 1px solid #e0e0e0;
-	color: #fefefe;
 	font-family: 'Gotham-Light', sans-serif;
 	height: 30px;
 	border-radius: 0;
@@ -317,9 +318,11 @@ table {
 
 .white-background-color {
 	background-color: #ffffff;
+	color: #555;
 }
 
 .blue-background-color {
+	color: #fefefe;
 	background-color: #3b5598;
 }
 
@@ -468,9 +471,36 @@ table {
 
 }
 
-/* Footer Drawer Styles End... */
+/* MODALS... */
 
-/* Quest List View... */
+.overlay {
+  	position: fixed;
+  	top: 0;
+  	left: 0;
+  	height: 100%;
+  	width: 100%;
+  	z-index: 10;
+  	background-color: rgba(0,0,0,0.5);
+}
+
+.modal {
+    /* some styles to position the modal at the center of the page */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 700px;
+    line-height: 200px;
+    height: 500px;
+    margin-left: -342px;
+    margin-top: -240px;
+    background-color: #f0f0f0;
+    text-align: center;
+    /* needed styles for the overlay */
+    z-index: 10; /* keep on top of other elements on the page */
+    outline: 9999px solid rgba(0,0,0,0.5);
+}
+
+/* QUEST LIST VIEW STYLES... */
 
 .header-back-btn {
 	position: absolute;
@@ -489,12 +519,16 @@ table {
 	border: 1px solid #10b5b8;
 }
 
+.teal-color-test {
+	color: #10b5b8;
+}
+
 #quest-list-view-header {
 	width: 100%;
 	position: fixed;
 	top: 0;
 	height: 65px;
-	background: url(../list-view-header.png) no-repeat center center fixed; 
+	background: url(../background.png) no-repeat center center fixed; 
   	-webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;

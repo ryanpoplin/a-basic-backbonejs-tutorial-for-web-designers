@@ -44,11 +44,11 @@
 		defaultRoute: function() {
 			var defaultView = new DefaultView;
 			defaultView.render();
-			// $('#spa').css('margin-bottom', '0');
+			$('#spa').css('margin-bottom', '0');
 		},
 		loadQuestsRoute: function() {
 			this.questsListView.coreRender();
-			// $('#spa').css('margin-bottom', '120px');
+			$('#spa').css('margin-bottom', '120px');
 		},
 		loadQuestRoute: function(questHash) {
 			this.questDisplayView.loadQuest(questHash);
@@ -144,7 +144,6 @@
 			$('.overlay, .modal').fadeOut(300);
 		},
 		render: function() {
-
 			this.$el.html(this.template({
 				footerArrowImg: this.model.get('footerArrowImg'),
 				logSignText: this.model.get('logSignText'),
@@ -168,9 +167,9 @@
 			socialFacebookImg: 'social-media-icons/fbook-icon.png',
 			logoImg: 'q-logo.png',
 			primaryHeading: 'Explore More',
-			primarySubHeading: '..questalot is ... the best ... !',
+			primarySubHeading: 'Find Local Quests in Your Area!',
 			questBtnLink: '/#load-quests',
-			questBtnText: 'Quest Now!'
+			questBtnText: 'START A QUEST!'
 		},
 		initialize: function() {
 		}
