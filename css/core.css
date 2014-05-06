@@ -85,6 +85,10 @@ table {
 	display: none;
 }
 
+.display-inline-block {
+	display: inline-block;
+}
+
 .position-relative {
 	position: relative;
 }
@@ -319,11 +323,13 @@ table {
 .white-background-color {
 	background-color: #ffffff;
 	color: #555;
+	border: 1px solid #555;
 }
 
 .blue-background-color {
 	color: #fefefe;
 	background-color: #3b5598;
+	border: 1px solid #3b5598;
 }
 
 #footer-subview-container-two {
@@ -488,16 +494,40 @@ table {
     position: fixed;
     top: 50%;
     left: 50%;
-    width: 700px;
-    line-height: 200px;
-    height: 500px;
-    margin-left: -342px;
+    width: 400px;
+	    height: 500px;
+    margin-left: -202px;
     margin-top: -240px;
-    background-color: #f0f0f0;
+    background-color: #ccc;
     text-align: center;
     /* needed styles for the overlay */
     z-index: 10; /* keep on top of other elements on the page */
     outline: 9999px solid rgba(0,0,0,0.5);
+}
+
+.modal-header {
+	padding-top: 15px;
+	height: 100px;
+	width: 100%;
+	color: #fefefe;
+	background-color: #aaa;
+}
+
+.modal-btn {
+	color: #fefefe;
+}
+
+.modal-heading {
+	font-size: 1.5em;
+	padding: 30px 0 10px 0;
+}
+
+.modal input[type=text], input[type=password] {
+	display: block;
+	padding: 20px;
+	margin: 15px auto;
+	font-size: 1.5em;
+	font-family: 'Gotham-Light', sans-serif;
 }
 
 /* QUEST LIST VIEW STYLES... */

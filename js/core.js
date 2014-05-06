@@ -132,12 +132,15 @@
 			return false; 
 		},
 		facebookModalShow: function() {
+			$('.modal').css('height', '465px');
 			$('.overlay, #facebook-modal').fadeIn(300);
 		},
 		emailModalShow: function() {
 			$('.overlay, #email-modal').fadeIn(300);
+			$('.modal').css('height', '540px');
 		},
 		biLogInModalShow: function() {
+			$('.modal').css('height', '465px');
 			$('.overlay, #bi-modal').fadeIn(300);
 		},
 		closeModal: function() {
