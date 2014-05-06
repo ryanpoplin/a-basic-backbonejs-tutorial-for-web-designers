@@ -44,26 +44,36 @@
 		defaultRoute: function() {
 			var defaultView = new DefaultView;
 			defaultView.render();
-			$('#spa').css('margin-bottom', '0');
+			// $('#spa').css('margin-bottom', '0');
 		},
 		loadQuestsRoute: function() {
 			this.questsListView.coreRender();
-			$('#spa').css('margin-bottom', '120px');
+			// $('#spa').css('margin-bottom', '120px');
 		},
 		loadQuestRoute: function(questHash) {
 			this.questDisplayView.loadQuest(questHash);
 		}
 	});
 
-	/*var FooterDrawerModel = Backbone.Model.extend({
+	var FooterDrawerModel = Backbone.Model.extend({
 		defaults: {
-
+			footerArrowImg: 'test-arrow.png',
+			logSignText: 'Log In / Sign Up',
+			facebookBtnText: 'CONNECT WITH FACEBOOK',
+			orText: 'OR',
+			emailBtnText: 'SIGN IN WITH EMAIL',
+			noticeText: 'We will not post on your profile without your permission.',
+			signedInText: 'Already signed up?',
+			logInText: 'LOGIN HERE!'
 		},
 		initialize: function() {
 		}
-	});*/
+	});
+
+	var footerDrawerModel = new FooterDrawerModel({});
 
 	var FooterDrawerView = Backbone.View.extend({
+		model: footerDrawerModel,
 		template: _.template($('#footer-drawer-template').html()),
 		events: {
 			'click #footer-button': 'footerAnimation',
@@ -76,57 +86,49 @@
 			// FIGURE OUT THE MEDIA QUERY ISSUE WITH ANIMATIONS...
 			var footerSubviewHeight = $('.footer-subview').outerHeight();
 			if (footerSubviewHeight === 80) {
-				// $('#footer-button').css('transform', 'rotate(180deg) scaleX(-1)');
+				$('#footer-button img').removeClass('box-rotate-two').addClass('box-rotate box-transition');
 				$('.footer-subview').stop().animate({
-					height: 260
+					height: 200
 				}).end();
 				$('#footer-button').stop().animate({
-					bottom: 208
+					bottom: 154
 				}).end();
-				/*$('.notice-msg').removeClass('display-none');
-				$('.footer-subview.or').css('display', 'inline-block');
-				$('.footer-subview span, button').show();
-				$('.footer-subview button').css('display', 'inline-block');
 				$('.footer-subview h4').hide();
-				$('.footer-subview').css('padding-top', '2em');*/
+				$('#footer-subview-container-one, #footer-subview-container-two').show();
 				return true; 
-			} else if (footerSubviewHeight === 260) {
-				// $('#footer-button').css('transform', 'rotate(360deg) scaleX(-1)');
+			} else if (footerSubviewHeight === 200) {
+				$('#footer-button img').addClass('box-rotate-two box-transition');
 				$('.footer-subview').stop().animate({
 					height: 80
 				}).end();
 				$('#footer-button').stop().animate({
 					bottom: 30
 				}).end();
-				/*$('.footer-subview span, button').hide();
 				$('.footer-subview h4').fadeIn(300);
-				$('.footer-subview').css('padding-top', '0');*/
+				$('#footer-subview-container-one, #footer-subview-container-two').hide();
 				return true;
-			} else if (footerSubviewHeight === 55) {
+			} /*else if (footerSubviewHeight === 55) {
 				// $('#footer-button').css('transform', 'rotate(180deg) scaleX(-1)');
 				$('.footer-subview').stop().animate({
-					height: 200
+					height: 240
 				}).end();
 				$('#footer-button').stop().animate({
-					bottom: 160
+					bottom: 200
 				}).end();
-				/*$('.notice-msg').removeClass('display-none');
-				$('.footer-subview span, button').show();
-				$('.footer-subview button').css('display', 'block');
-				$('.footer-subview h4').hide();*/
+				$('.footer-subview h4').hide();
+				$('#footer-subview-container-one, #footer-subview-container-two').show();
 				return true;
-			} else if (footerSubviewHeight === 200) {
+			} else if (footerSubviewHeight === 240) {
 				$('.footer-subview').stop().animate({
 					height: 55
 				}).end();
 				$('#footer-button').stop().animate({
 					bottom: 15
 				}).end();
-				/*$('.notice-msg').removeClass('display-none');
-				$('.footer-subview span, button').show();
-				$('.footer-subview button').css('display', 'block');
-				$('.footer-subview h4').hide();*/
-			}
+				$('.footer-subview h4').fadeIn(300);
+				$('#footer-subview-container-one, #footer-subview-container-two').hide();
+				return true;
+			}*/
 			return false; 
 		},
 		facebookModalShow: function() {
@@ -142,7 +144,17 @@
 			$('.overlay, .modal').fadeOut(300);
 		},
 		render: function() {
-			this.$el.html(this.template({}));
+
+			this.$el.html(this.template({
+				footerArrowImg: this.model.get('footerArrowImg'),
+				logSignText: this.model.get('logSignText'),
+				facebookBtnText: this.model.get('facebookBtnText'),
+				orText: this.model.get('orText'),
+				emailBtnText: this.model.get('emailBtnText'),
+				noticeText: this.model.get('noticeText'),
+				signedInText: this.model.get('signedInText'),
+				logInText: this.model.get('logInText')
+			}));
 		},
 		initialize: function() {
 		}

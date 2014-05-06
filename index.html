@@ -53,7 +53,7 @@
 
         <script type="text/template" id="footer-drawer-template">
             
-            <div class="overlay"></div>
+            <!--<div class="overlay"></div>
             
             <div id="facebook-modal" class="modal extra-margin-top">
                 <header class="modal-header">
@@ -85,37 +85,37 @@
                 <input placeholder="Email" type="text">
                 <input placeholder="Password" type="text">
                 <button class="submit-modal-btn">Log In</button>
-            </div>
+            </div>-->
 
             <div id="footer-button">
             
-                <img src="down-arrow.png" alt="^">
+                <img src="<%= footerArrowImg %>" alt="Arrow...">
             
             </div>
             
-            <h4 >Log In / Sign Up</h4>
+            <h4><%= logSignText %></h4>
             
-            <div id="footer-subview-container-one">
+            <div id="footer-subview-container-one" class="display-none">
                 
-                <button id="facebook-sign-up-btn" class="blue-background-color display-none">Sign Up with Facebook</button>
+                <button id="facebook-sign-up-btn" class="blue-background-color"><%= facebookBtnText %></button>
             
-                <div>
-                    <span class="or display-none or-padding">OR</span>
+                <div id="footer-or">
+                    <span class=""><%= orText %></span>
                 </div>
                 
-                <button id="email-sign-up-btn" class="white-background-color display-none">Sign Up with Email</button>
+                <button id="email-sign-up-btn" class="white-background-color"><%= emailBtnText %></button>
                 
                 <br>
 
-                <span class="notice-msg display-none">We will not post on your profile without your permission.</span>
+                <span class="notice-msg"><%= noticeText %></span>
 
             </div>
 
-            <div id="footer-subview-container-two">
-                        
-                <span>Already signed up?</span>
+            <div id="footer-subview-container-two" class="display-none">
                 
-                <a href="#/"><span id="bi-log-in-modal" class="display-none">Log In!</span></a>
+                <span><%= signedInText %></span>
+                
+                <span id="bi-log-in-modal" class=""><%= logInText %></span>
             
             </div>
         
