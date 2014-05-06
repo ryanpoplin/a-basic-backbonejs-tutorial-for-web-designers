@@ -110,7 +110,7 @@ table {
 
 /* Modals... */
 
-/*.modal-header {
+.modal-header {
 	background-color: #c0c0c0;
 	height: 65px;
 	margin-bottom: 0.4em;
@@ -168,7 +168,7 @@ table {
     text-align: center;
     z-index: 10;
     box-shadow: 0 0 0 9999px rgba(0,0,0,0.5);
-}*/
+}
 
 /* Modals End... */
 
@@ -176,7 +176,7 @@ table {
 
 /*.extra-margin-top {
 	margin-top: 60px;
-}
+}*/
 
 .modal input[type=text] {
 	display: block;
@@ -191,7 +191,7 @@ table {
 	color: #131313;
 	padding-top: 3em;
 	padding-bottom: 3em;
-}*/
+}
 
 /* Default View Styles... */
 
@@ -310,6 +310,7 @@ table {
 /* Footer Drawer Styles... */
 
 .footer-subview {
+	font-family: 'Gotham-Light', sans-serif;
 	overflow: visible !important;
 	position: fixed;
 	bottom: 0;
@@ -319,6 +320,7 @@ table {
 }
 
 #footer-button {
+	display: block;
 	line-height: 70px;
 	font-size: 1.8em;
 	font-weight: bolder;
@@ -342,6 +344,7 @@ table {
 
 .footer-subview button {
 	margin: 0 auto;
+	font-family: 'Gotham-Light', sans-serif;
 	height: 30px;
 	border-radius: 0;
 	width: 300px;
@@ -361,14 +364,59 @@ table {
 }
 
 .footer-subview button {
-	border: 1px solid #10b5b8;
-	border-radius: 5px;
-	font-size: 0.7em;
+	cursor: pointer;
+	border: 1px solid #a0a0a0;
+	font-size: 1.2em;
+	display: none;
 	color: #fefefe;
-	width: 200px;
+	width: 300px;
 	height: 50px;
-	background-color: #10b5b8;
 	margin: 0.5em auto 0.5em auto;
+}
+
+.or {
+	font-size: 1em;
+	color: #ffffff;
+	margin-top: 2em;
+	margin-left: 0.6em;
+	margin-right: 0.6em;
+	font-size: 2.4em;
+}
+
+.white-background-color {
+	background-color: #ffffff;
+}
+
+.blue-background-color {
+	background-color: #3b5598;
+}
+
+#footer-subview-container-one {
+	padding-top: 18px;
+}
+
+#footer-subview-container-two {
+	padding-top: 25px;
+}
+
+#footer-subview-container-two span {
+	display: inline-block;
+	padding-top: 30px;
+	font-size: 1.5em;
+}
+
+#footer-subview-container-two a {
+	color: #10a5e8;
+}
+
+.notice-msg {
+	position: fixed;
+	left: 50%;
+	margin-left: -372px;
+	color: #fefefe;
+	font-size: 0.7em;
+	width: 330px;
+	display: none;
 }
 
 @media screen and (max-width:768px) {
@@ -455,7 +503,7 @@ table {
 
 /* Quest List View... */
 
-/*.header-back-btn {
+.header-back-btn {
 	position: absolute;
 	top: 13px;
 	font-weight: 900;
@@ -555,7 +603,7 @@ table {
 
 quest-display-block {
 
-}*/
+}
 
 /* Spinner... */
 

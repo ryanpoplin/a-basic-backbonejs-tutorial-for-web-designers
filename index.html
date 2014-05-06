@@ -25,23 +25,23 @@
                 
                 <div id="social-media-icon-container">
                     
-                    <a href="https://www.twitter.com"><img src="social-media-icons/twit-icon.png" alt="Twitter"></a>
+                    <a href="<%= socialTwitterLink %>"><img src="<%= socialTwitterImg %>" alt="Twitter"></a>
                     
-                    <a href="https://www.facebook.com"><img style="padding-left: 8px;" src="social-media-icons/fbook-icon.png" alt="Facebook"></a>
+                    <a href="<%= socialFacebookLink %>"><img style="padding-left: 8px;" src="<%= socialFacebookImg %>" alt="Facebook"></a>
                 
                 </div>
                 
-                <img id="default-logo" src="q-logo.png" alt="Questalot">
+                <img id="default-logo" src="<%= logoImg %>" alt="Questalot">
 
                 <hgroup>    
                     
-                    <h1 id="primary-heading">Explore More</h1>
+                    <h1 id="primary-heading"><%= primaryHeading %></h1>
                     
-                    <h2 style="color: #fefefe;" id="primary-sub-heading">...Questalot is the best damn thing ever!</h2>
+                    <h2 style="color: #fefefe;" id="primary-sub-heading"><%= primarySubHeading %><h2>
                 
                 </hgroup>
                 
-                <a href="/#load-quests" id="quest-button">Quest Now!</a>
+                <a href="<%= questBtnLink %>" id="quest-button"><%= questBtnText %></a>
                 
                 <footer class="footer-subview text-align-center">
                          
@@ -53,23 +53,71 @@
 
         <script type="text/template" id="footer-drawer-template">
             
+            <div class="overlay"></div>
+            
+            <div id="facebook-modal" class="modal extra-margin-top">
+                <header class="modal-header">
+                    <button class="modal-btn">Back</button>
+                </header>
+                <span>Facebook Sign Up</span>
+                <input placeholder="Email" type="text">
+                <input placeholder="Password" type="text">
+                <button class="submit-modal-btn">Sign Up</button>
+            </div>
+            
+            <div id="email-modal" class="modal extra-margin-top">
+                <header class="modal-header">
+                    <button class="modal-btn">Back</button>
+                </header>
+                <h2>Email...</h2>
+                <span>Email Sign Up</span>
+                <input placeholder="Email" type="text">
+                <input placeholder="Password" type="text">
+                <button class="submit-modal-btn">Sign Up</button>
+            </div>
+            
+            <div id="bi-modal" class="modal extra-margin-top">
+                <header class="modal-header">
+                    <button class="modal-btn">Back</button>
+                </header>
+                <h2>Log In...</h2>
+                <span>Facebook or Email</span>
+                <input placeholder="Email" type="text">
+                <input placeholder="Password" type="text">
+                <button class="submit-modal-btn">Log In</button>
+            </div>
+
             <div id="footer-button">
             
-                <img src="down-arrow.png" alt="^">
+                <!--<img src="down-arrow.png" alt="^">-->
             
             </div>
             
-            <h4>Log In / Sign Up</h4>
+            <h4 >Log In / Sign Up</h4>
             
-            <!--<button id="facebook-sign-up-btn" class="display-none home-view-facebook-button">Sign Up with Facebook</button>
+            <div id="footer-subview-container-one">
+                
+                <button id="facebook-sign-up-btn" class="blue-background-color display-none">Sign Up with Facebook</button>
             
-            <span class="display-none or-padding">OR</span>
+                <div style="display: inline-block; padding-top: 1.2em;">
+                    <span class="or display-none or-padding">OR</span>
+                </div>
+                
+                <button id="email-sign-up-btn" class="white-background-color display-none">Sign Up with Email</button>
+                
+                <br>
+
+                <span class="notice-msg display-none">We will not post on your profile without your permission.</span>
+
+            </div>
+
+            <div id="footer-subview-container-two">
+                        
+                <span>Already signed up?</span>
+                
+                <a href="#/"><span id="bi-log-in-modal" class="display-none">Log In!</span></a>
             
-            <button id="email-sign-up-btn" class="display-none">Sign Up with Email</button>
-            
-            <span class="notice display-none">We will not post on your profile or email you about updates without your permission.</span>
-            
-            <button id="bi-log-in-modal" class="display-none">Log In</button>-->
+            </div>
         
         </script>
 
@@ -121,47 +169,17 @@
     
         --> 
 
-        <!--<script id="quests-list-view-template" type="text/template">
+        <script id="quests-list-view-template" type="text/template">
 
-            <div class="overlay"></div>
-            <div id="facebook-modal" class="modal">
-                <header class="modal-header">
-                    <button class="modal-btn">Back</button>
-                </header>
-                <span>Facebook Sign Up</span>
-                <input placeholder="Email" type="text">
-                <input placeholder="Password" type="text">
-                <button class="submit-modal-btn">Sign Up</button>
-            </div>
-            <div id="email-modal" class="modal">
-                <header class="modal-header">
-                    <button class="modal-btn">Back</button>
-                </header>
-                <h2>Email...</h2>
-                <span>Email Sign Up</span>
-                <input placeholder="Email" type="text">
-                <input placeholder="Password" type="text">
-                <button class="submit-modal-btn">Sign Up</button>
-            </div>
-            <div id="bi-modal" class="modal">
-                <header class="modal-header">
-                    <button class="modal-btn">Back</button>
-                </header>
-                <h2>Log In...</h2>
-                <span>Facebook or Email</span>
-                <input placeholder="Email" type="text">
-                <input placeholder="Password" type="text">
-                <button class="submit-modal-btn">Log In</button>
-            </div>
             <header id="quest-list-view-header">
                 <a href="/#" style="text-decoration: none;" class="header-back-btn">Back</a>
             </header>
             <h1 id="quest-list-view-heading">Register for a Quest!</h1>
             <div class="dashed-line-div"></div>
             <div class="quest-list-container">   
-                <div class="quests-list"></div>-->
+                <div class="quests-list"></div>
                 <!--<div class="library-box"></div>-->
-            <!--</div>
+            </div>
             <footer id="home-view-footer" class="text-align-center">
                 <div id="footer-button">
                     <div style="display: inline-block;">^</div>
@@ -174,9 +192,9 @@
                 <button id="bi-log-in-modal" class="display-none">Log In</button>
             </footer>
 
-        </script>-->
+        </script>
 
-        <!--<script id="quest-display-view-template" type="text/template">
+        <script id="quest-display-view-template" type="text/template">
 
             <div class="overlay" style="display: block;"></div>
             <div style="background: url(<%= attributes.img %>) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; background-color: #e0e0e0;">
@@ -188,17 +206,17 @@
             </div>
             </div>
 
-        </script>-->
+        </script>
 
         <!-- Refactor as subview... -->
 
-        <!--<script id="template-spinner" type="text/template">
+        <script id="template-spinner" type="text/template">
 
             <img src="ajax_loader_gray_48.gif" alt="Spinner...">
 
-        </script>-->
+        </script>
 
-        <!--<script id="quest-item-view-template" type="text/template">
+        <script id="quest-item-view-template" type="text/template">
 
             <div style="margin-bottom: 3em; background: url(<%= img %>) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; background-color: #e0e0e0; height: 200px;" class="quests-list-slider-img">
             </div>
@@ -209,11 +227,11 @@
             <p class="quest-info"><%= info %></p>
             <p class="quest-info"><a href=""><%= link %></a></p>
             <p class="quest-info"><%= rules %></p>
-            <p class="quest-info"><%= prizes %></p>-->
+            <p class="quest-info"><%= prizes %></p>
             <!--<span class="add-to-library">Add to Quest Library</span>-->
-            <!--<a class="quest-register-btn" href="#/load-quest/<%= hash %>">Register for <%= name %></a>
+            <a class="quest-register-btn" href="#/load-quest/<%= hash %>">Register for <%= name %></a>
 
-        </script>-->
+        </script>
 
         <script src="js/core.js"></script>
 

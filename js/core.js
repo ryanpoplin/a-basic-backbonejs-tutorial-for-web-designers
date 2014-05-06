@@ -2,7 +2,9 @@
 
 (function($) { 
 
-	/*var questData = [
+	// FUTURE JSON DATA...
+
+	var questData = [
 		{
 			hash: 'parkhop',
 			name: 'Park Hop',
@@ -12,89 +14,113 @@
 			rules: 'Rules: Lorem ipsum dolor...',
 			prizes: 'Prizes: Lorem ipsum dolor...'
 		}
-	];*/
+	];
 
+	// APPLICATION...
 	var app;
 
+	// ROUTER...
 	var Router = Backbone.Router.extend({
 		routes: {
 			'': 'defaultRoute',
-			/*'load-quests': 'loadQuestsRoute',
-			'load-quest/:questHash': 'loadQuestRoute'*/
+			'load-quests': 'loadQuestsRoute',
+			'load-quest/:questHash': 'loadQuestRoute'
 		},
 		initialize: function() {
-			/*var quests = new Quests();
+			var quests = new Quests();
 			quests.reset(questData);
 			this.questsListView = new QuestsListView({
 				collection: quests
 			});
 			this.questDisplayView = new QuestDisplayView({
 				collection: quests
-			});*/
+			});
 		},
 		defaultRoute: function() {
 			var defaultView = new DefaultView;
 			defaultView.render();
-			// $('#spa').css('margin-bottom', '0');
+			$('#spa').css('margin-bottom', '0');
 		},
-		/*loadQuestsRoute: function() {
+		loadQuestsRoute: function() {
 			this.questsListView.coreRender();
 			$('#spa').css('margin-bottom', '120px');
 		},
 		loadQuestRoute: function(questHash) {
 			this.questDisplayView.loadQuest(questHash);
-		}*/
+		}
 	});
 
-	var FooterDrawerView = Backbone.View.extend({
-		template: _.template($('#footer-drawer-template').html()),
-		render: function() {
-			this.$el.html(this.template({}));
+	// FOOTER MODEL...
+	var FooterDrawerModel = Backbone.Model.extend({
+		defaults: {
+
 		},
 		initialize: function() {
 		}
 	});
 
-	var DefaultView = Backbone.View.extend({
-		tagName: 'div',
-		el: '#spa',
-		footerSubEl: '.footer-subview',
-		template: _.template($('#default-template').html()),
-		/*events: {
+	// FOOTER SUBVIEW...
+	var FooterDrawerView = Backbone.View.extend({
+		template: _.template($('#footer-drawer-template').html()),
+		events: {
 			'click #footer-button': 'footerAnimation',
 			'click #facebook-sign-up-btn': 'facebookModalShow',
 			'click #email-sign-up-btn': 'emailModalShow',
 			'click #bi-log-in-modal': 'biLogInModalShow',
 			'click .modal-btn': 'closeModal'
-		},*/
-		/*footerAnimation: function() {
-			var homeViewFooterHeight = $('#home-view-footer').height();
-			if (homeViewFooterHeight === 80) {
-				$('#footer-button').css('transform', 'rotate(180deg) scaleX(-1)');
-				$('#home-view-footer').stop().animate({
-					height: 285
+		},
+		footerAnimation: function() {
+			var footerSubviewHeight = $('.footer-subview').height();
+			if (footerSubviewHeight === 80) {
+				// $('#footer-button').css('transform', 'rotate(180deg) scaleX(-1)');
+				$('.footer-subview').stop().animate({
+					height: 260
 				}).end();
 				$('#footer-button').stop().animate({
-					bottom: 255
+					bottom: 210
 				}).end();
-				$('#home-view-footer span, button').show();
-				$('#home-view-footer button').addClass('display-block');
-				$('#home-view-footer button').css('display', 'block');
-				$('#home-view-footer h4').hide();
-				$('#home-view-footer').css('padding-top', '2em');
+				$('.notice-msg').removeClass('display-none');
+				$('.footer-subview span, button').show();
+				$('.footer-subview button').css('display', 'inline-block');
+				$('.footer-subview h4').hide();
+				$('.footer-subview').css('padding-top', '2em');
 				return true; 
-			} else if (homeViewFooterHeight >= 163) {
-				$('#footer-button').css('transform', 'rotate(360deg) scaleX(-1)');
-				$('#home-view-footer').stop().animate({
+			} else if (footerSubviewHeight === 55) {
+				$('.footer-subview').stop().animate({
+					height: 160
+				}).end();
+				$('#footer-button').stop().animate({
+					bottom: 130
+				}).end();
+				$('.notice-msg').removeClass('display-none');
+				$('.footer-subview span, button').show();
+				$('.footer-subview button').css('display', 'inline-block');
+				$('.footer-subview h4').hide();
+				$('.footer-subview').css('padding-top', '2em');
+			} else if (footerSubviewHeight === 228) {
+				// $('#footer-button').css('transform', 'rotate(360deg) scaleX(-1)');
+				$('.footer-subview').stop().animate({
 					height: 80
 				}).end();
 				$('#footer-button').stop().animate({
-					bottom: 45
+					bottom: 25
 				}).end();
-				$('#home-view-footer span, button').hide();
-				$('#home-view-footer h4').show();
-				$('#home-view-footer').css('padding-top', '0');
+				$('.footer-subview span, button').hide();
+				$('.footer-subview h4').fadeIn(300);
+				$('.footer-subview').css('padding-top', '0');
 				return true;
+			} else if (footerSubviewHeight === 128) {
+				$('.footer-subview').stop().animate({
+					height: 55
+				}).end();
+				$('#footer-button').stop().animate({
+					bottom: 25
+				}).end();
+				$('.notice-msg').removeClass('display-none');
+				$('.footer-subview span, button').show();
+				$('.footer-subview button').css('display', 'inline-block');
+				$('.footer-subview h4').hide();
+				$('.footer-subview').css('padding-top', '2em');
 			}
 			return false; 
 		},
@@ -109,9 +135,50 @@
 		},
 		closeModal: function() {
 			$('.overlay, .modal').fadeOut(300);
-		},*/
+		},
 		render: function() {
-			$(this.el).html(this.template({}));
+			this.$el.html(this.template({}));
+		},
+		initialize: function() {
+		}
+	});
+
+	// DEFAULT MODEL...
+	var DefaultModel = Backbone.Model.extend({
+		defaults: {
+			socialTwitterLink: 'https://www.twitter.com',
+			socialTwitterImg: 'social-media-icons/twit-icon.png',
+			socialFacebookLink: 'https://www.facebook.com',
+			socialFacebookImg: 'social-media-icons/fbook-icon.png',
+			logoImg: 'q-logo.png',
+			primaryHeading: 'Explore More',
+			primarySubHeading: '..questalot is ... the best ... !',
+			questBtnLink: '/#load-quests',
+			questBtnText: 'Quest Now!'
+		},
+		initialize: function() {
+		}
+	});
+
+	// DEFAULT VIEW...
+	var DefaultView = Backbone.View.extend({
+		tagName: 'div',
+		el: '#spa',
+		footerSubEl: '.footer-subview',
+		template: _.template($('#default-template').html()),
+		render: function() {
+			var defaultModel = new DefaultModel({});
+			$(this.el).html(this.template({
+				socialTwitterLink: defaultModel.get('socialTwitterLink'),
+				socialTwitterImg: defaultModel.get('socialTwitterImg'),
+				socialFacebookLink: defaultModel.get('socialFacebookLink'),
+				socialFacebookImg: defaultModel.get('socialFacebookImg'),
+				logoImg: defaultModel.get('logoImg'),
+				primaryHeading: defaultModel.get('primaryHeading'),
+				primarySubHeading: defaultModel.get('primarySubHeading'),
+				questBtnLink: defaultModel.get('questBtnLink'),
+				questBtnText: defaultModel.get('questBtnText')
+			}));
 			var footerDrawerView = new FooterDrawerView({
 				// model: quest
 			});	
@@ -122,63 +189,12 @@
 		}
 	});
 
-	/*var QuestsListView = Backbone.View.extend({
+	// QUEST LIST VIEW...
+	var QuestsListView = Backbone.View.extend({
 		el: '#spa',
 		listEl: '.quests-list',
 		libraryEl: '.library-box',
 		template: _.template($('#quests-list-view-template').html()),
-		events: {
-			'click #footer-button': 'footerAnimation',
-			'click #facebook-sign-up-btn': 'facebookModalShow',
-			'click #email-sign-up-btn': 'emailModalShow',
-			'click #bi-log-in-modal': 'biLogInModalShow',
-			'click .modal-btn': 'closeModal'
-		},
-		footerAnimation: function() {
-			var homeViewFooterHeight = $('#home-view-footer').height();
-			if (homeViewFooterHeight === 80) {
-				// $('hgroup h1, h2, #quest-button').fadeOut(50);
-				$('#footer-button').css('transform', 'rotate(180deg) scaleX(-1)');
-				$('#home-view-footer').stop().animate({
-					height: 285
-				}).end();
-				$('#footer-button').stop().animate({
-					bottom: 255
-				}).end();
-				$('#home-view-footer span, button').show();
-				$('#home-view-footer button').addClass('display-block');
-				$('#home-view-footer button').css('display', 'block');
-				$('#home-view-footer h4').hide();
-				$('#home-view-footer').css('padding-top', '2em');
-				return true; 
-			} else if (homeViewFooterHeight >= 163) {
-				// $('hgroup h1, h2, #quest-button').fadeIn(500);
-				$('#footer-button').css('transform', 'rotate(360deg) scaleX(-1)');
-				$('#home-view-footer').stop().animate({
-					height: 80
-				}).end();
-				$('#footer-button').stop().animate({
-					bottom: 45
-				}).end();
-				$('#home-view-footer span, button').hide();
-				$('#home-view-footer h4').show();
-				$('#home-view-footer').css('padding-top', '0');
-				return true;
-			}
-			return false; 
-		},
-		facebookModalShow: function() {
-			$('.overlay, #facebook-modal').fadeIn(300);
-		},
-		emailModalShow: function() {
-			$('.overlay, #email-modal').fadeIn(300);
-		},
-		biLogInModalShow: function() {
-			$('.overlay, #bi-modal').fadeIn(300);
-		},
-		closeModal: function() {
-			$('.overlay, .modal').fadeOut(300);
-		},
 		initialize: function() {
 			console.log('QuestsListView init...');
 			this.$el.html(this.template);
@@ -200,8 +216,10 @@
 		}
 	});
 
+	// QUESTS COLLECTION...
 	var Quests = Backbone.Collection.extend({});
 
+	// QUESTS ITEM VIEW...
 	var QuestItemView = Backbone.View.extend({
 		template: _.template($('#quest-item-view-template').html()),
 		events: {
@@ -215,6 +233,7 @@
 		}
 	});
 
+	// QUEST DISPLAY VIEW...
 	var QuestDisplayView = Backbone.View.extend({
 		initialize: function() {
 			console.log('QuestDisplayView init...');
@@ -240,8 +259,9 @@
 		showSpinner: function() {
 			$('#spa').html(this.templateSpinner);
 		}
-	});*/
+	});
 
+	// ARE YOU READY?
 	$(function() {
 		app = new Router;
 		Backbone.history.start();
