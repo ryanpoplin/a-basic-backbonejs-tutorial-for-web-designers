@@ -459,12 +459,10 @@ table {
 
 	.or {
 		display: block;
-		font-size: 1em;
 		color: #ffffff;
-		margin-top: 2em;
 		margin-left: 0.6em;
 		margin-right: 0.6em;
-		font-size: 2.4em;
+		font-size: 1.4em;
 	}
 
 	.white-background-color {
@@ -476,15 +474,15 @@ table {
 	}
 
 	#footer-subview-container-one {
-		padding-top: 9px;
+		border: 1px solid purple;
 	}
 
 	#footer-subview-container-two {
-		padding-top: 15px;
+		border: 1px solid purple;
 	}
 
 	#footer-subview-container-two span {
-		display: block;
+		display: none;
 		padding-top: 10px;
 		font-size: 1em;
 	}

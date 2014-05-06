@@ -11,6 +11,15 @@
 			link: 'https://www.google.com/parkhop',
 			rules: 'Rules: Lorem ipsum dolor...',
 			prizes: 'Prizes: Lorem ipsum dolor...'
+		},
+		{
+			hash: 'parkhop',
+			name: 'Park Hop',
+			info: 'Information: Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor.',
+			img: 'http://www.naportals.com/wp-content/uploads/2014/02/orange-thighed-frog-tree-green-nature-animals-wallpaper-1920x1080-857671.jpg',
+			link: 'https://www.google.com/parkhop',
+			rules: 'Rules: Lorem ipsum dolor...',
+			prizes: 'Prizes: Lorem ipsum dolor...'
 		}
 	];
 
@@ -46,13 +55,13 @@
 		}
 	});
 
-	var FooterDrawerModel = Backbone.Model.extend({
+	/*var FooterDrawerModel = Backbone.Model.extend({
 		defaults: {
 
 		},
 		initialize: function() {
 		}
-	});
+	});*/
 
 	var FooterDrawerView = Backbone.View.extend({
 		template: _.template($('#footer-drawer-template').html()),
@@ -74,11 +83,12 @@
 				$('#footer-button').stop().animate({
 					bottom: 208
 				}).end();
-				$('.notice-msg').removeClass('display-none');
+				/*$('.notice-msg').removeClass('display-none');
+				$('.footer-subview.or').css('display', 'inline-block');
 				$('.footer-subview span, button').show();
 				$('.footer-subview button').css('display', 'inline-block');
 				$('.footer-subview h4').hide();
-				$('.footer-subview').css('padding-top', '2em');
+				$('.footer-subview').css('padding-top', '2em');*/
 				return true; 
 			} else if (footerSubviewHeight === 260) {
 				// $('#footer-button').css('transform', 'rotate(360deg) scaleX(-1)');
@@ -88,9 +98,9 @@
 				$('#footer-button').stop().animate({
 					bottom: 30
 				}).end();
-				$('.footer-subview span, button').hide();
+				/*$('.footer-subview span, button').hide();
 				$('.footer-subview h4').fadeIn(300);
-				$('.footer-subview').css('padding-top', '0');
+				$('.footer-subview').css('padding-top', '0');*/
 				return true;
 			} else if (footerSubviewHeight === 55) {
 				// $('#footer-button').css('transform', 'rotate(180deg) scaleX(-1)');
@@ -100,10 +110,10 @@
 				$('#footer-button').stop().animate({
 					bottom: 160
 				}).end();
-				$('.notice-msg').removeClass('display-none');
+				/*$('.notice-msg').removeClass('display-none');
 				$('.footer-subview span, button').show();
-				$('.footer-subview button').css('display', 'inline-block');
-				$('.footer-subview h4').hide();
+				$('.footer-subview button').css('display', 'block');
+				$('.footer-subview h4').hide();*/
 				return true;
 			} else if (footerSubviewHeight === 200) {
 				$('.footer-subview').stop().animate({
@@ -112,10 +122,10 @@
 				$('#footer-button').stop().animate({
 					bottom: 15
 				}).end();
-				$('.notice-msg').removeClass('display-none');
+				/*$('.notice-msg').removeClass('display-none');
 				$('.footer-subview span, button').show();
-				$('.footer-subview button').css('display', 'inline-block');
-				$('.footer-subview h4').hide();
+				$('.footer-subview button').css('display', 'block');
+				$('.footer-subview h4').hide();*/
 			}
 			return false; 
 		},
@@ -178,7 +188,7 @@
 			footerDrawerView.render();
 			$(this.footerSubEl).append(footerDrawerView.$el);
 			/*$(window).resize(function() {
-		
+			......
 			});*/
 		},
 		initialize: function() {
@@ -188,7 +198,7 @@
 	var QuestsListView = Backbone.View.extend({
 		el: '#spa',
 		listEl: '.quests-list',
-		libraryEl: '.library-box',
+		footerSubView: '.footer-subview',
 		template: _.template($('#quests-list-view-template').html()),
 		initialize: function() {
 			console.log('QuestsListView init...');
@@ -208,6 +218,11 @@
 				questSubView.render();
 				$(view.listEl).append(questSubView.$el);
 			});
+			var footerDrawerView = new FooterDrawerView({
+				// model: quest
+			});	
+			footerDrawerView.render();
+			$(this.footerSubView).append(footerDrawerView.$el);
 		}
 	});
 
