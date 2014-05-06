@@ -132,15 +132,12 @@
 			return false; 
 		},
 		facebookModalShow: function() {
-			$('.modal').css('height', '465px');
 			$('.overlay, #facebook-modal').fadeIn(300);
 		},
 		emailModalShow: function() {
 			$('.overlay, #email-modal').fadeIn(300);
-			$('.modal').css('height', '540px');
 		},
 		biLogInModalShow: function() {
-			$('.modal').css('height', '465px');
 			$('.overlay, #bi-modal').fadeIn(300);
 		},
 		closeModal: function() {
@@ -209,6 +206,17 @@
 		}
 	});
 
+	var QuestsListModel = Backbone.Model.extend({
+		defaults: {
+			miniLogo: 'mini-logo.png',
+			questListingsHeading: 'Register for a Quest!'
+		},
+		initialize: function() {
+		}
+	});
+
+	var questsListModel = new QuestsListModel({});
+
 	var QuestsListView = Backbone.View.extend({
 		el: '#spa',
 		listEl: '.quests-list',
@@ -223,7 +231,10 @@
 			$(this.libraryEl).append(questModel.attributes.name + '<br>');
 		},
 		coreRender: function() {
-			this.$el.html(this.template({}));
+			this.$el.html(this.template({
+				miniLogo: 'mini-logo.png',
+				questListingsHeading: 'FUCK!'
+			}));
 			var view = this;
 			this.collection.each(function(quest) {
 				var questSubView = new QuestItemView({

@@ -170,10 +170,12 @@
 
         <script id="quests-list-view-template" type="text/template">
 
+            <!-- -->
+
             <header id="quest-list-view-header">
-                <a href="/#" style="text-decoration: none;" class="header-back-btn">Back</a>
+                <div class="mini-logo"><img src="mini-logo.png" alt="Logo"></div>
             </header>
-            <h1 id="quest-list-view-heading">Register for a Quest!</h1>
+            <h1 id="quest-list-view-heading">Register for a Quest</h1>
             <div class="dashed-line-div"></div>
             <div class="quest-list-container">   
                 <div class="quests-list"></div>
@@ -187,7 +189,10 @@
 
         <script id="quest-display-view-template" type="text/template">
 
-            <div class="overlay" style="display: block;"></div>
+            <!--<div class="overlay" style="display: block;"></div>-->
+            <header id="quest-list-view-header">
+                <div class="mini-logo"><img src="mini-logo.png" alt="Logo"></div>
+            </header>
             <div style="background: url(<%= attributes.img %>) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; background-color: #e0e0e0;">
             <div style="display: block; position: absolute; left: 45%; width: 280px; height: 280px; margin-left: -125px; color: #131313; text-align: center; z-index: 10; color: #fefefe; ">
                 <p style="font-size: 0.9em;" class="text-align-center">Congratulations, you just registered for</p>

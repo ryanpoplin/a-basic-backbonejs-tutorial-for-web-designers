@@ -524,7 +524,7 @@ table {
 
 .modal input[type=text], input[type=password] {
 	display: block;
-	padding: 20px;
+	padding: 10px 20px 10px 20px;
 	margin: 15px auto;
 	font-size: 1.5em;
 	font-family: 'Gotham-Light', sans-serif;
@@ -532,7 +532,18 @@ table {
 
 /* QUEST LIST VIEW STYLES... */
 
-.header-back-btn {
+.mini-logo {
+	position: fixed;
+	left: 50%;
+	margin-left: -16px;
+}
+
+.quest-list-container {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+/*.header-back-btn {
 	position: absolute;
 	top: 13px;
 	font-weight: 900;
@@ -547,17 +558,14 @@ table {
 	color: #fefefe;
 	text-decoration: none;	
 	border: 1px solid #10b5b8;
-}
-
-.teal-color-test {
-	color: #10b5b8;
-}
+}*/
 
 #quest-list-view-header {
 	width: 100%;
 	position: fixed;
 	top: 0;
-	height: 65px;
+	padding-top: 6.5px;
+	height: 55px;
 	background: url(../background.png) no-repeat center center fixed; 
   	-webkit-background-size: cover;
   	-moz-background-size: cover;
