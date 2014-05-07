@@ -6,12 +6,12 @@
 		{
 			hash: 'parkhop',
 			name: 'Park Hop',
-			info: 'Information: Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor.',
+			info: 'Information: Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor.',
 			img: 'http://www.naportals.com/wp-content/uploads/2014/02/orange-thighed-frog-tree-green-nature-animals-wallpaper-1920x1080-857671.jpg',
 			link: 'https://www.google.com/parkhop',
-			rules: 'Rules: Lorem ipsum dolor...',
-			prizes: 'Prizes: Lorem ipsum dolor...'
-		},
+			rules: 'Rules: Lorem ipsum dolor... Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor.',
+			prizes: 'Prizes: Lorem ipsum dolor... Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor.'
+		}/*,
 		{
 			hash: 'parkhop',
 			name: 'Park Hop',
@@ -20,7 +20,7 @@
 			link: 'https://www.google.com/parkhop',
 			rules: 'Rules: Lorem ipsum dolor...',
 			prizes: 'Prizes: Lorem ipsum dolor...'
-		}
+		}*/
 	];
 
 	var app;
@@ -294,7 +294,6 @@
 	});
 
 	$(function() {
-		$('#slider').leanSlider();
 		app = new Router;
 		Backbone.history.start();
 	});

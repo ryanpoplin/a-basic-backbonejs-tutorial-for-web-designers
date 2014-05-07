@@ -10,8 +10,6 @@
         <script src="bower_components/jquery/dist/jquery.min.js"></script>
         <script src="bower_components/underscore/underscore.js"></script>
         <script src="bower_components/backbone/backbone.js"></script>
-        <script src="lean-slider/lean-slider.js"></script>
-        <link rel="stylesheet" href="lean-slider/lean-slider.css">
     </head>
     <body>
         
@@ -204,16 +202,17 @@
 
         <script id="quest-display-view-template" type="text/template">
 
-            <!--<div class="overlay" style="display: block;"></div>-->
-            <header id="quest-list-view-header">
+            <div class="overlay" style="display: block;"></div>
+                
+            <!--<header id="quest-list-view-header">
                 <div class="mini-logo"><img src="mini-logo.png" alt="Logo"></div>
-            </header>
-            <div style="background: url(<%= attributes.img %>) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; background-color: #e0e0e0;">
-            <div style="display: block; position: absolute; left: 45%; width: 280px; height: 280px; margin-left: -125px; color: #131313; text-align: center; z-index: 10; color: #fefefe; ">
-                <p style="font-size: 0.9em;" class="text-align-center">Congratulations, you just registered for</p>
-                <h1 style="font-size: 1.2em;" class="text-align-center"><%= attributes.name %></h1>
-                <h2 style="font-size: 1.5em;" class="text-align-center">Your Quest has just begun!</h2>
-                <a class="quest-register-btn text-align-center" style="" href="/#load-quests">Back to Quest Library</a>
+            </header>-->
+            <div class="view-container extra-padding" style="background: url(<%= attributes.img %>) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; background-color: #e0e0e0;">
+                <div class="item-display-container">
+                    <p class="text-align-center">Congratulations, you just registered for</p>
+                    <h1 style="font-size: 6em; padding: 20px 0 40px 0;" class="text-align-center"><%= attributes.name %></h1>
+                    <h2 style="font-size: 1.5em;" class="text-align-center">Your Quest has just begun!</h2>
+                </div>
             </div>
             </div>
 
@@ -230,24 +229,45 @@
         <script id="quest-item-view-template" type="text/template">
             
             <div class="border-listing">  
-            <!--<section class="section">-->
-                <div class="slider-wrapper">
-                <h1 class="quest-heading"><%= name %></h1>
+            
+            <section class="section">
+
+                    <div id="sliderFrame">
+                        <div id="slider">
+                            <a href="http://www.menucool.com/javascript-image-slider" target="_blank">
+                            <img src="image-slider-1.jpg" alt="">
+                            </a>
+                            <img src="image-slider-1.jpg" alt="">
+                            <img src="image-slider-1.jpg" alt="">
+                        </div>
+                        <div id="htmlcaption" style="display: none;">
+                            <em>HTML</em> caption. Link to <a href="http://www.google.com/">Google</a>.
+                        </div>
+                    </div>
+                
                 <a class="quest-register-btn" href="#/load-quest/<%= hash %>">Register for <%= name %></a>
-            <!--</section>-->
-            <!--<aside class="aside">-->
+
+            </section>
+
+            <aside class="aside">
+                
+                <h1 class="quest-heading"><%= name %></h1>
                 <p class="quest-info"><%= info %></p>
                 <p class="quest-info"><a href=""><%= link %></a></p>
                 <p class="quest-info"><%= rules %></p>
                 <p class="quest-info"><%= prizes %></p>
-            <!--</aside>-->
+           
+            </aside>
+           
             </div>
 
             <!--<span class="add-to-library">Add to Quest Library</span>-->
 
         </script>
 
+        <script src="js/slider.js"></script>
         <script src="js/core.js"></script>
+
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <!--<script>
