@@ -58,6 +58,16 @@ table {
 /* CUSTOM FONTS... */
 
 @font-face {
+	font-family: 'Gotham-Lighter';
+	src: url(../gotham-lighter.otf);
+}
+
+/*@font-face {
+	font-family: ;
+	src: url(../);
+}*/
+
+@font-face {
 	font-family: 'Martell';
 	src: url(../reg.otf);	
 }
@@ -120,32 +130,32 @@ table {
 #social-media-icon-container {
 	position: absolute;
 	right: 0;
-	padding: 18px 18px 18px 18px;
+	padding: 48px 48px 0 0;
 	color: #fefefe;
 	font-size: .5em;
 }
 
 #social-media-icon-container img {
+	padding: 5px;
 	display: inline;
 }
 
 #default-logo {
 	margin: 3.5em auto 0 auto;
-	height: 200px;
-	width: 200px;
 }
 
 #primary-heading {
 	font-family: 'Martell', sans-serif;
 	padding: 0.4em 0 0.2em 0;
-	font-size: 4em; 
+	font-size: 6em; 
 	color: #888888;
 }
 
 #primary-sub-heading {
 	color: #fefefe;
+	line-height: 18px;
 	padding: 0.3em 0 0.5em 0;
-	font-size: 0.9em;
+	font-size: 1em;
 	font-family: 'Gotham-Light';
 }
 
@@ -155,16 +165,16 @@ table {
 	margin: 1.1em auto 1.2em auto;
 	width: 13em;
 	font-size: 22pt;
-	padding: 0.4em 0.8em 0.6em 0.8em;
+	padding: 0.6em 0.8em 0.6em 0.8em;
 	font-family: 'Gotham-Bolder', sans-serif;
-	background-color: #10b5b8;
+	background-color: #026b5d;
 	color: #ffffff;
 	text-decoration: none;
 }
 
 @media screen and (max-width:768px) {
   
-	/*#default-logo {
+	#default-logo {
   		height: 200px;
   		width: 200px;
   	}
@@ -184,13 +194,13 @@ table {
 		width: 7em;
 		font-size: 15pt;
 		padding: 0.7em 0.3em 0.7em 0.3em;
-  	}*/
+  	}
 
 }
 
 @media screen and (max-width:500px) {
 
-	/*#default-logo {
+	#default-logo {
   		height: 150px;
   		width: 150px;
   	}
@@ -210,7 +220,7 @@ table {
 		width: 7em;
 		font-size: 13pt;
 		padding: 0.5em 0.3em 0.5em 0.3em;
-  	}*/
+  	}
 
 }
 
@@ -243,7 +253,6 @@ table {
 	left: 0;
 	right: 0;
 	margin: 0 auto 0 auto;
-	color: #fefefe;
 }
 
 #footer-button img {
@@ -281,7 +290,7 @@ table {
 	color: #ffffff;
 	width: 200px;
 	left: 50%;
-	margin-left: -95px;
+	margin-left: -101px;
 	font-size: 0.8em;
 	/*margin-top: 2.3em;*/
 }
@@ -294,6 +303,7 @@ table {
 	height: 30px;
 	border-radius: 0;
 	width: 300px;
+	color: #a0a0a0;
 	height: 50px;
 	margin: 0.5em auto 0.5em auto;
 }
@@ -335,12 +345,11 @@ table {
 }
 
 #footer-subview-container-two {
-	padding-top: 11px;
 }
 
 #footer-subview-container-two span {
 	display: inline-block;
-	padding-top: 30px;
+	padding-top: 10px;
 	color: #555;
 	font-size: 1.2em;
 }
@@ -697,11 +706,17 @@ table {
 
 .item-display-container {
 	position: absolute;
+	border: 1px solid red;
 	left: 50%;
+	width: 500px;
 	font-family: "Gotham-Light", sans-serif;
-	margin-left: -200px;
+	margin-left: -260px;
 	z-index: 10;
 	color: #fefefe;
+}
+
+.dynamic-top-measure {
+	top: 40%;
 }
 
 /* Spinner... */

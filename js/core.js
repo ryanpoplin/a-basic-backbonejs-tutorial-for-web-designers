@@ -12,15 +12,6 @@
 			rules: 'Rules: Lorem ipsum dolor... Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor.',
 			prizes: 'Prizes: Lorem ipsum dolor... Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor.'
 		},
-		{
-			hash: 'parkhop',
-			name: 'Park Hop',
-			info: 'Information: Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor.',
-			img: 'http://www.naportals.com/wp-content/uploads/2014/02/orange-thighed-frog-tree-green-nature-animals-wallpaper-1920x1080-857671.jpg',
-			link: 'https://www.google.com/parkhop',
-			rules: 'Rules: Lorem ipsum dolor...',
-			prizes: 'Prizes: Lorem ipsum dolor...'
-		}
 	];
 
 	var app;
@@ -57,14 +48,14 @@
 
 	var FooterDrawerModel = Backbone.Model.extend({
 		defaults: {
-			footerArrowImg: 'test-arrow.png',
-			logSignText: 'Log In / Sign Up',
+			footerArrowImg: 'arrow-footer.png',
+			logSignText: 'LOGIN / SIGN UP',
 			facebookBtnText: 'CONNECT WITH FACEBOOK',
 			orText: 'OR',
-			emailBtnText: 'SIGN IN WITH EMAIL',
+			emailBtnText: 'CREATE A NEW ACCOUNT',
 			noticeText: 'We will not post on your profile without your permission.',
-			signedInText: 'Already signed up?',
-			logInText: 'LOGIN HERE!'
+			signedInText: 'Already have an account?',
+			logInText: 'LOGIN HERE'
 		},
 		initialize: function() {
 		}
@@ -80,7 +71,8 @@
 			'click #facebook-sign-up-btn': 'facebookModalShow',
 			'click #email-sign-up-btn': 'emailModalShow',
 			'click #bi-log-in-modal': 'biLogInModalShow',
-			'click .modal-btn': 'closeModal'
+			'click .modal-btn': 'closeModal',
+			'click .overlay': 'closeModal'
 		},
 		footerAnimation: function() {
 			// FIGURE OUT THE MEDIA QUERY ISSUE WITH ANIMATIONS...
@@ -88,15 +80,15 @@
 			if (footerSubviewHeight === 80) {
 				$('#footer-button img').removeClass('box-rotate-two').addClass('box-rotate box-transition');
 				$('.footer-subview').stop().animate({
-					height: 200
+					height: 180
 				}).end();
 				$('#footer-button').stop().animate({
-					bottom: 154
+					bottom: 134
 				}).end();
 				$('.footer-subview h4').hide();
 				$('#footer-subview-container-one, #footer-subview-container-two').show();
 				return true; 
-			} else if (footerSubviewHeight === 200) {
+			} else if (footerSubviewHeight === 180) {
 				$('#footer-button img').addClass('box-rotate-two box-transition');
 				$('.footer-subview').stop().animate({
 					height: 80
@@ -165,11 +157,11 @@
 			socialTwitterImg: 'social-media-icons/twit-icon.png',
 			socialFacebookLink: 'https://www.facebook.com',
 			socialFacebookImg: 'social-media-icons/fbook-icon.png',
-			logoImg: 'q-logo.png',
+			logoImg: 'default-logo.png',
 			primaryHeading: 'Explore More',
-			primarySubHeading: 'Find Local Quests in Your Area!',
+			primarySubHeading: ' Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor.',
 			questBtnLink: '/#load-quests',
-			questBtnText: 'START A QUEST!'
+			questBtnText: 'START A QUEST'
 		},
 		initialize: function() {
 		}

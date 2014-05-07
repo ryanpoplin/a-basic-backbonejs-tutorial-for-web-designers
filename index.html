@@ -10,6 +10,9 @@
         <script src="bower_components/jquery/dist/jquery.min.js"></script>
         <script src="bower_components/underscore/underscore.js"></script>
         <script src="bower_components/backbone/backbone.js"></script>
+        <!-- ADD PARSEBONE BOILERPLATE STUFF... -->
+        <!-- ADD PARSE SDK... -->
+        <!-- ADD PARSE CLOUD CODE SETUP... -->
     </head>
     <body>
         
@@ -21,7 +24,7 @@
         
         <script type="text/template" id="default-template">
             
-            <div class="default-full-background-image view-container text-align-center">
+            <div class="default-full-background-image view-container">
                 
                 <div id="social-media-icon-container">
                     
@@ -31,17 +34,21 @@
                 
                 </div>
                 
-                <img id="default-logo" src="<%= logoImg %>" alt="Questalot">
+                <div style="text-align: center; width: 650px; position: absolute; left: 50%; top: 20%; margin-left: -320px;">
+                    
+                    <img style="margin: 0 auto;" id="default-logo" style="" src="default-logo.png" alt="Questalot">
 
-                <hgroup>    
+                    <hgroup>    
                     
-                    <h1 id="primary-heading"><%= primaryHeading %></h1>
+                        <h1 id="primary-heading"><%= primaryHeading %></h1>
                     
-                    <h2 style="color: #fefefe;" id="primary-sub-heading"><%= primarySubHeading %><h2>
+                        <h2 style="color: #fefefe;" id="primary-sub-heading"><%= primarySubHeading %><h2>
                 
-                </hgroup>
+                    </hgroup>
                 
                 <a href="<%= questBtnLink %>" id="quest-button"><%= questBtnText %></a>
+                
+                </div>
                 
                 <footer class="footer-subview text-align-center">
                          
@@ -92,21 +99,21 @@
             
             </div>
             
-            <h4><%= logSignText %></h4>
+            <h4 style="font-size: 1em;"><%= logSignText %></h4>
             
             <div id="footer-subview-container-one" class="display-none">
                 
-                <button id="facebook-sign-up-btn" class="blue-background-color"><%= facebookBtnText %></button>
+                <!--<button id="facebook-sign-up-btn" class="blue-background-color"><%= facebookBtnText %></button>
             
                 <div id="footer-or">
                     <span class=""><%= orText %></span>
-                </div>
+                </div>-->
                 
-                <button id="email-sign-up-btn" class="white-background-color"><%= emailBtnText %></button>
+                <button style="font-family: 'Gotham-Bolder', sans-serif;" id="email-sign-up-btn" class="white-background-color"><%= emailBtnText %></button>
                 
                 <br>
 
-                <span class="notice-msg"><%= noticeText %></span>
+                <!--<span class="notice-msg"><%= noticeText %></span>-->
 
             </div>
 
@@ -114,7 +121,7 @@
                 
                 <span><%= signedInText %></span>
                 
-                <span id="bi-log-in-modal" class="teal-color-test"><%= logInText %></span>
+                <span id="bi-log-in-modal" style="font-family: 'Gotham-Bolder', sans-serif; cursor: pointer; color: #026b5d;"><%= logInText %></span>
             
             </div>
         
@@ -207,8 +214,8 @@
             <!--<header id="quest-list-view-header">
                 <div class="mini-logo"><img src="mini-logo.png" alt="Logo"></div>
             </header>-->
-            <div class="view-container extra-padding" style="background: url(<%= attributes.img %>) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; background-color: #e0e0e0;">
-                <div class="item-display-container">
+            <div class="view-container" style="background: url(<%= attributes.img %>) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; background-color: #e0e0e0;">
+                <div class="item-display-container dynamic-top-measure">
                     <p class="text-align-center">Congratulations, you just registered for</p>
                     <h1 style="font-size: 6em; padding: 20px 0 40px 0;" class="text-align-center"><%= attributes.name %></h1>
                     <h2 style="font-size: 1.5em;" class="text-align-center">Your Quest has just begun!</h2>
