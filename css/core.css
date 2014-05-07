@@ -30,7 +30,7 @@ footer, header, hgroup, menu, nav, section {
 body {
 	position: relative;
 	line-height: 1;
-	background-color: #e0e0e0;
+	background: url('../neo-back.png');
 }
 ol, ul {
 	list-style: none;
@@ -62,11 +62,6 @@ table {
 	src: url(../gotham-lighter.otf);
 }
 
-/*@font-face {
-	font-family: ;
-	src: url(../);
-}*/
-
 @font-face {
 	font-family: 'Martell';
 	src: url(../reg.otf);	
@@ -83,7 +78,6 @@ table {
 }
 
 #spa {
-	/*position: relative;*/
 }
 
 /* UTILITY CLASSES... */
@@ -172,7 +166,7 @@ table {
 	text-decoration: none;
 }
 
-@media screen and (max-width:768px) {
+/*@media screen and (max-width:768px) {
   
 	#default-logo {
   		height: 200px;
@@ -222,7 +216,7 @@ table {
 		padding: 0.5em 0.3em 0.5em 0.3em;
   	}
 
-}
+}*/
 
 /* FOOTER STYLES... */
 
@@ -292,7 +286,6 @@ table {
 	left: 50%;
 	margin-left: -101px;
 	font-size: 0.8em;
-	/*margin-top: 2.3em;*/
 }
 
 .footer-subview button {
@@ -501,36 +494,30 @@ table {
 }
 
 .modal {
-    /* some styles to position the modal at the center of the page */
     position: fixed;
+    text-align: center;
     top: 50%;
     left: 50%;
     width: 400px;
-	    height: 500px;
+	height: 500px;
     margin-left: -202px;
     margin-top: -240px;
     background-color: #ccc;
-    text-align: center;
-    /* needed styles for the overlay */
-    z-index: 10; /* keep on top of other elements on the page */
+    z-index: 10;
     outline: 9999px solid rgba(0,0,0,0.5);
 }
 
 .modal-header {
-	padding-top: 15px;
-	height: 100px;
+	padding: 20px 0 20px 20px;
 	width: 100%;
 	color: #fefefe;
 	background-color: #aaa;
 }
 
-.modal-btn {
-	color: #fefefe;
+.modal-header span {
 }
 
 .modal-heading {
-	font-size: 1.5em;
-	padding: 30px 0 10px 0;
 }
 
 .modal input[type=text], input[type=password] {
@@ -551,7 +538,6 @@ table {
 
 .quest-list-container {
 	width: 1200px;
-	margin: 0 auto;
 	/*padding: 20px 0 20px 0;*/
 }
 
@@ -587,13 +573,19 @@ table {
 	background-color: #e0e0e0;
 }
 
+.quest-core-container {
+	width: 1200px;
+	position: absolute;
+	left: 50%;
+	top: 23%;
+	margin-left: -595px;
+}
+
 #quest-list-view-heading {
 	font-size: 3em;
 	color: #10b5b8;
 	text-align: center;
-	margin-bottom: 17px;
 	font-family: 'Martell', sans-serif;
-	/*margin-top: 75px;*/
 }
 
 .extra-margin {
@@ -797,7 +789,6 @@ table {
 #slider div.mc-caption a:hover {
 	color:#DA0;
 }
-
 
 /* ------ built-in navigation bullets wrapper ------*/
 /* Note: check themes\2\js-image-slider.css to see how to hide nav bullets */
