@@ -11,7 +11,7 @@
 			link: 'https://www.google.com/parkhop',
 			rules: 'Rules: Lorem ipsum dolor... Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor.',
 			prizes: 'Prizes: Lorem ipsum dolor... Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor.'
-		}/*,
+		},
 		{
 			hash: 'parkhop',
 			name: 'Park Hop',
@@ -20,7 +20,7 @@
 			link: 'https://www.google.com/parkhop',
 			rules: 'Rules: Lorem ipsum dolor...',
 			prizes: 'Prizes: Lorem ipsum dolor...'
-		}*/
+		}
 	];
 
 	var app;
