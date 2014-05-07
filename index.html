@@ -10,6 +10,8 @@
         <script src="bower_components/jquery/dist/jquery.min.js"></script>
         <script src="bower_components/underscore/underscore.js"></script>
         <script src="bower_components/backbone/backbone.js"></script>
+        <script src="lean-slider/lean-slider.js"></script>
+        <link rel="stylesheet" href="lean-slider/lean-slider.css">
     </head>
     <body>
         
@@ -170,20 +172,33 @@
 
         <script id="quests-list-view-template" type="text/template">
 
-            <!-- -->
-
+        <div class="quests-list-background extra-margin">
+           
             <header id="quest-list-view-header">
+                
                 <div class="mini-logo"><img src="mini-logo.png" alt="Logo"></div>
+            
             </header>
+
             <h1 id="quest-list-view-heading">Register for a Quest</h1>
+            
             <div class="dashed-line-div"></div>
-            <div class="quest-list-container">   
-                <div class="quests-list"></div>
+            
+            <div class="quest-list-container" style="margin-bottom: 80px;">   
+            
+                <div class="quests-list">
+                
+                </div>
+            
                 <!--<div class="library-box"></div>-->
+            
             </div>
+            
             <footer class="footer-subview text-align-center">
                 
             </footer>
+        
+        </div>
 
         </script>
 
@@ -213,19 +228,22 @@
         </script>
 
         <script id="quest-item-view-template" type="text/template">
+            
+            <div class="border-listing">  
+            <!--<section class="section">-->
+                <div class="slider-wrapper">
+                <h1 class="quest-heading"><%= name %></h1>
+                <a class="quest-register-btn" href="#/load-quest/<%= hash %>">Register for <%= name %></a>
+            <!--</section>-->
+            <!--<aside class="aside">-->
+                <p class="quest-info"><%= info %></p>
+                <p class="quest-info"><a href=""><%= link %></a></p>
+                <p class="quest-info"><%= rules %></p>
+                <p class="quest-info"><%= prizes %></p>
+            <!--</aside>-->
+            </div>
 
-            <div style="margin-bottom: 3em; background: url(<%= img %>) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; background-color: #e0e0e0; height: 200px;" class="quests-list-slider-img">
-            </div>
-            <h1 class="quest-heading"><%= name %></h1>
-            <div class="quest-stats-container-slider">
-                
-            </div>
-            <p class="quest-info"><%= info %></p>
-            <p class="quest-info"><a href=""><%= link %></a></p>
-            <p class="quest-info"><%= rules %></p>
-            <p class="quest-info"><%= prizes %></p>
             <!--<span class="add-to-library">Add to Quest Library</span>-->
-            <a class="quest-register-btn" href="#/load-quest/<%= hash %>">Register for <%= name %></a>
 
         </script>
 

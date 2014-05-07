@@ -30,6 +30,7 @@ footer, header, hgroup, menu, nav, section {
 body {
 	position: relative;
 	line-height: 1;
+	background-color: #e0e0e0;
 }
 ol, ul {
 	list-style: none;
@@ -541,6 +542,7 @@ table {
 .quest-list-container {
 	width: 1200px;
 	margin: 0 auto;
+	/*padding: 20px 0 20px 0;*/
 }
 
 /*.header-back-btn {
@@ -575,19 +577,32 @@ table {
 }
 
 #quest-list-view-heading {
-	font-size: 1.5em;
+	font-size: 3em;
 	color: #10b5b8;
 	text-align: center;
-	margin-top: 75px;
+	margin-bottom: 17px;
+	font-family: 'Martell', sans-serif;
+	/*margin-top: 75px;*/
+}
+
+.extra-margin {
+	padding-top: 85px;
+	padding-bottom: 85px;
 }
 
 .dashed-line-div {
-	border: 1px dashed #c0c0c0;
-	margin: 15px 10px 15px 10px;
+	width: 1200px;
+	border: 1px dashed #888;
+	margin: 10px auto 10px auto;
+}
+
+.border-listing {
+	margin: 40px 0 40px 0;
+	border: 3px solid #a0a0a0;
 }
 
 .quests-list {
-	margin: 15px 6px 15px 6px;
+	padding: 15px 6px 15px 6px;
 }
 
 .quests-list-slider-img {
@@ -596,28 +611,65 @@ table {
 	background-color: #e0e0e0;
 }
 
-.library-box {
+/*.library-box {
 	margin: 15px 10px 15px 10px;
+}*/
+
+.section {
+	height: 540px;
 }
 
-.quests-list div {
-	border: 1px solid #e0e0e0;
-	margin: 10px 5px 10px 5px;
+.single-item {
+	width: 300px;
+	height: 300px;
 }
+
+.aside {
+	height: 540px;
+}
+
+.quests-list-background {
+	height: 100vh;
+	overflow: visible;
+}
+
+@media screen and (min-width:600px) {
+  section {
+  	height: 400px;
+    float: left;
+    width: 50%;
+    text-align: center;
+  }
+  aside {
+  	height: 400px;
+    margin-left: 50%;
+  }
+}
+
+/*@media screen and (max-width:599px) {
+  aside  {
+    display: inline;
+  }
+}*/
+
+/*.quests-list div {
+	border: 3px solid #b0b0b0;
+	background-color: #fafafa;
+	margin: 20px 5px 70px 5px;
+}*/
 
 .quest-heading {
-	margin-top: -38px;
 	margin-left: 5px;
 	font-size: 1.6em;
 	color: #10b5b8;
 }
 
-.quest-stats-container-slider {
+/*.quest-stats-container-slider {
 	height: 40px;
 	background-color: #10b5b8;
 	color: #fefefe;
 	margin: 5px 0 5px 0;
-}
+}*/
 
 .quest-info {
 	padding: 0 8px 12px 8px;
@@ -632,7 +684,6 @@ table {
 	width: 200px;
 	text-decoration: none;
 	display: block;
-	margin: 5px auto 15px auto;
 	padding: 1.5em;
 	background-color: #10b5b8;
 	color: #fefefe;

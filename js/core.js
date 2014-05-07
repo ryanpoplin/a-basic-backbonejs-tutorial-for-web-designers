@@ -44,11 +44,11 @@
 		defaultRoute: function() {
 			var defaultView = new DefaultView;
 			defaultView.render();
-			$('#spa').css('margin-bottom', '0');
+			// $('#spa').css('margin-bottom', '0');
 		},
 		loadQuestsRoute: function() {
 			this.questsListView.coreRender();
-			$('#spa').css('margin-bottom', '120px');
+			// $('#spa').css('margin-bottom', '120px');
 		},
 		loadQuestRoute: function(questHash) {
 			this.questDisplayView.loadQuest(questHash);
@@ -294,6 +294,7 @@
 	});
 
 	$(function() {
+		$('#slider').leanSlider();
 		app = new Router;
 		Backbone.history.start();
 	});
