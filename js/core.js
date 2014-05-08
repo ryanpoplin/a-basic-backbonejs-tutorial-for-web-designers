@@ -35,11 +35,10 @@
 		defaultRoute: function() {
 			var defaultView = new DefaultView;
 			defaultView.render();
-			// $('#spa').css('margin-bottom', '0');
+			$('#quest-button').fadeIn(1500).css('display', 'block');
 		},
 		loadQuestsRoute: function() {
 			this.questsListView.coreRender();
-			// $('#spa').css('margin-bottom', '120px');
 		},
 		loadQuestRoute: function(questHash) {
 			this.questDisplayView.loadQuest(questHash);
@@ -259,35 +258,61 @@
 	});
 
 	var QuestDisplayView = Backbone.View.extend({
+		
 		initialize: function() {
-			console.log('QuestDisplayView init...');
+			
 			this.model = new (Backbone.Model.extend({}));
+			
 			this.model.on('change', this.render, this);
+			
 			this.on('spinner', this.showSpinner, this);
+		
 		},
+		
 		template: _.template($('#quest-display-view-template').html()),
+		
 		templateSpinner: _.template($('#template-spinner').html()),
+		
 		loadQuest: function(questHash) {
+		
 			this.trigger('spinner');
+		
 			var view = this;
+		
 			setTimeout(function() {
+		
 				view.model.set(view.collection.where({
+		
 					hash: questHash
+		
 				})[0].attributes);
+		
 			}, 1000);
+		
 		},
+		
 		render: function(questName) {
+		
 			var questTemplate = this.template(this.model);
+		
 			$('#spa').html(questTemplate);
+		
 		},
+		
 		showSpinner: function() {
+		
 			$('#spa').html(this.templateSpinner);
+		
 		}
+	
 	});
 
 	$(function() {
+
 		app = new Router;
+		
 		Backbone.history.start();
+	
 	});
 
 }(jQuery));
