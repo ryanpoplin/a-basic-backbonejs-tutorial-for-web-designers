@@ -111,6 +111,8 @@ table {
 
 /* DEFAULT VIEW STYLES... */
 
+/* DESKTOP RESOLUTION... */
+
 .view-container {
 	width: 100%;
 	height: 100vh;
@@ -136,7 +138,7 @@ table {
 #social-media-icon-container {
 	position: absolute;
 	right: 0;
-	padding: 48px 48px 0 0;
+	padding: 38px 38px 0 0;
 	color: #fefefe;
 	font-size: .5em;
 }
@@ -147,20 +149,22 @@ table {
 }
 
 #default-logo {
+	height: 200px;
+	width: 200px;
 	margin: 3.5em auto 0 auto;
 }
 
 #primary-heading {
 	font-family: 'Martell', sans-serif;
-	padding: 0.4em 0 0.2em 0;
-	font-size: 6em; 
+	padding: 0.1em 0 0.2em 0;
+	font-size: 4.5em; 
 	color: #888888;
 }
 
 #primary-sub-heading {
 	color: #fefefe;
 	line-height: 18px;
-	padding: 0.3em 0 0.5em 0;
+	padding: 0.1em 0 0.5em 0;
 	font-size: 1em;
 	font-family: 'Gotham-Light';
 }
@@ -178,15 +182,16 @@ table {
 	text-decoration: none;
 }
 
-/* Complex Media Query Example... */
-@media screen and (min-width: 1234px) and (max-height: 1000px) {
+/* LAPTOP RESOLUTION... */
+
+@media screen and (min-width: 800px) and (max-height: 1000px) {
 
 	#default-styles-container {
 		text-align: center; 
 		width: 650px; 
 		position: absolute; 
 		left: 50%; 
-		top: 3%; 
+		top: 6%; 
 		margin-left: -320px;
 	}
 
@@ -210,7 +215,7 @@ table {
 	#primary-heading {
 		font-family: 'Martell', sans-serif;
 		padding: 0.4em 0 0.2em 0;
-		font-size: 4em; 
+		font-size: 6em; 
 		color: #888888;
 	}
 
@@ -218,7 +223,7 @@ table {
 		color: #fefefe;
 		line-height: 18px;
 		padding: 0.3em 0 0.5em 0;
-		font-size: 0.8em;
+		font-size: 0.9em;
 		font-family: 'Gotham-Light';
 	}
 
@@ -237,8 +242,27 @@ table {
 
 }
 
-/*@media screen and (max-width:768px) {
+/* TABLET RESOLUTION... */
+
+@media screen and (max-width:800px) {
   
+	#default-styles-container {
+		text-align: center; 
+		width: 500px; 
+		position: absolute; 
+		left: 50%; 
+		top: 10%; 
+		margin-left: -255px;
+	}
+
+	#social-media-icon-container {
+		position: absolute;
+		right: 0;
+		padding: 28px 28px 0 0;
+		color: #fefefe;
+		font-size: .5em;
+	}
+
 	#default-logo {
   		height: 200px;
   		width: 200px;
@@ -246,48 +270,68 @@ table {
 
   	#primary-heading {
   		padding: 0.3em 0 0.3em 0;
-		font-size: 3.2em; 
+		font-size: 4.5em; 
   	}	
 
   	#primary-sub-heading {
   		padding: 0.8em 0 0.8em 0;
-		font-size: 0.7em;
+		font-size: 0.8em;
   	}
 
   	#quest-button {
   		margin: 1em auto;
-		width: 7em;
+		width: 9em;
 		font-size: 15pt;
 		padding: 0.7em 0.3em 0.7em 0.3em;
   	}
 
 }
 
+/* PHONE RESOLUTION... */
+
 @media screen and (max-width:500px) {
 
+	#default-styles-container {
+		text-align: center; 
+		width: 230px; 
+		position: absolute; 
+		left: 50%; 
+		top: 10%; 
+		margin-left: -115px;
+	}
+
+	#social-media-icon-container {
+		position: absolute;
+		right: 0;
+		padding: 10px 10px 0 0;
+		color: #fefefe;
+		font-size: .5em;
+	}
+
 	#default-logo {
-  		height: 150px;
-  		width: 150px;
+  		height: 100px;
+  		width: 100px;
   	}
 
   	#primary-heading {
   		padding: 0.2em 0 0.2em 0;
-		font-size: 1.8em; 
+		font-size: 2em; 
   	}
 
   	#primary-sub-heading {
+  		line-height: 12px;
   		padding: 0 0 0.5em 0;
-		font-size: 0.5em;
+		font-size: 0.4em;
   	}	
 
   	#quest-button {
   		margin: 1em auto;
-		width: 7em;
+		width: 9em;
 		font-size: 13pt;
 		padding: 0.5em 0.3em 0.5em 0.3em;
   	}
 
-}*/
+}
 
 /* FOOTER STYLES... */
 
@@ -356,7 +400,7 @@ table {
 	width: 200px;
 	left: 50%;
 	margin-left: -101px;
-	font-size: 0.8em;
+	font-size: 0.4em;
 }
 
 .footer-subview button {
@@ -463,16 +507,34 @@ table {
 
 @media screen and (max-width:500px) {
   
-	/*.footer-subview {
+	.footer-subview {
+		z-index: 10;
+		font-family: 'Gotham-Light', sans-serif;
+		overflow: visible !important;
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+		font-size: 1em;
 		height: 55px;
+		background-color: #a0a0a0;
 	}
 
 	#footer-button {
+		display: block;
 		line-height: 70px;
 		font-size: 1.8em;
-		height: 55px;
-		width: 55px;
-		bottom: 15px;
+		font-weight: bolder;
+		text-align: center;
+		cursor: pointer;
+		border-radius: 100px;
+		height: 70px;
+		width: 70px;
+		background-color: #a0a0a0;
+		position: absolute;
+		bottom: 0.4em;
+		left: 0;
+		right: 0;
+		margin: 0 auto 0 auto;
 	}
 
 	#footer-button img {
@@ -480,75 +542,79 @@ table {
 	}
 
 	.footer-subview h4 {
-		font-size: 0.9em;
-		bottom: 7px;
-	}
-
-	#footer-or {
-		font-size: 20px;
+		font-family: 'Gotham-Light', sans-serif;
+		position: fixed;
+		z-index: 10;
+		bottom: 17px;
 		color: #ffffff;
-		margin-top: 0.1em;
-		margin-left: 0.6em;
-		margin-right: 0.6em;
-		display: block;
+		width: 200px;
+		left: 50%;
+		margin-left: -101px;
+		font-size: 0.1em;
 	}
 
-	.white-background-color {
-		background-color: #ffffff;
-	}
-
-	.blue-background-color {
-		background-color: #3b5598;
+	.footer-subview button {
+		cursor: pointer;
+		font-size: 0.8em;
+		border: 1px solid #e0e0e0;
+		font-family: 'Gotham-Light', sans-serif;
+		height: 30px;
+		border-radius: 0;
+		width: 250px;
+		color: #a0a0a0;
+		height: 50px;
+		margin: 0.5em auto 0.5em auto;
 	}
 
 	#footer-subview-container-one {
-		padding-top: 5px;
-		position: fixed;
-		z-index: 10;
-		border: 1px solid blue;
-		margin-top: 26px;
-		left: 50%;
-		margin-left: -120px;
-	}
-
-	#foter-subview-container-one button {
-		cursor: pointer;
-		font-size: 0.1em;
-		color: #fefefe;
-		font-family: 'Gotham-Light', sans-serif;
-		height: 15px;
-		border-radius: 0;
-		width: 100px;
-		height: 50px;
-		margin: 0 auto 0 auto;
-	}
-
-
-	#footer-subview-container-two {
-		margin: 0 auto;
-		display: none;
-	}
-
-	#footer-subview-container-two span {
-		padding-top: 2px;
-		font-size: 0.7em;
-		display: none;
-		margin: 0 auto;
-	}
-
-	#footer-subview-container-two a {
-		color: #10a5e8;
+		padding-top: 34px;
 	}
 
 	.notice-msg {
 		position: fixed;
 		left: 50%;
-		margin-left: -372px;
+		margin-left: -361px;
 		color: #fefefe;
 		font-size: 0.7em;
 		width: 330px;
-		display: none;
-	}*/
+	}
+
+	/* The 'or' in the footer... */
+	#footer-or {
+		font-size: 1.5em;
+		color: #555;
+		margin-top: 1em;
+		margin-left: 0.9em;
+		margin-right: 0.9em;
+		display: inline-block;
+	}
+
+	.white-background-color {
+		background-color: #ffffff;
+		color: #555;
+		border: 1px solid #555;
+	}
+
+	.blue-background-color {
+		color: #fefefe;
+		background-color: #3b5598;
+		border: 1px solid #3b5598;
+	}	
+
+	#footer-subview-container-two {
+
+	}
+
+	#footer-subview-container-two span {
+		display: inline-block;
+		padding-top: 10px;
+		color: #555;
+		font-size: 0.8em;
+	}
+
+	#footer-subview-container-two a {
+		color: #10a5e8;
+	}
 
 }
 

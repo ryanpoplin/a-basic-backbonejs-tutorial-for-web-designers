@@ -74,7 +74,6 @@
 			'click .overlay': 'closeModal'
 		},
 		footerAnimation: function() {
-			// FIGURE OUT THE MEDIA QUERY ISSUE WITH ANIMATIONS...
 			var footerSubviewHeight = $('.footer-subview').outerHeight();
 			if (footerSubviewHeight === 80) {
 				$('#footer-button img').removeClass('box-rotate-two').addClass('box-rotate box-transition');
@@ -95,31 +94,32 @@
 				$('#footer-button').stop().animate({
 					bottom: 30
 				}).end();
-				$('.footer-subview h4').fadeIn(300);
+				$('.footer-subview h4').fadeIn(1000);
 				$('#footer-subview-container-one, #footer-subview-container-two').hide();
 				return true;
-			} /*else if (footerSubviewHeight === 55) {
-				// $('#footer-button').css('transform', 'rotate(180deg) scaleX(-1)');
+			} else if (footerSubviewHeight === 55) {
+				$('#footer-button img').removeClass('box-rotate-two').addClass('box-rotate box-transition');
 				$('.footer-subview').stop().animate({
-					height: 240
+					height: 140
 				}).end();
 				$('#footer-button').stop().animate({
-					bottom: 200
+					bottom: 100
 				}).end();
 				$('.footer-subview h4').hide();
 				$('#footer-subview-container-one, #footer-subview-container-two').show();
 				return true;
-			} else if (footerSubviewHeight === 240) {
+			} else if (footerSubviewHeight === 140) {
+				$('#footer-button img').addClass('box-rotate-two box-transition');
 				$('.footer-subview').stop().animate({
 					height: 55
 				}).end();
 				$('#footer-button').stop().animate({
-					bottom: 15
+					bottom: 8
 				}).end();
-				$('.footer-subview h4').fadeIn(300);
+				$('.footer-subview h4').fadeIn(500);
 				$('#footer-subview-container-one, #footer-subview-container-two').hide();
 				return true;
-			}*/
+			}
 			return false; 
 		},
 		facebookModalShow: function() {
