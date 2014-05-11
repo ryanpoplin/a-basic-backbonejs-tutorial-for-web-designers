@@ -1,12 +1,21 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Questalot...</title>
+        
+        <title>Questalot | ...</title>
+        
         <meta name="description" content="Questalot">
+        
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/core.css">
+        <link rel="stylesheet" href="css/default.view.css">
+        <link rel="stylesheet" href="css/footer.css">
+        <link rel="stylesheet" href="css/modal.css">
+        <link rel="stylesheet" href="css/quest.list.view.css">
+        <link rel="stylesheet" href="css/quest.display.view.css">
         <script src="bower_components/jquery/dist/jquery.min.js"></script>
         <script src="bower_components/underscore/underscore.js"></script>
         <script src="bower_components/backbone/backbone.js"></script>
@@ -73,25 +82,43 @@
             </div>-->
             
             <div id="email-modal" class="modal display-none">
+                
                 <header class="modal-header">
+                
                     <img src="back-arrow.png" alt="">
+                
                     <span style="padding-left: 5px; text-align: left; font-size: 1.4em;">Back<span>
+                
                 </header>
+                
                 <h2 style="text-align: center;" class="modal-heading">Sign Up with Email</h2>
+                
                 <input placeholder="Name" type="text">
+                
                 <input placeholder="Email" type="text">
+                
                 <input placeholder="Password" type="password">
+                
                 <button style="margin: 0 auto;" class="submit-modal-btn">Sign Up</button>
+           
             </div>
             
             <div id="bi-modal" class="modal display-none">
+           
                 <header class="modal-header">
+           
                     <button class="modal-btn">Back</button>
+           
                 </header>
+           
                 <h2 class="modal-heading">Log In with Facebook or Email</h2>
+           
                 <input placeholder="Email" type="text">
+           
                 <input placeholder="Password" type="password">
+           
                 <button class="submit-modal-btn">Log In</button>
+           
             </div>
 
             <div id="footer-button">
@@ -127,55 +154,7 @@
             </div>
         
         </script>
-
-        <!-- Modal -->
-        <!--
-
-        - top bar color: #212121;
-        - background-color: #616b6e 0.95;
-        - box-shadow:
-        - spread/size: 20...
-        - blur: 46...
-        - back-btn: color: #fff; Gotham reg 14pt...
-        - modal-heading: martell reg 29pt...
-        - same as footer 'OR' color: #fff;
-        - forget-pwd: 12pt gotham color: #fefefe text-decoration: underline...
-        - login-btn: 18pt Gotham reg color: #fff;
-        - Placeholders: color: #888;
-
-        -->
-
-        <!--
-
-        Sign Up Please Modal...
-
-        - Same footer styles...
-        - Heading: 58pt...
-        - link color: #fefefe and Top bar color...
-
-        -->
-
-        <!-- Quest list footer view -->
-
-        <!-- 
-    
-        - Quest list view background-color: #f7f5f5;
-        - Quest model background-color: #fff;
-        - Border: #aab3b6;
-        #232323;
-
-        -->
-
-        <!-- 
-
-        Registration view...
-
-        - congrats: 14pt gotham light #fff;
-        - name: Gotham Italic 16pt #88b3b6;
-        - Heading: Martell 18pt 
-    
-        --> 
-
+        
         <script id="quests-list-view-template" type="text/template">
 
         <div class="quests-list-background extra-margin">
@@ -216,16 +195,25 @@
 
             <div class="overlay" style="display: block;"></div>
                 
-            <!--<header id="quest-list-view-header">
-                <div class="mini-logo"><img src="mini-logo.png" alt="Logo"></div>
-            </header>-->
-            <div class="view-container" style="background: url(<%= attributes.img %>) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; background-color: #e0e0e0;">
-                <div class="item-display-container dynamic-top-measure">
-                    <p class="text-align-center">Congratulations, you just registered for</p>
-                    <h1 style="font-size: 6em; padding: 20px 0 40px 0;" class="text-align-center"><%= attributes.name %></h1>
-                    <h2 style="font-size: 1.5em;" class="text-align-center">Your Quest has just begun!</h2>
+                <!--<header id="quest-list-view-header">
+                
+                    <div class="mini-logo"><img src="mini-logo.png" alt="Logo"></div>
+                
+                </header>-->
+                
+                <div class="view-container quest-display-styles" style="background: url(<%= attributes.img %>) no-repeat center center;">
+                
+                    <div class="item-display-container dynamic-top-measure">
+                
+                        <p class="text-align-center">Congratulations, you just registered for</p>
+                
+                        <h1 style="font-size: 6em; padding: 20px 0 40px 0;" class="text-align-center"><%= attributes.name %></h1>
+                
+                        <h2 style="font-size: 1.5em;" class="text-align-center">Your Quest has just begun!</h2>
+                    </div>
+                
                 </div>
-            </div>
+            
             </div>
 
         </script>
@@ -245,16 +233,27 @@
             <section class="section">
 
                     <div id="sliderFrame">
+                      
                         <div id="slider">
+                      
                             <a href="http://www.menucool.com/javascript-image-slider" target="_blank">
-                            <img src="image-slider-1.jpg" alt="">
+                      
+                                <img src="image-slider-1.jpg" alt="">
+                      
                             </a>
+                      
                             <img src="image-slider-1.jpg" alt="">
+                      
                             <img src="image-slider-1.jpg" alt="">
+                      
                         </div>
+                        
                         <div id="htmlcaption" style="display: none;">
+                        
                             <em>HTML</em> caption. Link to <a href="http://www.google.com/">Google</a>.
+                        
                         </div>
+                    
                     </div>
                 
                 <a class="quest-register-btn" href="#/load-quest/<%= hash %>">Register for <%= name %></a>
@@ -264,9 +263,13 @@
             <aside class="aside">
                 
                 <h1 class="quest-heading"><%= name %></h1>
+               
                 <p class="quest-info"><%= info %></p>
+               
                 <p class="quest-info"><a href=""><%= link %></a></p>
+               
                 <p class="quest-info"><%= rules %></p>
+               
                 <p class="quest-info"><%= prizes %></p>
            
             </aside>
@@ -278,8 +281,8 @@
         </script>
 
         <script src="js/slider.js"></script>
-        <script src="js/core.js"></script>
 
+        <script src="js/core.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <!--<script>
@@ -290,6 +293,8 @@
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
             ga('create','UA-XXXXX-X');ga('send','pageview');
         </script>-->
+
     </body>
+
 </html>
 

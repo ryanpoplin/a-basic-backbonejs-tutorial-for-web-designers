@@ -1,0 +1,188 @@
+/* ALL MOBILE IMAGES NEED TO BE SMALLER... */
+
+.view-container {
+	width: 100%;
+	height: 100vh;
+}
+
+#default-styles-container {
+	text-align: center; 
+	width: 650px; 
+	position: absolute; 
+	left: 50%; 
+	top: 20%; 
+	margin-left: -320px;
+}
+
+.default-full-background-image {
+	background: url(../background.png) no-repeat center center fixed; 
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+}
+
+#social-media-icon-container {
+	position: absolute;
+	right: 0;
+	padding: 28px 38px 0 0;
+}
+
+#social-media-icon-container img {
+	padding: 5px;
+	display: inline;
+}
+
+#default-logo {
+	height: 200px;
+	width: 200px;
+	margin: 3.5em auto 0 auto;
+}
+
+#primary-heading {
+	font-family: 'Martell', sans-serif;
+	padding: 0.1em 0 0.2em 0;
+	font-size: 4.5em; 
+	color: #888888;
+}
+
+#primary-sub-heading {
+	color: #fefefe;
+	line-height: 18px;
+	padding: 0.1em 0 0.5em 0;
+	font-size: 1em;
+	font-family: 'Gotham-Light';
+}
+
+#quest-button {
+	text-align: center;
+	display: none;
+	margin: 1.1em auto 1.2em auto;
+	width: 13em;
+	font-size: 22pt;
+	padding: 0.6em 0.8em 0.6em 0.8em;
+	font-family: 'Gotham-Bolder', sans-serif;
+	background-color: #026b5d;
+	color: #ffffff;
+	text-decoration: none;
+}
+
+@media screen and (min-width: 800px) and (max-height: 1000px) {
+
+	#default-styles-container {
+		width: 650px; 
+		top: 6%; 
+		margin-left: -320px;
+	}
+
+	#social-media-icon-container {
+		padding: 28px 38px 0 0;
+	}
+
+	#social-media-icon-container img {
+		padding: 4px;
+	}
+
+	#default-logo {
+		height: 185px;
+		width: 185px;
+	}
+
+	#primary-heading {
+		padding: 0.4em 0 0.2em 0;
+		font-size: 5em; 
+	}
+
+	#primary-sub-heading {
+		line-height: 18px;
+		padding: 0.3em 0 0.5em 0;
+		font-size: 0.9em;
+	}
+
+	#quest-button {
+		margin: 1.1em auto 1.2em auto;
+		width: 13em;
+		font-size: 18pt;
+		padding: 0.5em 0.7em 0.5em 0.7em;
+		background-color: #026b5d;
+	}
+
+}
+
+@media screen and (max-width:800px) {
+  
+	#default-styles-container {
+		width: 500px; 
+		position: absolute; 
+		left: 50%; 
+		top: 10%; 
+		margin-left: -255px;
+	}
+
+	#social-media-icon-container {
+		padding: 18px 18px 0 0;
+	}
+
+	#default-logo {
+  		height: 180px;
+  		width: 180px;
+  	}
+
+  	#primary-heading {
+  		padding: 0.3em 0 0.3em 0;
+		font-size: 3.5em; 
+  	}	
+
+  	#primary-sub-heading {
+  		padding: 0.8em 0 0.8em 0;
+		font-size: 0.7em;
+  	}
+
+  	#quest-button {
+  		margin: 1em auto;
+		width: 9em;
+		font-size: 15pt;
+		padding: 0.7em 0.3em 0.7em 0.3em;
+  	}
+
+}
+
+@media screen and (max-width:500px) {
+
+	#default-styles-container {
+		width: 230px; 
+		position: absolute; 
+		top: 10%; 
+		margin-left: -115px;
+	}
+
+	#social-media-icon-container {
+		position: absolute;
+		right: 0;
+		padding: 10px 10px 0 0;
+	}
+
+	#default-logo {
+  		height: 100px;
+  		width: 100px;
+  	}
+
+  	#primary-heading {
+  		padding: 0.2em 0 0.2em 0;
+		font-size: 2em; 
+  	}
+
+  	#primary-sub-heading {
+  		line-height: 12px;
+  		padding: 0 0 0.5em 0;
+		font-size: 0.4em;
+  	}	
+
+  	#quest-button {
+  		margin: 1em auto;
+		width: 9em;
+		font-size: 13pt;
+		padding: 0.5em 0.3em 0.5em 0.3em;
+  	}
+
+}
