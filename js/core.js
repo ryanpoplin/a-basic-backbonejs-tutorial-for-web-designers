@@ -2,11 +2,16 @@
 
 (function($) { 
 
+	// Connect this data to Parse.com with the help of Parsebone...
+
+	// Share data structure with Jake Smith...
+	
 	var questData = [
 		{
 			hash: 'parkhop',
 			name: 'Park Hop',
 			info: 'Information: Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor.',
+			sliderImgOne: '../park-hop.png',
 			img: 'http://www.naportals.com/wp-content/uploads/2014/02/orange-thighed-frog-tree-green-nature-animals-wallpaper-1920x1080-857671.jpg',
 			link: 'https://www.google.com/parkhop',
 			rules: 'Rules: Lorem ipsum dolor... Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor.',
@@ -516,6 +521,12 @@
 		app = new Router;
 		
 		Backbone.history.start();
+
+		// $('.slider-container').slick({
+	  	
+	  		// setting-name: setting-value
+		
+		// });
 	
 	});
 

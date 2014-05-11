@@ -18,8 +18,26 @@
         <link rel="stylesheet" href="css/default.view.css">
         <link rel="stylesheet" href="css/footer.css">
         <link rel="stylesheet" href="css/modal.css">
+        <link rel="alternate" href="slick/slick/slick.css">
         <link rel="stylesheet" href="css/quest.list.view.css">
         <link rel="stylesheet" href="css/quest.display.view.css">
+
+        <style>
+            
+            /* TEST STYLES... */
+            
+            .slider-container {
+                /*height: 350px;
+                width: 450px;*/
+                border: 1px solid #a0a0a0;
+            }
+
+            .main-content {
+                /*height: 350px;
+                width: 450px;*/
+            }
+
+        </style>
         <script src="bower_components/jquery/dist/jquery.min.js"></script>
         <script src="bower_components/underscore/underscore.js"></script>
         <script src="bower_components/backbone/backbone.js"></script>
@@ -188,9 +206,7 @@
                     <div class="quests-list">
                 
                     </div>
-            
-                    <!--<div class="library-box"></div>-->
-            
+                        
                 </div>
             
             </div>
@@ -200,6 +216,50 @@
             </footer>
         
         </div>
+
+        </script>
+
+        <!-- QUEST ITEM TEMPLATE... -->
+
+        <script id="quest-item-view-template" type="text/template">
+            
+            <div class="border-listing">  
+
+                <!--<div class="slider-container">
+                    
+                    <div class="main-content">...</div>
+                    
+                    <div class="main-content">...</div>
+                    
+                    <div class="main-content">...</div>
+                
+                </div>-->
+            
+            <section class="section">
+                
+                <div class="quests-list-slider-img">
+                    <img src="<%= sliderImgOne %>" alt="Quest Image..." />
+                </div>
+
+                <a class="quest-register-btn" href="#/load-quest/<%= hash %>">Register for <%= name %></a>
+
+            </section>
+
+            <aside class="aside">
+                
+                <h1 class="quest-heading"><%= name %></h1>
+               
+                <p class="quest-info"><%= info %></p>
+               
+                <p class="quest-info"><a href=""><%= link %></a></p>
+               
+                <p class="quest-info"><%= rules %></p>
+               
+                <p class="quest-info"><%= prizes %></p>
+           
+            </aside>
+           
+            </div>
 
         </script>
 
@@ -240,35 +300,7 @@
 
         </script>
 
-        <!-- QUEST ITEM TEMPLATE... -->
-
-        <script id="quest-item-view-template" type="text/template">
-            
-            <div class="border-listing">  
-            
-            <section class="section">
-                
-                <a class="quest-register-btn" href="#/load-quest/<%= hash %>">Register for <%= name %></a>
-
-            </section>
-
-            <aside class="aside">
-                
-                <h1 class="quest-heading"><%= name %></h1>
-               
-                <p class="quest-info"><%= info %></p>
-               
-                <p class="quest-info"><a href=""><%= link %></a></p>
-               
-                <p class="quest-info"><%= rules %></p>
-               
-                <p class="quest-info"><%= prizes %></p>
-           
-            </aside>
-           
-            </div>
-
-        </script>
+        <script src="slick/slick/slick.min.js"></script>
 
         <script src="js/core.js"></script>
 
