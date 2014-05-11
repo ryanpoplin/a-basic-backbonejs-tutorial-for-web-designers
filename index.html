@@ -1,7 +1,11 @@
 <!doctype html>
+
 <html class="no-js" lang="en">
+    
     <head>
+
         <meta charset="utf-8">
+        
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         
         <title>Questalot | ...</title>
@@ -19,9 +23,11 @@
         <script src="bower_components/jquery/dist/jquery.min.js"></script>
         <script src="bower_components/underscore/underscore.js"></script>
         <script src="bower_components/backbone/backbone.js"></script>
+        
         <!-- ADD PARSEBONE BOILERPLATE STUFF... -->
         <!-- ADD PARSE SDK... -->
         <!-- ADD PARSE CLOUD CODE SETUP... -->
+    
     </head>
     <body>
         
@@ -30,7 +36,9 @@
         <![endif]-->
         
         <div id="spa"></div>
-        
+
+        <!-- DEFAULT TEMPLATE... -->
+
         <script type="text/template" id="default-template">
             
             <div class="default-full-background-image view-container">
@@ -66,6 +74,8 @@
             </div>
         
         </script>
+
+        <!-- FOOTER TEMPLATE... -->
 
         <script type="text/template" id="footer-drawer-template">
             
@@ -155,6 +165,8 @@
         
         </script>
         
+        <!-- QUEST LIST TEMPLATE... -->
+
         <script id="quests-list-view-template" type="text/template">
 
         <div class="quests-list-background extra-margin">
@@ -191,6 +203,8 @@
 
         </script>
 
+        <!-- QUEST DISPLAY TEMPLATE... -->
+
         <script id="quest-display-view-template" type="text/template">
 
             <div class="overlay" style="display: block;"></div>
@@ -218,7 +232,7 @@
 
         </script>
 
-        <!-- Spinner | Refactor as subview... -->
+        <!-- SPINNER TEMPLATE... -->
 
         <script id="template-spinner" type="text/template">
 
@@ -226,35 +240,13 @@
 
         </script>
 
+        <!-- QUEST ITEM TEMPLATE... -->
+
         <script id="quest-item-view-template" type="text/template">
             
             <div class="border-listing">  
             
             <section class="section">
-
-                    <div id="sliderFrame">
-                      
-                        <div id="slider">
-                      
-                            <a href="http://www.menucool.com/javascript-image-slider" target="_blank">
-                      
-                                <img src="image-slider-1.jpg" alt="">
-                      
-                            </a>
-                      
-                            <img src="image-slider-1.jpg" alt="">
-                      
-                            <img src="image-slider-1.jpg" alt="">
-                      
-                        </div>
-                        
-                        <div id="htmlcaption" style="display: none;">
-                        
-                            <em>HTML</em> caption. Link to <a href="http://www.google.com/">Google</a>.
-                        
-                        </div>
-                    
-                    </div>
                 
                 <a class="quest-register-btn" href="#/load-quest/<%= hash %>">Register for <%= name %></a>
 
@@ -276,11 +268,7 @@
            
             </div>
 
-            <!--<span class="add-to-library">Add to Quest Library</span>-->
-
         </script>
-
-        <script src="js/slider.js"></script>
 
         <script src="js/core.js"></script>
 
