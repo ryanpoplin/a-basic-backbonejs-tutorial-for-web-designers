@@ -65,7 +65,7 @@
 	
 		loadQuestsRoute: function() {
 	
-			this.questsListView.coreRender();
+			this.questsListView.loadQuests();
 	
 		},
 	
@@ -364,6 +364,8 @@
 	
 	});
 
+	// QUESTS LIST MODEL...
+
 	var QuestsListModel = Backbone.Model.extend({
 	
 		defaults: {
@@ -375,11 +377,14 @@
 		},
 	
 		initialize: function() {
+		
 		}
 	
 	});
 
 	var questsListModel = new QuestsListModel({});
+
+	// QUESTS LIST VIEW...
 
 	var QuestsListView = Backbone.View.extend({
 		
@@ -390,12 +395,16 @@
 		footerSubView: '.footer-subview',
 		
 		template: _.template($('#quests-list-view-template').html()),
+
+		templateSpinner: _.template($('#template-spinner').html()),
 		
 		initialize: function() {
 		
 			console.log('QuestsListView init...');
 		
 			this.$el.html(this.template);
+
+			this.on('spinner', this.showSpinner, this);
 		
 			this.collection.on('addToLibrary', this.showLibrary, this);
 		
@@ -406,47 +415,66 @@
 			$(this.libraryEl).append(questModel.attributes.name + '<br>');
 		
 		},
+
+		loadQuests: function() {
+
+			this.trigger('spinner');
+
+			var view = this;
+
+			setTimeout(function() {
+
+				view.coreRender();
+
+			}, 1000);
+
+		},
 		
 		coreRender: function() {
 			
 			this.$el.html(this.template({
-			
+
 				miniLogo: 'mini-logo.png',
-			
-				questListingsHeading: 'FUCK!'
-			
+
 			}));
-			
+
 			var view = this;
-			
+
 			this.collection.each(function(quest) {
-			
+
 				var questSubView = new QuestItemView({
-				
+
 					model: quest
-				
+
 				});	
-	
+
 				questSubView.render();
-	
+
 				$(view.listEl).append(questSubView.$el);
-	
+
 			});
-	
-			var footerDrawerView = new FooterDrawerView({
-	
-				// model: quest
-	
-			});	
-	
+
+			var footerDrawerView = new FooterDrawerView({});	
+
 			footerDrawerView.render();
-	
+
 			$(this.footerSubView).append(footerDrawerView.$el);
+						
+		},
+
+		showSpinner: function() {
+		
+			$('#spa').html(this.templateSpinner);
+		
 		}
 	
 	});
 
+	// QUESTS COLLECTION...
+
 	var Quests = Backbone.Collection.extend({});
+
+	// QUEST ITEM VIEW...
 
 	var QuestItemView = Backbone.View.extend({
 	
@@ -465,6 +493,8 @@
 		}
 	
 	});
+
+	// QUESTS DISPLAY VIEW...
 
 	var QuestDisplayView = Backbone.View.extend({
 		
@@ -515,6 +545,8 @@
 		}
 	
 	});
+
+	// READY...
 
 	$(function() {
 
