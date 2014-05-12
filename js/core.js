@@ -151,9 +151,7 @@
 				$('.footer-subview h4').hide();
 			
 				$('#footer-subview-container-one, #footer-subview-container-two').show();
-			
-				return true; 
-			
+						
 			} else if (footerSubviewHeight === 180) {
 			
 				$('#footer-button img').addClass('box-rotate-two box-transition');
@@ -173,9 +171,7 @@
 				$('.footer-subview h4').fadeIn(1000);
 			
 				$('#footer-subview-container-one, #footer-subview-container-two').hide();
-			
-				return true;
-		
+					
 			} else if (footerSubviewHeight === 55) {
 		
 				$('#footer-button img').removeClass('box-rotate-two').addClass('box-rotate box-transition');
@@ -195,9 +191,7 @@
 				$('.footer-subview h4').hide();
 		
 				$('#footer-subview-container-one, #footer-subview-container-two').show();
-		
-				return true;
-		
+				
 			} else if (footerSubviewHeight === 140) {
 		
 				$('#footer-button img').addClass('box-rotate-two box-transition');
@@ -218,12 +212,8 @@
 		
 				$('#footer-subview-container-one, #footer-subview-container-two').hide();
 		
-				return true;
-		
 			}
-		
-			return false; 
-		
+				
 		},
 		
 		facebookModalShow: function() {
@@ -423,7 +413,7 @@
 			var view = this;
 
 			setTimeout(function() {
-				
+
 				(function() {
 
 					view.coreRender();
@@ -506,7 +496,7 @@
 			
 			this.model = new (Backbone.Model.extend({}));
 			
-			this.model.on('change', this.render, this);
+			// this.model.on('change', this.render, this);
 			
 			this.on('spinner', this.showSpinner, this);
 		
@@ -524,21 +514,21 @@
 		
 			setTimeout(function() {
 		
-				view.model.set(view.collection.where({
+				(function() {
+
+					view.model.set(view.collection.where({
 		
-					hash: questHash
+						hash: questHash
 		
-				})[0].attributes);
+					})[0].attributes);
+				
+					var questTemplate = view.template(view.model);
+		
+					$('#spa').html(questTemplate);
+
+				}());
 		
 			}, 1000);
-		
-		},
-		
-		render: function(questName) {
-		
-			var questTemplate = this.template(this.model);
-		
-			$('#spa').html(questTemplate);
 		
 		},
 		
