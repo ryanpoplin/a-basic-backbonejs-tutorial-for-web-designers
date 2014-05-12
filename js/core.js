@@ -423,8 +423,12 @@
 			var view = this;
 
 			setTimeout(function() {
+				
+				(function() {
 
-				view.coreRender();
+					view.coreRender();
+					
+				}());
 
 			}, 1000);
 
