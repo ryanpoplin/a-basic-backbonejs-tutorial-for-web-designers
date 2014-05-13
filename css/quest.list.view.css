@@ -209,7 +209,6 @@
 	}
 
 	.quests-list-slider-img {
-		height: 150px;
 		border: 1px solid #e0e0e0;
 		background-color: #e0e0e0;
 	}
@@ -256,7 +255,7 @@
 		padding: 0.5em;
 		background-color: #fefefe;
 		color: #10b5b8;
-		margin: 140px auto 10px auto;
+		margin: 40px auto 10px auto;
 		text-align: center;
 		font-size: 2em;
 		border: 2px solid #10b5b8;
@@ -286,6 +285,11 @@
 }
 
 @media screen and (max-width:1100px) {
+
+	.quests-list-slider-img {
+		display:block;
+		margin: 0 auto;
+	}
 
 	.quest-list-container {
 		width: 600px;
@@ -336,6 +340,7 @@
 
 	.section {
 		height: 420px;
+		/*padding-left: 50px;*/
 	}
 
 	#quest-list-view-heading {
@@ -424,8 +429,135 @@
 
 }
 
-@media screen and (max-width: 660px) {
+@media screen and (max-width: 630px) {
 
-	
-		
+	.quest-list-container {
+		width: 300px;
+	}
+
+	#quest-list-view-header {
+		width: 100%;
+		z-index: 10;
+		position: fixed;
+		top: 0;
+		padding-top: 6.5px;
+		height: 55px;
+		background: url(../background.png) no-repeat center center fixed; 
+  		-webkit-background-size: cover;
+  		-moz-background-size: cover;
+  		-o-background-size: cover;
+  		background-size: cover;
+		background-color: #e0e0e0;
+	}
+
+	.quests-list-slider-img {
+		height: 167px;
+		width: 282px;
+		margin: 0 auto;
+		border: 1px solid #e0e0e0;
+		background-color: #e0e0e0;
+	}	
+
+	.quest-core-container {
+		width: 300px;
+		position: absolute;
+		left: 50%;
+		top: 12%;
+		margin-left: -145px;
+	}
+
+	.extra-margin {
+		padding-top: 25px;
+		padding-bottom: 25px;
+	}
+
+	.dashed-line-div {
+		width: 300px;
+		border: 1px dashed #888;
+		margin: 10px auto 10px auto;
+	}
+
+	.border-listing {
+		/*margin: 40px 0 40px 0;*/
+		border: 3px solid #a0a0a0;
+	}	
+
+	.quests-list {
+		padding: 15px 6px 15px 6px;
+	}
+
+	.section {
+		height: 320px;
+	}
+
+	#quest-list-view-heading {
+		font-size: 2em;
+		color: #10b5b8;
+		text-align: center;
+		font-family: 'Martell', sans-serif;
+	}
+
+	.aside {
+		height: 460px;
+	}
+
+	.quests-list-background {
+		height: 100vh;
+		overflow: visible;
+	}
+
+	.quests-list div {
+		background-color: #fafafa;
+	}
+
+	.quest-heading {
+		font-family: "Gotham-Light", sans-serif;
+		margin-left: 5px;
+		font-size: 2.5em;
+		color: #10b5b8;
+	}
+
+	.quest-info {
+		font-family: "Gotham-Light", sans-serif;
+		padding: 10px 8px 10px 8px;
+	}
+
+	.quest-info a {
+		color: #10b5b8;
+		text-decoration: none;
+	}
+
+	.quest-register-btn {
+		width: 280px;
+		font-family: 'Gotham-Light', sans-serif;
+		text-decoration: none;
+		display: block;
+		padding: 0.5em;
+		background-color: #fefefe;
+		color: #10b5b8;
+		margin: 30px auto 10px auto;
+		text-align: center;
+		font-size: 1.4em;
+		border: 2px solid #10b5b8;
+	}
+
+	.extra-padding {
+		padding-top: 230px;
+	}
+
+	.item-display-container {
+		position: absolute;
+		border: 1px solid red;
+		left: 50%;
+		width: 500px;
+		font-family: "Gotham-Light", sans-serif;
+		margin-left: -260px;
+		z-index: 10;
+		color: #fefefe;
+	}
+
+	.dynamic-top-measure {
+		top: 5%;
+	}		
+
 }
