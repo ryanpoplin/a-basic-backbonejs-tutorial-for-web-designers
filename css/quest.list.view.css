@@ -67,7 +67,7 @@
 }
 
 .section {
-	margin-top: 28px;
+	padding-top: 28px;
 	height: 500px;
 }
 
@@ -81,7 +81,7 @@
 	overflow: visible;
 }
 
-@media screen and (min-width:600px) {
+@media screen and (min-width:750px) {
   section {
     float: left;
     width: 50%;
@@ -146,7 +146,7 @@
 	top: 40%;
 }
 
-@media screen and (min-width: 1000px) and (max-height: 1000px) {
+@media screen and (min-width: 1100px) and (max-height: 1000px) {
 
 	.mini-logo {
 		position: fixed;
@@ -189,8 +189,8 @@
 	}
 
 	.extra-margin {
-		padding-top: 85px;
-		padding-bottom: 85px;
+		padding-top: 55px;
+		padding-bottom: 55px;
 	}
 
 	.dashed-line-div {
@@ -215,29 +215,17 @@
 	}
 
 	.section {
-		height: 500px;
+		height: 460px;
 	}
 
 	.aside {
-		padding-top: 28px;
-		height: 500px;
+		height: 460px;
 	}
 
 	.quests-list-background {
 		height: 100vh;
 		overflow: visible;
 	}
-
-	/*@media screen and (min-width:600px) {
-  		section {
-    		float: left;
-    		width: 50%;
-    		text-align: center;
-  		}
-  		aside {
-    		margin-left: 50%;
-  		}
-	}*/
 
 	.quests-list div {
 		background-color: #fafafa;
@@ -299,21 +287,8 @@
 
 @media screen and (max-width:1100px) {
 
-	#quest-list-view-heading {
-		font-size: 1em;
-		color: yellow;
-		text-align: center;
-		font-family: 'Martell', sans-serif;
-	}
-
-	.mini-logo {
-		position: fixed;
-		left: 50%;
-		margin-left: -16px;
-	}
-
 	.quest-list-container {
-		width: 700px;
+		width: 600px;
 	}
 
 	#quest-list-view-header {
@@ -332,26 +307,26 @@
 	}	
 
 	.quest-core-container {
-		width: 700px;
+		width: 600px;
 		position: absolute;
 		left: 50%;
-		top: 13%;
-		margin-left: -355px;
+		top: 12%;
+		margin-left: -295px;
 	}
 
 	.extra-margin {
-		padding-top: 85px;
-		padding-bottom: 85px;
+		padding-top: 25px;
+		padding-bottom: 25px;
 	}
 
 	.dashed-line-div {
-		width: 700px;
+		width: 600px;
 		border: 1px dashed #888;
 		margin: 10px auto 10px auto;
 	}
 
 	.border-listing {
-		margin: 40px 0 40px 0;
+		/*margin: 40px 0 40px 0;*/
 		border: 3px solid #a0a0a0;
 	}	
 
@@ -359,19 +334,19 @@
 		padding: 15px 6px 15px 6px;
 	}
 
-	.quests-list-slider-img {
-		height: 150px;
-		border: 1px solid #e0e0e0;
-		background-color: #e0e0e0;
+	.section {
+		height: 420px;
 	}
 
-	.section {
-		height: 500px;
+	#quest-list-view-heading {
+		font-size: 2em;
+		color: #10b5b8;
+		text-align: center;
+		font-family: 'Martell', sans-serif;
 	}
 
 	.aside {
-		padding-top: 28px;
-		height: 500px;
+		height: 360px;
 	}
 
 	.quests-list-background {
@@ -379,14 +354,15 @@
 		overflow: visible;
 	}
 
-	@media screen and (min-width:600px) {
+	@media screen and (min-width:750px) {
   		section {
-    		float: left;
-    		width: 50%;
+  			float: none;
+  			width: 100%;
     		text-align: center;
   		}
   		aside {
-    		margin-left: 50%;
+  			width: 100%;
+  			margin-left: 0;
   		}
 	}
 
@@ -397,7 +373,7 @@
 	.quest-heading {
 		font-family: "Gotham-Light", sans-serif;
 		margin-left: 5px;
-		font-size: 4em;
+		font-size: 2.5em;
 		color: #10b5b8;
 	}
 
@@ -419,7 +395,7 @@
 		padding: 0.5em;
 		background-color: #fefefe;
 		color: #10b5b8;
-		margin: 140px auto 10px auto;
+		margin: 40px auto 10px auto;
 		text-align: center;
 		font-size: 2em;
 		border: 2px solid #10b5b8;
@@ -442,8 +418,14 @@
 
 	.dynamic-top-measure {
 
-		top: 40%;
+		top: 5%;
 
 	}	
 
+}
+
+@media screen and (max-width: 660px) {
+
+	
+		
 }
