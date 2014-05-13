@@ -501,7 +501,7 @@
 			this.on('spinner', this.showSpinner, this);
 		
 		},
-		
+			
 		template: _.template($('#quest-display-view-template').html()),
 		
 		templateSpinner: _.template($('#template-spinner').html()),

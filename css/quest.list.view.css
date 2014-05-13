@@ -209,6 +209,8 @@
 	}
 
 	.quests-list-slider-img {
+		height: 250px;
+		width: 400px;
 		border: 1px solid #e0e0e0;
 		background-color: #e0e0e0;
 	}
@@ -544,20 +546,5 @@
 	.extra-padding {
 		padding-top: 230px;
 	}
-
-	.item-display-container {
-		position: absolute;
-		border: 1px solid red;
-		left: 50%;
-		width: 500px;
-		font-family: "Gotham-Light", sans-serif;
-		margin-left: -260px;
-		z-index: 10;
-		color: #fefefe;
-	}
-
-	.dynamic-top-measure {
-		top: 5%;
-	}		
 
 }
