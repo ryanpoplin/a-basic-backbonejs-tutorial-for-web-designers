@@ -146,7 +146,7 @@
 	top: 40%;
 }
 
-/*@media screen and (min-width: 800px) and (max-height: 1000px) {
+@media screen and (min-width: 1000px) and (max-height: 1000px) {
 
 	.mini-logo {
 		position: fixed;
@@ -154,155 +154,296 @@
 		margin-left: -16px;
 	}
 
-.quest-list-container {
-	width: 1200px;
-}
+	.quest-list-container {
+		width: 1000px;
+	}
 
-#quest-list-view-header {
-	width: 100%;
-	z-index: 10;
-	position: fixed;
-	top: 0;
-	padding-top: 6.5px;
-	height: 55px;
-	background: url(../background.png) no-repeat center center fixed; 
-  	-webkit-background-size: cover;
-  	-moz-background-size: cover;
-  	-o-background-size: cover;
-  	background-size: cover;
-	background-color: #e0e0e0;
-}
+	#quest-list-view-header {
+		width: 100%;
+		z-index: 10;
+		position: fixed;
+		top: 0;
+		padding-top: 6.5px;
+		height: 55px;
+		background: url(../background.png) no-repeat center center fixed; 
+  		-webkit-background-size: cover;
+  		-moz-background-size: cover;
+  		-o-background-size: cover;
+  		background-size: cover;
+		background-color: #e0e0e0;
+	}	
 
-.quest-core-container {
-	width: 1200px;
-	position: absolute;
-	left: 50%;
-	top: 23%;
-	margin-left: -595px;
-}
+	.quest-core-container {
+		width: 1000px;
+		position: absolute;
+		left: 50%;
+		top: 13%;
+		margin-left: -495px;
+	}
 
-#quest-list-view-heading {
-	font-size: 3em;
-	color: #10b5b8;
-	text-align: center;
-	font-family: 'Martell', sans-serif;
-}
+	#quest-list-view-heading {
+		font-size: 2.5em;
+		color: #10b5b8;
+		text-align: center;
+		font-family: 'Martell', sans-serif;
+	}
 
-.extra-margin {
-	padding-top: 85px;
-	padding-bottom: 85px;
-}
+	.extra-margin {
+		padding-top: 85px;
+		padding-bottom: 85px;
+	}
 
-.dashed-line-div {
-	width: 1200px;
-	border: 1px dashed #888;
-	margin: 10px auto 10px auto;
-}
+	.dashed-line-div {
+		width: 1000px;
+		border: 1px dashed #888;
+		margin: 10px auto 10px auto;
+	}
 
-.border-listing {
-	margin: 40px 0 40px 0;
-	border: 3px solid #a0a0a0;
-}
+	.border-listing {
+		margin: 40px 0 40px 0;
+		border: 3px solid #a0a0a0;
+	}	
 
-.quests-list {
-	padding: 15px 6px 15px 6px;
-}
+	.quests-list {
+		padding: 15px 6px 15px 6px;
+	}
 
-.quests-list-slider-img {
-	height: 150px;
-	border: 1px solid #e0e0e0;
-	background-color: #e0e0e0;
-}
+	.quests-list-slider-img {
+		height: 150px;
+		border: 1px solid #e0e0e0;
+		background-color: #e0e0e0;
+	}
 
-.section {
-	height: 500px;
-}
+	.section {
+		height: 500px;
+	}
 
-.aside {
-	padding-top: 28px;
-	height: 500px;
-}
+	.aside {
+		padding-top: 28px;
+		height: 500px;
+	}
 
-.quests-list-background {
-	height: 100vh;
-	overflow: visible;
-}
+	.quests-list-background {
+		height: 100vh;
+		overflow: visible;
+	}
 
-@media screen and (min-width:600px) {
-  section {
-    float: left;
-    width: 50%;
-    text-align: center;
-  }
-  aside {
-    margin-left: 50%;
-  }
-}
+	/*@media screen and (min-width:600px) {
+  		section {
+    		float: left;
+    		width: 50%;
+    		text-align: center;
+  		}
+  		aside {
+    		margin-left: 50%;
+  		}
+	}*/
 
-.quests-list div {
-	background-color: #fafafa;
-}
+	.quests-list div {
+		background-color: #fafafa;
+	}
 
-.quest-heading {
-	font-family: "Gotham-Light", sans-serif;
-	margin-left: 5px;
-	font-size: 4em;
-	color: #10b5b8;
-}
+	.quest-heading {
+		font-family: "Gotham-Light", sans-serif;
+		margin-left: 5px;
+		font-size: 4em;
+		color: #10b5b8;
+	}
 
-.quest-info {
-	font-family: "Gotham-Light", sans-serif;
-	padding: 10px 8px 10px 8px;
-}
+	.quest-info {
+		font-family: "Gotham-Light", sans-serif;
+		padding: 10px 8px 10px 8px;
+	}
 
-.quest-info a {
-	color: #10b5b8;
-	text-decoration: none;
-}
+	.quest-info a {
+		color: #10b5b8;
+		text-decoration: none;
+	}
 
-.quest-register-btn {
-	width: 380px;
-	font-family: 'Gotham-Light', sans-serif;
-	text-decoration: none;
-	display: block;
-	padding: 0.5em;
-	background-color: #fefefe;
-	color: #10b5b8;
-	margin: 70px auto 10px auto;
-	text-align: center;
-	font-size: 2em;
-	border: 2px solid #10b5b8;
-}
+	.quest-register-btn {
+		width: 380px;
+		font-family: 'Gotham-Light', sans-serif;
+		text-decoration: none;
+		display: block;
+		padding: 0.5em;
+		background-color: #fefefe;
+		color: #10b5b8;
+		margin: 140px auto 10px auto;
+		text-align: center;
+		font-size: 2em;
+		border: 2px solid #10b5b8;
+	}
 
-.extra-padding {
-	padding-top: 230px;
-}
+	.extra-padding {
+		padding-top: 230px;
+	}
 
-.item-display-container {
-	position: absolute;
-	border: 1px solid red;
-	left: 50%;
-	width: 500px;
-	font-family: "Gotham-Light", sans-serif;
-	margin-left: -260px;
-	z-index: 10;
-	color: #fefefe;
-}
+	.item-display-container {
+		position: absolute;
+		border: 1px solid red;
+		left: 50%;
+		width: 500px;
+		font-family: "Gotham-Light", sans-serif;
+		margin-left: -260px;
+		z-index: 10;
+		color: #fefefe;
+	}
 
-.dynamic-top-measure {
-	top: 40%;
-}	
+	.dynamic-top-measure {
 
-}
+		top: 40%;
 
-@media screen and (max-width:800px) {
-  
-
+	}	
 
 }
 
-@media screen and (max-width:500px) {
+@media screen and (max-width:1100px) {
 
+	#quest-list-view-heading {
+		font-size: 1em;
+		color: yellow;
+		text-align: center;
+		font-family: 'Martell', sans-serif;
+	}
 
+	.mini-logo {
+		position: fixed;
+		left: 50%;
+		margin-left: -16px;
+	}
 
-}*/
+	.quest-list-container {
+		width: 700px;
+	}
+
+	#quest-list-view-header {
+		width: 100%;
+		z-index: 10;
+		position: fixed;
+		top: 0;
+		padding-top: 6.5px;
+		height: 55px;
+		background: url(../background.png) no-repeat center center fixed; 
+  		-webkit-background-size: cover;
+  		-moz-background-size: cover;
+  		-o-background-size: cover;
+  		background-size: cover;
+		background-color: #e0e0e0;
+	}	
+
+	.quest-core-container {
+		width: 700px;
+		position: absolute;
+		left: 50%;
+		top: 13%;
+		margin-left: -355px;
+	}
+
+	.extra-margin {
+		padding-top: 85px;
+		padding-bottom: 85px;
+	}
+
+	.dashed-line-div {
+		width: 700px;
+		border: 1px dashed #888;
+		margin: 10px auto 10px auto;
+	}
+
+	.border-listing {
+		margin: 40px 0 40px 0;
+		border: 3px solid #a0a0a0;
+	}	
+
+	.quests-list {
+		padding: 15px 6px 15px 6px;
+	}
+
+	.quests-list-slider-img {
+		height: 150px;
+		border: 1px solid #e0e0e0;
+		background-color: #e0e0e0;
+	}
+
+	.section {
+		height: 500px;
+	}
+
+	.aside {
+		padding-top: 28px;
+		height: 500px;
+	}
+
+	.quests-list-background {
+		height: 100vh;
+		overflow: visible;
+	}
+
+	@media screen and (min-width:600px) {
+  		section {
+    		float: left;
+    		width: 50%;
+    		text-align: center;
+  		}
+  		aside {
+    		margin-left: 50%;
+  		}
+	}
+
+	.quests-list div {
+		background-color: #fafafa;
+	}
+
+	.quest-heading {
+		font-family: "Gotham-Light", sans-serif;
+		margin-left: 5px;
+		font-size: 4em;
+		color: #10b5b8;
+	}
+
+	.quest-info {
+		font-family: "Gotham-Light", sans-serif;
+		padding: 10px 8px 10px 8px;
+	}
+
+	.quest-info a {
+		color: #10b5b8;
+		text-decoration: none;
+	}
+
+	.quest-register-btn {
+		width: 380px;
+		font-family: 'Gotham-Light', sans-serif;
+		text-decoration: none;
+		display: block;
+		padding: 0.5em;
+		background-color: #fefefe;
+		color: #10b5b8;
+		margin: 140px auto 10px auto;
+		text-align: center;
+		font-size: 2em;
+		border: 2px solid #10b5b8;
+	}
+
+	.extra-padding {
+		padding-top: 230px;
+	}
+
+	.item-display-container {
+		position: absolute;
+		border: 1px solid red;
+		left: 50%;
+		width: 500px;
+		font-family: "Gotham-Light", sans-serif;
+		margin-left: -260px;
+		z-index: 10;
+		color: #fefefe;
+	}
+
+	.dynamic-top-measure {
+
+		top: 40%;
+
+	}	
+
+}

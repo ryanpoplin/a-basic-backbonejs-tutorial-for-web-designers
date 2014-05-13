@@ -396,7 +396,7 @@
 
 			this.on('spinner', this.showSpinner, this);
 		
-			this.collection.on('addToLibrary', this.showLibrary, this);
+			// this.collection.on('addToLibrary', this.showLibrary, this);
 		
 		},
 		
