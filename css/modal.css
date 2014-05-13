@@ -43,27 +43,82 @@
 	font-family: 'Gotham-Light', sans-serif;
 }
 
-/* LAPTOP RESOLUTION... */
 
-@media screen and (min-width: 800px) and (max-height: 1000px) {
+@media screen and (max-width:1100px) {
 
+.modal {
+    position: fixed;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    width: 320px;
+	height: 500px;
+    margin-left: -162px;
+    margin-top: -240px;
+    background-color: #ccc;
+    z-index: 10;
+    outline: 9999px solid rgba(0,0,0,0.5);
+}
 
+.modal-header {
+	padding: 20px 0 20px 20px;
+	width: 100%;
+	color: #fefefe;
+	background-color: #aaa;
+}
+
+.modal-header span {
+}
+
+.modal-heading {
+}
+
+.modal input[type=text], input[type=password] {
+	display: block;
+	padding: 10px 20px 10px 20px;
+	margin: 15px auto;
+	font-size: 1.5em;
+	font-family: 'Gotham-Light', sans-serif;
+}
 
 }
 
-/* TABLET RESOLUTION... */
+@media screen and (max-width:660px) {
 
-@media screen and (max-width:800px) {
-  
-
-
+.modal {
+    position: fixed;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    width: 260px;
+	height: 300px;
+    margin-left: -125px;
+    margin-top: -240px;
+    background-color: #ccc;
+    z-index: 10;
+    outline: 9999px solid rgba(0,0,0,0.5);
 }
 
-/* PHONE RESOLUTION... */
+.modal-header {
+	padding: 20px 0 20px 20px;
+	width: 100%;
+	color: #fefefe;
+	background-color: #aaa;
+}
 
-@media screen and (max-width:500px) {
+.modal-header span {
+}
 
-	
+.modal-heading {
+}
+
+.modal input[type=text], input[type=password] {
+	display: block;
+	padding: 10px 20px 10px 20px;
+	margin: 15px auto;
+	font-size: 1.5em;
+	font-family: 'Gotham-Light', sans-serif;
+}
 
 }
 

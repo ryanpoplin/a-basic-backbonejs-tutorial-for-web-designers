@@ -25,6 +25,7 @@
 }
 
 .item-display-container {
+  border: none;
   position: absolute;
   left: 50%;
   width: 500px;
@@ -60,7 +61,7 @@
   }
 
   .dynamic-top-measure {
-    top: 20%;
+    top: 30%;
   } 
 
 }
@@ -96,7 +97,6 @@
   .item-display-container {
     height: 250px;
     position: absolute;
-    border: 1px solid red;
     left: 50%;
     width: 500px;
     font-family: "Gotham-Light", sans-serif;
@@ -142,7 +142,6 @@
   .item-display-container {
     height: 200px;
     position: absolute;
-    border: 1px solid red;
     left: 50%;
     width: 300px;
     font-family: "Gotham-Light", sans-serif;

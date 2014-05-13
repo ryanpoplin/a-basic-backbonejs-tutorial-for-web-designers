@@ -48,14 +48,3 @@
 .notice {
 	font-size: 0.5em;
 }
-
-/* Spinner... */
-
-.spinner-gif {
-   position: absolute;
-   left: 50%;
-   width: 200px;
-   height: 200px;
-   margin-left: -90px; /* Half the width */
-   margin-top: 215px;
-}

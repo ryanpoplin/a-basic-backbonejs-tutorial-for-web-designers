@@ -1,0 +1,35 @@
+.spinner {
+  position: absolute;
+  left: 50%;
+  width: 180px;
+  height: 180px;
+  margin-left: -90px; /* Half the width */
+  margin-top: 18%;
+}
+
+@media screen and (max-width:1100px) {
+  
+    .spinner {
+      position: absolute;
+      left: 50%;
+      width: 150px;
+      height: 150px;
+      margin-left: -80px; /* Half the width */
+      margin-top: 28%;
+    }
+
+}
+
+@media screen and (max-width:660px) {
+
+   
+    .spinner {
+      position: absolute;
+      left: 50%;
+      width: 120px;
+      height: 120px;
+      margin-left: -55px; /* Half the width */
+      margin-top: 45%;
+    }
+
+}
