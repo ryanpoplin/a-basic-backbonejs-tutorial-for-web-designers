@@ -15,7 +15,11 @@
 			img: 'http://www.naportals.com/wp-content/uploads/2014/02/orange-thighed-frog-tree-green-nature-animals-wallpaper-1920x1080-857671.jpg',
 			link: 'https://www.google.com/parkhop',
 			rules: 'Rules: Lorem ipsum dolor... Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor.',
-			prizes: 'Prizes: Lorem ipsum dolor... Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor.'
+			prizes: 'Prizes: Lorem ipsum dolor... Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor.',
+			facebook: 'facebook2.png',
+			twitter: 'twiiter2.png',
+			play: 'play.png',
+			apple: 'apple.png'
 		}
 	];
 
@@ -360,14 +364,18 @@
 	
 		defaults: {
 	
-			miniLogo: 'mini-logo.png',
+			// miniLogo: 'mini-logo.png',
 	
-			questListingsHeading: 'Register for a Quest!'
+			// questListingsHeading: 'Register for a Quest!',
+
+			// android: 'play.png',
+
+			// apple: 'apple.png'
 	
 		},
 	
 		initialize: function() {
-		
+
 		}
 	
 	});
@@ -430,11 +438,15 @@
 
 				miniLogo: 'mini-logo.png',
 
+				play: 'play.png',
+
+				apple: 'apple.png'
+
 			}));
 
 			var view = this;
 
-			this.collection.each(function(quest) {
+			view.collection.each(function(quest) {
 
 				var questSubView = new QuestItemView({
 
@@ -452,7 +464,7 @@
 
 			footerDrawerView.render();
 
-			$(this.footerSubView).append(footerDrawerView.$el);
+			$(view.footerSubView).append(footerDrawerView.$el);
 						
 		},
 

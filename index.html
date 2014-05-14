@@ -1,17 +1,12 @@
 <!doctype html>
-
 <html class="no-js" lang="en">
-    
     <head>
-
         <meta charset="utf-8">
-        
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        
+        <!-- CONFIG -->
         <title>Questalot | ...</title>
-        
+        <!-- CONFIG -->
         <meta name="description" content="Questalot">
-        
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/core.css">
@@ -21,40 +16,22 @@
         <link rel="stylesheet" href="css/modal.css">
         <link rel="stylesheet" href="css/quest.list.view.css">
         <link rel="stylesheet" href="css/quest.display.view.css">
-
-        <style>
-            
-            /* TEST STYLES... */
-            
-            .slider-container {
-                /*height: 350px;
-                width: 450px;*/
-                border: 1px solid #a0a0a0;
-            }
-
-            .main-content {
-                /*height: 350px;
-                width: 450px;*/
-            }
-
-        </style>
         <script src="bower_components/jquery/dist/jquery.min.js"></script>
         <script src="bower_components/underscore/underscore.js"></script>
         <script src="bower_components/backbone/backbone.js"></script>
-        
         <!-- ADD PARSEBONE BOILERPLATE STUFF... -->
         <!-- ADD PARSE SDK... -->
         <!-- ADD PARSE CLOUD CODE SETUP... -->
-    
     </head>
     <body>
-        
         <!--[if lt IE 8]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         
-        <div id="spa"></div>
+        <!-- SPA APP... -->
 
+        <div id="spa"></div>
+        
         <!-- DEFAULT TEMPLATE... -->
 
         <script type="text/template" id="default-template">
@@ -192,7 +169,7 @@
             <header id="quest-list-view-header">
                 
                 <div class="mini-logo"><img src="mini-logo.png" alt="Logo"></div>
-            
+
             </header>
 
             <div class="quest-core-container">
@@ -237,6 +214,14 @@
 
             <aside class="aside">
                 
+                <div class="quest-list-social">
+                    
+                    <img src="<%= facebook %>" alt="facebook...">
+
+                    <img src="<%= twitter %>" alt="twitter...">
+                
+                </div>
+
                 <h1 class="quest-heading"><%= name %></h1>
                
                 <p class="quest-info"><%= info %></p>
@@ -246,6 +231,10 @@
                 <p class="quest-info"><%= rules %></p>
                
                 <p class="quest-info"><%= prizes %></p>
+
+                <img src="<%= play %>" alt="android...">
+
+                <img src="<%= apple %>" alt="apple...">
            
             </aside>
            
@@ -271,6 +260,14 @@
 
                         <a class="back-btn" href="#/load-quests">Back to Quest Library...</a>
 
+                        <div class="display-market-container">
+                            
+                            <img src="<%= attributes.play %>" alt="android...">
+
+                            <img src="<%= attributes.apple %>" alt="apple...">
+                        
+                        </div>
+
                     </div>
 
                 </div>
@@ -287,10 +284,8 @@
 
         </script>
 
-        <!--<script src="slick/slick/slick.min.js"></script>-->
-
         <script src="js/core.js"></script>
-
+        
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <!--<script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
@@ -300,8 +295,5 @@
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
             ga('create','UA-XXXXX-X');ga('send','pageview');
         </script>-->
-
     </body>
-
 </html>
-

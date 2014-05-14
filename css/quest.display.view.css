@@ -3,6 +3,12 @@
   padding: 20px 0 40px 0;
 }
 
+.display-market-container {
+  margin: 0 auto;
+  width: 15em;
+  padding-left: 30px;
+}
+
 .display-sub-heading {
   font-size: 4.5em;
 }
