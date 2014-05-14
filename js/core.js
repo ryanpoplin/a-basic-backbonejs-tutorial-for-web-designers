@@ -9,7 +9,8 @@
 	var questData = [
 		{
 			hash: 'parkhop',
-			name: 'Park Hop',
+			name: 'PARK HOP',
+			btname: 'PARK HOP',
 			info: 'Information: Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor.',
 			sliderImgOne: '../park-hop.png',
 			img: 'http://www.naportals.com/wp-content/uploads/2014/02/orange-thighed-frog-tree-green-nature-animals-wallpaper-1920x1080-857671.jpg',
@@ -395,6 +396,28 @@
 		template: _.template($('#quests-list-view-template').html()),
 
 		templateSpinner: _.template($('#template-spinner').html()),
+
+		events: {
+
+			'click .quest-register-btn': 'changeColor'
+
+		},
+
+		changeColor: function() {
+
+			// header q links to default...
+
+			// Change text of register btn to 'You are already registered for...'
+
+			// Make header log out string of text link...
+
+			$('.quest-register-btn').css('color', '#f5f5f5');
+
+			$('.quest-register-btn').css('border', '2px solid #f5f5f5');
+
+			$('.quest-register-btn').css('cursor', 'none');
+
+		},
 		
 		initialize: function() {
 		

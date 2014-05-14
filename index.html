@@ -92,19 +92,19 @@
                 
                     <img src="back-arrow.png" alt="">
                 
-                    <span style="padding-left: 5px; text-align: left; font-size: 1.4em;">Back<span>
+                    <span>Back<span>
                 
                 </header>
                 
-                <h2 style="text-align: center;" class="modal-heading">Sign Up with Email</h2>
+                <h2 class="modal-heading">Create a new account</h2>
                 
-                <input placeholder="Name" type="text">
+                <input placeholder="FULL NAME" type="text">
                 
-                <input placeholder="Email" type="text">
+                <input placeholder="EMAIL" type="text">
                 
-                <input placeholder="Password" type="password">
+                <input placeholder="PASSWORD" type="password">
                 
-                <button style="margin: 0 auto;" class="submit-modal-btn">Sign Up</button>
+                <div class="modal-submit-btn">SIGN UP</div>
            
             </div>
             
@@ -112,17 +112,21 @@
            
                 <header class="modal-header">
            
-                    <button class="modal-btn">Back</button>
+                    <img src="back-arrow.png" alt="">
+                
+                    <span class="modal-back">Back<span>
            
                 </header>
            
-                <h2 class="modal-heading">Log In with Facebook or Email</h2>
+                <h2 class="modal-heading">We're so glad you're back!</h2>
            
                 <input placeholder="Email" type="text">
            
                 <input placeholder="Password" type="password">
            
-                <button class="submit-modal-btn">Log In</button>
+                <a style="color: #fefefe;" href=""><p style="padding: 10px 0 20px 0; color: #fefefe;">Forgot your password?</p></a>
+
+                <div style="margin: 0 auto;" class="modal-submit-btn">LOGIN</div>
            
             </div>
 
@@ -168,13 +172,13 @@
            
             <header id="quest-list-view-header">
                 
-                <div class="mini-logo"><img src="mini-logo.png" alt="Logo"></div>
+                <a style="cursor: pointer; text-decoration: none;" href="/#"><div class="mini-logo"><img src="mini-logo.png" alt="Logo"></div></a>
 
             </header>
 
             <div class="quest-core-container">
 
-                <h1 id="quest-list-view-heading">Register for a Quest</h1>
+                <h1 id="quest-list-view-heading">Once upon a time, a brave adventurer went on a Quest...</h1>
             
                 <div class="dashed-line-div"></div>
             
@@ -205,10 +209,12 @@
             <section class="section">
                 
                 <div class="img-container">
+                   
                     <img class="quests-list-slider-img" src="<%= sliderImgOne %>" alt="Quest Image..." />
+                
                 </div>
 
-                <a class="quest-register-btn" href="#/load-quest/<%= hash %>">Register for <%= name %></a>
+                <a class="quest-register-btn" href="#/load-quest/<%= hash %>">REGISTER FOR <%= btname %></a>
 
             </section>
 
@@ -222,7 +228,7 @@
                 
                 </div>
 
-                <h1 class="quest-heading"><%= name %></h1>
+                <h1 class="quest-heading-style"><%= name %></h1>
                
                 <p class="quest-info"><%= info %></p>
                
@@ -246,9 +252,9 @@
 
         <script id="quest-display-view-template" type="text/template">
 
-            <div class="overlay" style="display: block;"></div>
+            <div class="overlay-display" style="display: block;"></div>
                 
-                <div class="view-container quest-display-styles" style="background: url(<%= attributes.img %>) no-repeat center center;">
+                <div class="view-container quest-display-styles" style="background: url(<%= attributes.img %>) no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;">
                 
                     <div class="item-display-container dynamic-top-measure">
                 
@@ -258,21 +264,27 @@
                 
                         <h2 class="display-msg text-align-center">Your Quest has just begun!</h2>
 
-                        <a class="back-btn" href="#/load-quests">Back to Quest Library...</a>
+                        <a class="back-btn" href="#/load-quests">DONE</a>
 
-                        <div class="display-market-container">
+                    </div>
+
+                    <div class="display-market-container">
+                            
+                        <p class="download">DOWNLOAD THE QUESTALOT APP</p>
+
+                        <div class="market-img-container">
                             
                             <img src="<%= attributes.play %>" alt="android...">
 
                             <img src="<%= attributes.apple %>" alt="apple...">
                         
                         </div>
-
+                        
                     </div>
 
                 </div>
             
-            </div>
+            <!--</div>-->
 
         </script>
 
@@ -285,7 +297,7 @@
         </script>
 
         <script src="js/core.js"></script>
-        
+
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <!--<script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=

@@ -6,6 +6,16 @@
 }
 
 @font-face {
+	font-family: 'Goth-Reg-It';
+	src: url(../goth-reg-it.ttf);
+}
+
+@font-face {
+	font-family: 'Goth-It';
+	src: url(../goth-it.otf);
+}
+
+@font-face {
 	font-family: 'Gotham-Lighter';
 	src: url(../gotham-lighter.otf);
 }

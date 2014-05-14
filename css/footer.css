@@ -100,7 +100,7 @@
 	color: #10a5e8;
 }
 
-@media screen and (max-width:500px) {
+@media screen and (max-width:660px) {
   
 	.footer-subview {
 		font-size: 0.8em;

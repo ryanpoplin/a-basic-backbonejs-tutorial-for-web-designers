@@ -1,27 +1,56 @@
+.overlay-display {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    background-color: rgba(0,0,0,0.6);
+}
+
 .display-heading {
-  font-size: 1.5em; 
-  padding: 20px 0 40px 0;
+  font-size: 1.2em; 
+  font-family: 'Goth-Reg-It', sans-serif;
+  padding: 20px 0 10px 0;
 }
 
 .display-market-container {
-  margin: 0 auto;
-  width: 15em;
-  padding-left: 30px;
+  width: 20em;
+  z-index: 10;
+  position: absolute;
+  bottom: 45px;
+  left: 50%;
+  text-align: center;
+  margin-left: -158px;
+}
+
+.download {
+  font-family: 'Goth-Bolder', sans-serif;
+  padding: 8px 0 8px 0;
+  color: #fefefe;
+}
+
+.market-img-container {
+
 }
 
 .display-sub-heading {
-  font-size: 4.5em;
+  color: #aab3b6;
+  font-family: 'Goth-It', sans-serif;
+  font-size: 2.5em;
 }
 
 .display-msg {
-  padding: 20px 0 20px 0;
+  font-family: 'Martell', sans-serif;
+  font-size: 60pt;
+  padding: 50px 0 20px 0;
 }
 
 .back-btn {
   display: block;
   text-align: center;
   margin: 1.2em auto 1.2em auto;
-  width: 15em;
+  width: 10em;
   font-size: 16pt;
   padding: 0.6em 0.8em 0.6em 0.8em;
   font-family: 'Gotham-Bolder', sans-serif;
@@ -34,10 +63,10 @@
   border: none;
   position: absolute;
   left: 50%;
-  width: 500px;
+  width: 1100px;
   height: 350px;
   font-family: "Gotham-Light", sans-serif;
-  margin-left: -260px;
+  margin-left: -560px;
   z-index: 10;
   color: #fefefe;
 }
@@ -59,9 +88,9 @@
   .item-display-container {
     position: absolute;
     left: 50%;
-    width: 500px;
+    width: 820px;
     font-family: "Gotham-Light", sans-serif;
-    margin-left: -260px;
+    margin-left: -410px;
     z-index: 10;
     color: #fefefe;
   }
@@ -69,6 +98,12 @@
   .dynamic-top-measure {
     top: 30%;
   } 
+
+  .display-msg {
+    font-family: 'Martell', sans-serif;
+    font-size: 50pt;
+    padding: 50px 0 20px 0;
+  }
 
 }
 
