@@ -209,7 +209,7 @@
 		
 				$('#footer-button').stop().animate({
 		
-					bottom: 20
+					bottom: 15
 		
 				}).end();
 		

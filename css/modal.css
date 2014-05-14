@@ -8,6 +8,11 @@
   	background-color: rgba(0,0,0,0.5);
 }
 
+.forgot {
+    padding: 10px 0 20px 0; 
+    color: #fefefe;
+}
+
 .modal {
     position: fixed;
     text-align: center;
@@ -86,9 +91,9 @@
         text-align: center;
         top: 50%;
         left: 50%;
-        width: 320px;
+        width: 450px;
 	    height: 420px;
-        margin-left: -162px;
+        margin-left: -230px;
         margin-top: -240px;
         background-color: #ccc;
         z-index: 10;
@@ -96,35 +101,35 @@
     }
 
     .modal-header {
-        height: 60px;
+        height: 40px;
         color: #fefefe;
         background-color: #aaa;
     }
 
     .modal-header span {
         padding-left: 5px;
-        padding-top: 20px;
+        padding-top: -5px;
         float: left;
     }
 
     .modal-header img {
         padding-left: 10px;
-        padding-top: 20px;
+        padding-top: 11px;
         float: left;
     }
 
     .modal-heading {
-        font-size: 1.5em;
-        padding-top: 10px;
+        font-size: 2.1em;
+        padding-top: 24px;
         color: #fefefe;
     }
 
 
     .modal input[type=text], input[type=password] {
 	   display: block;
-	   padding: 7px 10px 7px 10px;
-	   margin: 15px auto;
-	   font-size: 1.5em;
+	   padding: 13px 10px 10px 10px;
+	   margin: 0 auto 8px auto;
+	   font-size: 1em;
 	   font-family: 'Gotham-Light', sans-serif;
     }
 
@@ -135,11 +140,11 @@
     .modal {
         position: fixed;
         text-align: center;
-        top: 50%;
+        top: 70%;
         left: 50%;
-        width: 210px;
-        height: 260px;
-        margin-left: -102px;
+        width: 260px;
+        height: 275px;
+        margin-left: -132px;
         margin-top: -240px;
         background-color: #ccc;
         z-index: 10;
@@ -147,36 +152,53 @@
     }
 
     .modal-header {
-        height: 60px;
+        height: 40px;
         color: #fefefe;
         background-color: #aaa;
     }
 
     .modal-header span {
         padding-left: 5px;
-        padding-top: 10px;
         float: left;
+        padding-top: -10px;
+        font-size: 1em;
     }
 
     .modal-header img {
         padding-left: 10px;
-        padding-top: 20px;
         float: left;
     }
 
     .modal-heading {
-        font-size: 0.9em;
-        padding-top: 7px;
+        font-size: 1.6em;
+        padding-top: 20px;
         color: #fefefe;
     }
 
+    .forgot {
+        padding: 1px 0 20px 0; 
+        color: #fefefe;
+    }
 
     .modal input[type=text], input[type=password] {
        display: block;
-       padding: 4px 7px 4px 7px;
-       margin: 10px auto;
-       font-size: 0.8em;
+       padding: 9px 12px 7px 12px;
+       margin: 0 auto 8px auto;
+       font-size: 0.9em;
        font-family: 'Gotham-Light', sans-serif;
+    }
+
+    .modal-submit-btn {
+        display: block;
+        text-align: center;
+        margin: 0.8em auto 1.2em auto;
+        width: 10em;
+        font-size: 11pt;
+        padding: 0.6em 0.6em 0.6em 0.6em;
+        font-family: 'Gotham-Bolder', sans-serif;
+        background-color: #026b5d;
+        color: #ffffff;
+        text-decoration: none;
     }    
 
 }
