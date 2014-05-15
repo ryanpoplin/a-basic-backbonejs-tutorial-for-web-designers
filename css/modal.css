@@ -71,6 +71,7 @@
 }
 
 .modal-submit-btn {
+    cursor: pointer;
     display: block;
     text-align: center;
     margin: 1.6em auto 1.2em auto;

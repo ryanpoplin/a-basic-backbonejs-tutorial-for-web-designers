@@ -2,13 +2,9 @@
 
 (function($) {
 
-	Parse.initialize("4LKnB89wxuXlhXIjYBuRD6xyQEpGeMPuwHpuz9eG", "e9CnKoHkoLODJhm7Kdpq9XqODhPTiXyk7KlGajYc"); 
+	// ...
 
-	/*var TestObject = Parse.Object.extend("TestObject");
-	var testObject = new TestObject();
-	testObject.save({foo: "bar"}).then(function(object) {
-  		alert("yay! it worked");
-	});*/
+	Parse.initialize("4LKnB89wxuXlhXIjYBuRD6xyQEpGeMPuwHpuz9eG", "e9CnKoHkoLODJhm7Kdpq9XqODhPTiXyk7KlGajYc"); 
 	
 	var questData = [
 		{
@@ -472,7 +468,7 @@
 
 		events: {
 
-			'click .quest-register-btn': 'changeColor',
+			'click .quest-register-btn': 'something',
 
 			'click #logout': 'logout'
 
@@ -486,15 +482,15 @@
 
 		},
 
-		/*changeColor: function() {
+		something: function() {
 
-			$('.quest-register-btn').css('color', '#f5f5f5');
+			/*$('.quest-register-btn').css('color', '#f5f5f5');
 
 			$('.quest-register-btn').css('border', '2px solid #f5f5f5');
 
-			$('.quest-register-btn').css('cursor', 'none');
+			$('.quest-register-btn').css('cursor', 'none');*/
 
-		},*/
+		},
 		
 		initialize: function() {
 		
@@ -510,7 +506,7 @@
 		
 		showLibrary: function(questModel) {
 		
-			$(this.libraryEl).append(questModel.attributes.name + '<br>');
+			// $(this.libraryEl).append(questModel.attributes.name + '<br>');
 		
 		},
 
@@ -536,18 +532,6 @@
 			
 			this.$el.html(this.template({}));
 
-			var currentUser = Parse.User.current();
-			
-			if (currentUser === null) {
-    			
-    			$('#logout').css('display', 'none');
-
-			} else {
-    	
-    			$('#logout').css('display', 'inline-block');
-
-			}
-
 			var view = this;
 
 			view.collection.each(function(quest) {
@@ -569,7 +553,34 @@
 			footerDrawerView.render();
 
 			$(view.footerSubView).append(footerDrawerView.$el);
-						
+					
+			$('.quest-register-btn').css('display', 'none');
+
+			var currentUser = Parse.User.current();
+
+			// ...
+			var registered = false;
+			
+			if (currentUser === null) {
+    			
+    			$('#logout').css('display', 'none');
+
+    			$('.quest-register-btn-two').show();
+
+			} else if (currentUser && registered) {
+
+				$('#logout').css('display', 'inline-block');
+
+				$('.quest-register-btn-three').show();
+
+			} else {
+    	
+    			$('#logout').css('display', 'inline-block');
+
+    			$('.quest-register-btn-one').show();
+			
+			}
+
 		},
 
 		showSpinner: function() {

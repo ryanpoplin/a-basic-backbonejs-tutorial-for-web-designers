@@ -139,11 +139,40 @@
 	text-decoration: none;
 }
 
-.quest-register-btn {
+.quest-register-btn-one {
+	cursor: pointer;
+	display: none;
 	width: 380px;
 	font-family: 'Gotham-Bolder', sans-serif;
 	text-decoration: none;
-	display: block;
+	padding: 0.5em;
+	background-color: #fefefe;
+	color: #026c5f;
+	margin: 30px auto 10px auto;
+	text-align: center;
+	font-size: 1.5em;
+	border: 2px solid #026c5f;
+}
+
+.quest-register-btn-two {
+	width: 380px;
+	display: none;
+	font-family: 'Gotham-Bolder', sans-serif;
+	text-decoration: none;
+	padding: 0.5em;
+	background-color: #fefefe;
+	color: #026c5f;
+	margin: 30px auto 10px auto;
+	text-align: center;
+	font-size: 1.5em;
+	border: 2px solid #026c5f;
+}
+
+.quest-register-btn-three {
+	width: 380px;
+	display: none;
+	font-family: 'Gotham-Bolder', sans-serif;
+	text-decoration: none;
 	padding: 0.5em;
 	background-color: #fefefe;
 	color: #026c5f;
@@ -247,11 +276,21 @@
 		text-decoration: none;
 	}
 
-	.quest-register-btn {
+	.quest-register-btn-one {
 		width: 380px;
 		font-family: 'Gotham-Light', sans-serif;
 		text-decoration: none;
-		display: block;
+		padding: 0.5em;
+		background-color: #fefefe;
+		margin: 26px auto 10px auto;
+		text-align: center;
+		font-size: 1.5em;
+	}
+
+	.quest-register-btn-two {
+		width: 380px;
+		font-family: 'Gotham-Light', sans-serif;
+		text-decoration: none;
 		padding: 0.5em;
 		background-color: #fefefe;
 		margin: 26px auto 10px auto;
@@ -387,11 +426,21 @@
 		text-decoration: none;
 	}
 
-	.quest-register-btn {
+	.quest-register-btn-one {
 		width: 380px;
 		font-family: 'Gotham-Light', sans-serif;
 		text-decoration: none;
-		display: block;
+		padding: 0.5em;
+		background-color: #fefefe;
+		margin: 40px auto 10px auto;
+		text-align: center;
+		font-size: 1.5em;
+	}
+
+	.quest-register-btn-two {
+		width: 380px;
+		font-family: 'Gotham-Light', sans-serif;
+		text-decoration: none;
 		padding: 0.5em;
 		background-color: #fefefe;
 		margin: 40px auto 10px auto;
@@ -537,11 +586,21 @@
 		text-decoration: none;
 	}
 
-	.quest-register-btn {
+	.quest-register-btn-one {
 		width: 280px;
 		font-family: 'Gotham-Light', sans-serif;
 		text-decoration: none;
-		display: block;
+		padding: 0.5em;
+		background-color: #fefefe;
+		margin: 30px auto 0 auto;
+		text-align: center;
+		font-size: 1em;
+	}
+
+	.quest-register-btn-two {
+		width: 280px;
+		font-family: 'Gotham-Light', sans-serif;
+		text-decoration: none;
 		padding: 0.5em;
 		background-color: #fefefe;
 		margin: 30px auto 0 auto;
