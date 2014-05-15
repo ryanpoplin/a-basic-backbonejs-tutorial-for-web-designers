@@ -1,3 +1,13 @@
+.logout {
+	font-family: 'Gotham-Bolder', sans-serif;	
+	color: #fefefe;
+	border: 1px solid #fefefe;
+	padding: 10px 15px 8px 15px;
+	float: left;
+	margin: 3px 0 3px 20px;
+	cursor: pointer;
+}
+
 .mini-logo {
 	position: fixed;
 	left: 50%;
@@ -44,6 +54,7 @@
 	left: 50%;
 	top: 23%;
 	margin-left: -595px;
+	height: 800px;
 }
 
 #quest-list-view-heading {
@@ -67,6 +78,7 @@
 
 .border-listing {
 	margin: 40px 0 40px 0;
+	height: 1200px;
 	border: 3px solid #a0a0a0;
 }
 
@@ -85,13 +97,13 @@
 
 .section {
 	padding-top: 28px;
-	height: 440px;
+	height: 1840px;
 }
 
 .aside {
 	padding-right: 30px;
 	padding-top: 28px;
-	height: 440px;
+	height: 1840px;
 }
 
 .quests-list-background {
@@ -156,6 +168,7 @@
 
 .quest-register-btn-two {
 	width: 380px;
+	cursor: pointer;
 	display: none;
 	font-family: 'Gotham-Bolder', sans-serif;
 	text-decoration: none;

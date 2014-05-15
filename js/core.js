@@ -2,28 +2,7 @@
 
 (function($) {
 
-	// ...
-
-	Parse.initialize("4LKnB89wxuXlhXIjYBuRD6xyQEpGeMPuwHpuz9eG", "e9CnKoHkoLODJhm7Kdpq9XqODhPTiXyk7KlGajYc"); 
-	
-	var questData = [
-		{
-			hash: 'parkhop',
-			name: 'PARK HOP',
-			btname: 'PARK HOP',
-			info: 'Information: Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor.',
-			sliderImgOne: 'img/park-hop.png',
-			img: 'http://www.naportals.com/wp-content/uploads/2014/02/orange-thighed-frog-tree-green-nature-animals-wallpaper-1920x1080-857671.jpg',
-			link: 'https://www.google.com/parkhop',
-			rules: 'Rules: Lorem ipsum dolor... Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor.',
-			prizes: 'Prizes: Lorem ipsum dolor... Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor.',
-			facebook: 'img/facebook2.png',
-			// Get this image from Matt again...
-			twitter: 'twiiter2.png',
-			play: 'img/play.png',
-			apple: 'img/apple.png'
-		}
-	];
+	Parse.initialize("dOXsblWB78isb7UdD3k6xdZ1b1imElPvD5WltH6U", "jMVD9CDx1B4hTvGjsGz2dQeSW3TxCu21gPiqkw6T"); 
 
 	var app;
 
@@ -40,23 +19,9 @@
 		},
 	
 		initialize: function() {
-	
-			var quests = new Quests();
-	
-			quests.reset(questData);
-	
-			this.questsListView = new QuestsListView({
-	
-				collection: quests
-	
-			});
-	
-			this.questDisplayView = new QuestDisplayView({
-	
-				collection: quests
-	
-			});
-	
+
+			this.quests = new Quests;
+		
 		},
 	
 		defaultRoute: function() {
@@ -70,14 +35,34 @@
 		},
 	
 		loadQuestsRoute: function() {
+
+			var questsListView = new QuestsListView({
 	
-			this.questsListView.loadQuests();
+				collection: this.quests
 	
+			});
+
+			this.quests.fetch();	
+		
 		},
 	
 		loadQuestRoute: function(questHash) {
-	
-			this.questDisplayView.loadQuest(questHash);
+
+			var questDisplayView = new QuestDisplayView;
+
+			this.quests.fetch().then(function(collection){
+				
+				var model = collection.findWhere({
+				
+					hash: questHash
+				
+				});
+
+				questDisplayView.model = model;
+				
+				questDisplayView.render();
+			
+			});
 	
 		}
 	
@@ -89,7 +74,7 @@
 	
 			// Need arrow image...
 
-			footerArrowImg: 'img/test-arrow.png',
+			footerArrowImg: 'img/footer-arrow.png',
 	
 			logSignText: 'LOGIN / SIGN UP',
 	
@@ -130,7 +115,7 @@
 		
 			'click #bi-log-in-modal': 'biLogInModalShow',
 		
-			'click .modal-btn': 'closeModal',
+			'click .out': 'closeModal',
 		
 			'click .overlay': 'closeModal',
 
@@ -161,8 +146,14 @@
 			user.signUp(null, {
 			
 				success: function(user) {
+
+					$('.sign-up-msg').text('Your account has been created!');
 						
-					app.navigate('#/load-quests', {trigger: true});
+					setTimeout(function() {
+
+						app.navigate('#/load-quests', {trigger: true});
+
+					}, 2500);
 						
 				},
 			
@@ -348,11 +339,11 @@
 	
 		defaults: {
 	
-			socialTwitterLink: 'https://www.twitter.com',
+			socialTwitterLink: 'https://twitter.com/QuestalotApp/followers',
 	
 			socialTwitterImg: 'social-media-icons/twit-icon.png',
 	
-			socialFacebookLink: 'https://www.facebook.com',
+			socialFacebookLink: ' https://www.facebook.com/pages/Questalot/143594135827033',
 	
 			socialFacebookImg: 'social-media-icons/fbook-icon.png',
 				
@@ -360,7 +351,7 @@
 	
 			primaryHeading: 'Explore More',
 	
-			primarySubHeading: ' Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor.',
+			primarySubHeading: 'Questalot is a fun way to explore your world! Using your mobile device you can compete in real-world scavenger hunts that we call “quests.”Connect in a way that is new, refreshing and engaging!',
 	
 			questBtnLink: '/#load-quests',
 	
@@ -457,9 +448,9 @@
 
 		events: {
 
-			'click .quest-register-btn': 'something',
+			'click #logout': 'logout',
 
-			'click #logout': 'logout'
+			'click .quest-register-btn-two': 'signUpPrompt'
 
 		},
 
@@ -477,25 +468,18 @@
 		
 			this.$el.html(this.template);
 
-			this.on('spinner', this.showSpinner, this);
-				
-		},
+			this.showSpinner();
+
+			var self = this;
+			this.listenTo(this.collection, 'sync', function(){
+				self.coreRender();
+			});
 	
-		loadQuests: function() {
+		},
 
-			this.trigger('spinner');
+		signUpPrompt: function() {
 
-			var view = this;
-
-			setTimeout(function() {
-
-				(function() {
-
-					view.coreRender();
-					
-				}());
-
-			}, 1000);
+			$('.overlay, #email-modal').fadeIn(300);
 
 		},
 		
@@ -529,7 +513,6 @@
 
 			var currentUser = Parse.User.current();
 
-			// ...
 			var registered = false;
 			
 			if (currentUser === null) {
@@ -564,7 +547,14 @@
 
 	// QUESTS COLLECTION...
 
-	var Quests = Backbone.Collection.extend({});
+	var Quest = Parse.Object.extend("Quest");
+
+	var Quests = Parse.Collection.extend({
+  		
+  		model: Quest
+	
+	});
+
 
 	// QUEST ITEM VIEW...
 
@@ -581,7 +571,7 @@
 		},
 	
 		addToLibrary: function() {
-			this.model.collection.trigger('addToLibrary', this.model);
+			// this.model.collection.trigger('addToLibrary', this.model);
 		}
 	
 	});
@@ -591,49 +581,24 @@
 	var QuestDisplayView = Backbone.View.extend({
 		
 		initialize: function() {
-			
-			this.model = new (Backbone.Model.extend({}));
-			
-			this.model.on('change', this.render, this);
-			
-			this.on('spinner', this.showSpinner, this);
-		
+
+			this.showSpinner();
+					
 		},
 			
 		template: _.template($('#quest-display-view-template').html()),
 		
 		templateSpinner: _.template($('#template-spinner').html()),
 		
-		loadQuest: function(questHash) {
-		
-			this.trigger('spinner');
-		
-			var view = this;
-		
-			setTimeout(function() {
-		
-				(function() {
-
-					view.model.set(view.collection.where({
-		
-						hash: questHash
-		
-					})[0].attributes);
-				
-					var questTemplate = view.template(view.model);
-		
-					$('#spa').html(questTemplate);
-
-				}());
-		
-			}, 1000);
-		
-		},
-		
 		showSpinner: function() {
 		
 			$('#spa').html(this.templateSpinner);
 		
+		},
+
+		render: function(){
+			var template = this.template(this.model);
+			$('#spa').html(template);
 		}
 	
 	});

@@ -4,9 +4,9 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <!-- CONFIG -->
-        <title>Questalot | ...</title>
+        <title>Questalot | A Scavenger Hunt App for Mobile Devices</title>
         <!-- CONFIG -->
-        <meta name="description" content="Questalot">
+        <meta name="description" content="Questalot is a fun way to explore your world! Using your mobile device you can compete in real-world scavenger hunts that we call “quests.” Connect in a way that is new, refreshing and engaging! Park Hop 2014 is a competitive summer game for you to play on your smart phone. Visit the parks. Unlock the clues. Answer the questions! It's absolutly free!">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/core.css">
@@ -80,9 +80,9 @@
                 
                 <header class="modal-header">
                 
-                    <img src="img/back-arrow.png" alt="">
+                    <img class="out" src="img/back-arrow.png" alt="">
                 
-                    <span>Back<span>
+                    <span class="out">Back<span>
                 
                 </header>
                 
@@ -106,9 +106,9 @@
            
                 <header class="modal-header">
            
-                    <img src="img/back-arrow.png" alt="">
+                    <img class="out" src="img/back-arrow.png" alt="">
                 
-                    <span class="modal-back">Back<span>
+                    <span class="out">Back<span>
            
                 </header>
            
@@ -168,9 +168,9 @@
            
             <header id="quest-list-view-header">
                 
-                <div class="logout" style="float: left; padding: 4px 0 4px 4px;" id="logout">
+                <div class="logout" id="logout">
                 
-                    <span style="color: #fefefe;">Logout...</span>
+                    <span>LOGOUT</span>
 
                 </div>
 
@@ -212,13 +212,13 @@
                 
                 <div class="img-container">
                    
-                    <img class="quests-list-slider-img" src="<%= sliderImgOne %>" alt="Quest Image..." />
+                    <img class="quests-list-slider-img" src="<%= heroImage %>" alt="Quest Image..." />
                 
                 </div>
 
                 <div class="quest-register-btn-one">
 
-                    <a style="color: #026c5f; text-decoration: none;" href="#/load-quest/<%= hash %>">REGISTER FOR <%= btname %></a>
+                    <a style="color: #026c5f; text-decoration: none;" href="#/load-quest/<%= hash %>">REGISTER FOR <%= title %></a>
 
                 </div>
 
@@ -229,28 +229,10 @@
             </section>
 
             <aside class="aside">
-                
-                <div class="quest-list-social">
-                    
-                    <img src="<%= facebook %>" alt="facebook...">
 
-                    <img src="<%= twitter %>" alt="twitter...">
-                
-                </div>
-
-                <h1 class="quest-heading-style"><%= name %></h1>
+                <h1 class="quest-heading-style"><%= title %></h1>
                
-                <p class="quest-info"><%= info %></p>
-               
-                <p class="quest-info"><a href=""><%= link %></a></p>
-               
-                <p class="quest-info"><%= rules %></p>
-               
-                <p class="quest-info"><%= prizes %></p>
-
-                <img src="<%= play %>" alt="android...">
-
-                <img src="<%= apple %>" alt="apple...">
+                <div class="quest-info"><%= webContent %></div>
            
             </aside>
            
@@ -270,7 +252,7 @@
                 
                         <p class="display-heading text-align-center">Congratulations, you just registered for</p>
                 
-                        <h1 class="text-align-center display-sub-heading"><%= attributes.name %></h1>
+                        <h1 class="text-align-center display-sub-heading"><%= attributes.title %></h1>
                 
                         <h2 class="display-msg text-align-center">Your Quest has just begun!</h2>
 
@@ -284,9 +266,9 @@
 
                         <div class="market-img-container">
                             
-                            <img src="<%= attributes.play %>" alt="android...">
+                            <a href="https://itunes.apple.com/us/app/questalot/id650039138?mt=8"><img src="<%= attributes.play %>" alt="android..."></a>
 
-                            <img src="<%= attributes.apple %>" alt="apple...">
+                            <a href=" https://play.google.com/store/apps/details?id=com.gamemastermedia.questalot"><img src="<%= attributes.apple %>" alt="apple..."></a>
                         
                         </div>
                         
@@ -308,14 +290,13 @@
 
         <script src="js/core.js"></script>
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <!--<script>
+        <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
             function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
             e=o.createElement(i);r=o.getElementsByTagName(i)[0];
             e.src='//www.google-analytics.com/analytics.js';
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
-        </script>-->
+            ga('create','UA-51072702-1');ga('send','pageview');
+        </script>
     </body>
 </html>
