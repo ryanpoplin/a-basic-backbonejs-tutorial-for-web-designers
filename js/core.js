@@ -55,8 +55,6 @@
 		},
 	
 		loadQuestRoute: function(questHash) {
-      console.log(questHash);
-
 			var questDisplayView = new QuestDisplayView;
 
 			this.quests.fetch().then(function(collection){
@@ -582,6 +580,7 @@
 	var QuestItemView = Backbone.View.extend({
 	
 		template: _.template($('#quest-item-view-template').html()),
+		templateSpinner: _.template($('#template-spinner').html()),
 	
 		events: {
 			'click .register-for-quest': 'registerForQuest'
@@ -592,6 +591,7 @@
 		},
 	
 		registerForQuest: function() {
+      this.showSpinner();
       var quest = this.model;
       Parse.Cloud.run("joinAdventure", {quest: quest.id}).then(function(){
 				app.navigate('#/load-quest/' + quest.get('hash'), {trigger: true});
@@ -599,7 +599,13 @@
         console.error(error);
       });
       return false;
-		}
+		},
+
+		showSpinner: function() {
+		
+			$('#spa').html(this.templateSpinner);
+		
+		},
 	
 	});
 
