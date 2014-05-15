@@ -19,7 +19,7 @@
     top: 50%;
     left: 50%;
     width: 400px;
-	height: 420px;
+	height: 460px;
     margin-left: -202px;
     margin-top: -240px;
     background-color: #697275;
@@ -84,6 +84,18 @@
     text-decoration: none;
 }
 
+.login-msg {
+    display: block;
+    margin: 0 auto;
+    padding-top: 20px;
+    color: #fefefe;
+}
+
+.sign-up-msg {
+    display: block;
+    margin: 0 auto;
+    color: #fefefe;
+}
 
 @media screen and (max-width:1100px) {
 

@@ -161,16 +161,14 @@
 			user.signUp(null, {
 			
 				success: function(user) {
-			
-					alert('Thank you for signing up!');
-			
+						
 					app.navigate('#/load-quests', {trigger: true});
 						
 				},
 			
 				error: function(user, error) {
 			
-					alert("Error: " + error.code + " " + error.message);
+					$('.sign-up-msg').text(error.message);
 						
 				}
 			
@@ -190,15 +188,13 @@
 			
 				success: function(user) {
 			
-					alert(user.get("email") + ' you have been logged in...');
-			
 					app.navigate('#/load-quests', {trigger: true});
 						
 				},
 			
 				error: function(user, error) {
 			
-					alert('An error has occured...');
+					$('.login-msg').text('Incorrect username or password...');
 						
 				}
 			
@@ -416,18 +412,11 @@
 			
 			}));
 			
-			var footerDrawerView = new FooterDrawerView({
-			
-				// model: quest
-			
-			});	
+			var footerDrawerView = new FooterDrawerView({});	
 
 			footerDrawerView.render();
 	
 			$(this.footerSubEl).append(footerDrawerView.$el);
-			/*$(window).resize(function() {
-			......
-			});*/
 	
 		},
 	
@@ -482,16 +471,6 @@
 
 		},
 
-		something: function() {
-
-			/*$('.quest-register-btn').css('color', '#f5f5f5');
-
-			$('.quest-register-btn').css('border', '2px solid #f5f5f5');
-
-			$('.quest-register-btn').css('cursor', 'none');*/
-
-		},
-		
 		initialize: function() {
 		
 			console.log('QuestsListView init...');
@@ -499,17 +478,9 @@
 			this.$el.html(this.template);
 
 			this.on('spinner', this.showSpinner, this);
-		
-			// this.collection.on('addToLibrary', this.showLibrary, this);
-		
+				
 		},
-		
-		showLibrary: function(questModel) {
-		
-			// $(this.libraryEl).append(questModel.attributes.name + '<br>');
-		
-		},
-
+	
 		loadQuests: function() {
 
 			this.trigger('spinner');
@@ -623,7 +594,7 @@
 			
 			this.model = new (Backbone.Model.extend({}));
 			
-			// this.model.on('change', this.render, this);
+			this.model.on('change', this.render, this);
 			
 			this.on('spinner', this.showSpinner, this);
 		
@@ -674,12 +645,6 @@
 		app = new Router;
 		
 		Backbone.history.start();
-
-		// $('.slider-container').slick({
-	  	
-	  		// setting-name: setting-value
-		
-		// });
 	
 	});
 
