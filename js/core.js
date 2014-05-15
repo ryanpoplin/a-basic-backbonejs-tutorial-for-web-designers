@@ -6,6 +6,8 @@
 
 	var app;
 
+  var applicationController = new Backbone.Model;
+
 	var Router = Backbone.Router.extend({
 	
 		routes: {
@@ -21,7 +23,7 @@
 		initialize: function() {
 
 			this.quests = new Quests;
-		
+
 		},
 	
 		defaultRoute: function() {
@@ -43,19 +45,24 @@
 			});
 
 			this.quests.fetch();	
-		
+
+      // TODO: this is a hack
+      Parse.Cloud.run("getAdventures").then(function(adventures){
+        if(adventures && adventures.length){
+          applicationController.set('registered', true);
+        }
+      });
 		},
 	
 		loadQuestRoute: function(questHash) {
+      console.log(questHash);
 
 			var questDisplayView = new QuestDisplayView;
 
 			this.quests.fetch().then(function(collection){
 				
-				var model = collection.findWhere({
-				
-					hash: questHash
-				
+				var model = collection.find(function(model){
+          return model.get('hash') == questHash;
 				});
 
 				questDisplayView.model = model;
@@ -127,9 +134,11 @@
 
 		parseSignUp: function() {
 
-			var username, email, password, user;
-			
-			username = $('#sign-up-username').val();
+			var fullName, firstName, lastName, email, password, user;
+
+			fullName = $('#sign-up-username').val() || "";
+			firstName = fullName.split(" ")[0];
+			lastName = fullName.split(" ").slice(1).join(" ");
 			
 			email = $('#sign-up-email').val();
 			
@@ -137,8 +146,10 @@
 			
 			user = new Parse.User();
 			
-			user.set("username", username);
+			user.set("firstName", firstName);
+			user.set("lastName", firstName);
 			
+			user.set("username", email);
 			user.set("email", email);
 			
 			user.set("password", password);
@@ -474,6 +485,12 @@
 			this.listenTo(this.collection, 'sync', function(){
 				self.coreRender();
 			});
+
+      this.listenTo(applicationController, 'change:registered', function(controller, registered){
+        if(registered){
+          self.coreRender();
+        }
+      });
 	
 		},
 
@@ -513,7 +530,7 @@
 
 			var currentUser = Parse.User.current();
 
-			var registered = false;
+			var registered = this.isRegistered();
 			
 			if (currentUser === null) {
     			
@@ -541,7 +558,11 @@
 		
 			$('#spa').html(this.templateSpinner);
 		
-		}
+		},
+
+    isRegistered: function(){
+      return applicationController.get('registered');
+    },
 	
 	});
 
@@ -563,15 +584,21 @@
 		template: _.template($('#quest-item-view-template').html()),
 	
 		events: {
-			'click .add-to-library': 'addToLibrary' 
+			'click .register-for-quest': 'registerForQuest'
 		},
 	
 		render: function() {
 			this.$el.html(this.template(this.model.attributes));
 		},
 	
-		addToLibrary: function() {
-			// this.model.collection.trigger('addToLibrary', this.model);
+		registerForQuest: function() {
+      var quest = this.model;
+      Parse.Cloud.run("joinAdventure", {quest: quest.id}).then(function(){
+				app.navigate('#/load-quest/' + quest.get('hash'), {trigger: true});
+      },function(error){
+        console.error(error);
+      });
+      return false;
 		}
 	
 	});
