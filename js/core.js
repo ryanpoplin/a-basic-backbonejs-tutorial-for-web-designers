@@ -6,21 +6,24 @@
 
 	// Share data structure with Jake Smith...
 	
+	// questData needs to be the fetched info from the server...
+
 	var questData = [
 		{
 			hash: 'parkhop',
 			name: 'PARK HOP',
 			btname: 'PARK HOP',
 			info: 'Information: Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor.',
-			sliderImgOne: '../park-hop.png',
+			sliderImgOne: 'img/park-hop.png',
 			img: 'http://www.naportals.com/wp-content/uploads/2014/02/orange-thighed-frog-tree-green-nature-animals-wallpaper-1920x1080-857671.jpg',
 			link: 'https://www.google.com/parkhop',
 			rules: 'Rules: Lorem ipsum dolor... Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor.',
 			prizes: 'Prizes: Lorem ipsum dolor... Lorem ipsum dolor, lorem ipsum dolor. Lorem ipsum dolor, lorem ipsum dolor.',
-			facebook: 'facebook2.png',
+			facebook: 'img/facebook2.png',
+			// Get this image from Matt again...
 			twitter: 'twiiter2.png',
-			play: 'play.png',
-			apple: 'apple.png'
+			play: 'img/play.png',
+			apple: 'img/apple.png'
 		}
 	];
 
@@ -86,7 +89,9 @@
 	
 		defaults: {
 	
-			footerArrowImg: 'arrow-footer.png',
+			// Need arrow image...
+
+			footerArrowImg: 'img/test-arrow.png',
 	
 			logSignText: 'LOGIN / SIGN UP',
 	
@@ -270,6 +275,7 @@
 		},
 	
 		initialize: function() {
+
 		}
 	
 	});
@@ -286,6 +292,8 @@
 	
 			socialFacebookImg: 'social-media-icons/fbook-icon.png',
 	
+			// Why the hell is this not working in the 'img' dir?...
+			
 			logoImg: 'default-logo.png',
 	
 			primaryHeading: 'Explore More',
@@ -364,14 +372,6 @@
 	var QuestsListModel = Backbone.Model.extend({
 	
 		defaults: {
-	
-			// miniLogo: 'mini-logo.png',
-	
-			// questListingsHeading: 'Register for a Quest!',
-
-			// android: 'play.png',
-
-			// apple: 'apple.png'
 	
 		},
 	
@@ -457,15 +457,7 @@
 		
 		coreRender: function() {
 			
-			this.$el.html(this.template({
-
-				miniLogo: 'mini-logo.png',
-
-				play: 'play.png',
-
-				apple: 'apple.png'
-
-			}));
+			this.$el.html(this.template({}));
 
 			var view = this;
 

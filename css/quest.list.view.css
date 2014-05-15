@@ -19,7 +19,7 @@
 	top: 0;
 	padding-top: 6.5px;
 	height: 55px;
-	background: url(../background.png) no-repeat center center fixed; 
+	background: url(../img/background.png) no-repeat center center fixed; 
   	-webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
@@ -300,7 +300,6 @@
 		top: 0;
 		padding-top: 6.5px;
 		height: 55px;
-		background: url(../background.png) no-repeat center center fixed; 
   		-webkit-background-size: cover;
   		-moz-background-size: cover;
   		-o-background-size: cover;
@@ -447,7 +446,6 @@
 		top: 0;
 		padding-top: 6.5px;
 		height: 55px;
-		background: url(../background.png) no-repeat center center fixed; 
   		-webkit-background-size: cover;
   		-moz-background-size: cover;
   		-o-background-size: cover;

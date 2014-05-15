@@ -95,15 +95,12 @@
 	    height: 420px;
         margin-left: -230px;
         margin-top: -240px;
-        background-color: #ccc;
         z-index: 10;
         outline: 9999px solid rgba(0,0,0,0.5);
     }
 
     .modal-header {
         height: 40px;
-        color: #fefefe;
-        background-color: #aaa;
     }
 
     .modal-header span {
@@ -121,7 +118,6 @@
     .modal-heading {
         font-size: 2.1em;
         padding-top: 24px;
-        color: #fefefe;
     }
 
 
@@ -130,7 +126,6 @@
 	   padding: 13px 10px 10px 10px;
 	   margin: 0 auto 8px auto;
 	   font-size: 1em;
-	   font-family: 'Gotham-Light', sans-serif;
     }
 
 }
@@ -146,15 +141,12 @@
         height: 275px;
         margin-left: -132px;
         margin-top: -240px;
-        background-color: #ccc;
         z-index: 10;
         outline: 9999px solid rgba(0,0,0,0.5);
     }
 
     .modal-header {
         height: 40px;
-        color: #fefefe;
-        background-color: #aaa;
     }
 
     .modal-header span {
@@ -172,12 +164,10 @@
     .modal-heading {
         font-size: 1.6em;
         padding-top: 20px;
-        color: #fefefe;
     }
 
     .forgot {
         padding: 1px 0 20px 0; 
-        color: #fefefe;
     }
 
     .modal input[type=text], input[type=password] {
@@ -185,7 +175,6 @@
        padding: 9px 12px 7px 12px;
        margin: 0 auto 8px auto;
        font-size: 0.9em;
-       font-family: 'Gotham-Light', sans-serif;
     }
 
     .modal-submit-btn {
@@ -195,9 +184,7 @@
         width: 10em;
         font-size: 11pt;
         padding: 0.6em 0.6em 0.6em 0.6em;
-        font-family: 'Gotham-Bolder', sans-serif;
         background-color: #026b5d;
-        color: #ffffff;
         text-decoration: none;
     }    
 

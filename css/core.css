@@ -7,32 +7,32 @@
 
 @font-face {
 	font-family: 'Goth-Reg-It';
-	src: url(../goth-reg-it.ttf);
+	src: url(../fonts/goth-reg-it.ttf);
 }
 
 @font-face {
 	font-family: 'Goth-It';
-	src: url(../goth-it.otf);
+	src: url(../fonts/goth-it.otf);
 }
 
 @font-face {
 	font-family: 'Gotham-Lighter';
-	src: url(../gotham-lighter.otf);
+	src: url(../fonts/gotham-lighter.otf);
 }
 
 @font-face {
 	font-family: 'Martell';
-	src: url(../reg.otf);	
+	src: url(../fonts/reg.otf);	
 }
 
 @font-face {
 	font-family: 'Gotham-Light';
-	src: url(../gotham-light.ttf);
+	src: url(../fonts/gotham-light.ttf);
 }
 
 @font-face {
 	font-family: 'Gotham-Bolder';
-	src: url(../gotham-bolder.otf);
+	src: url(../fonts/gotham-bolder.otf);
 }
 
 .text-align-center {

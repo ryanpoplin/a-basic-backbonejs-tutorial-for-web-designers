@@ -30,7 +30,7 @@ footer, header, hgroup, menu, nav, section {
 body {
 	position: relative;
 	line-height: 1;
-	background: url('../neo-back.png');
+	background: url('../img/neo-back.png');
 }
 ol, ul {
 	list-style: none;

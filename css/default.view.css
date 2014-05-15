@@ -13,7 +13,7 @@
 }
 
 .default-full-background-image {
-	background: url(../background.png) no-repeat center center fixed; 
+	background: url(../img/background.png) no-repeat center center fixed; 
   	-webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
@@ -107,13 +107,13 @@
 
 }
 
-@media screen and (max-width:800px) {
+@media screen and (max-width: 800px) {
   
 	#default-styles-container {
 		width: 500px; 
 		position: absolute; 
 		left: 50%; 
-		top: 22%; 
+		top: 8%; 
 		margin-left: -255px;
 	}
 
@@ -145,7 +145,7 @@
 
 }
 
-@media screen and (max-width:500px) {
+@media screen and (max-width: 500px) {
 
 	#default-styles-container {
 		width: 230px; 
