@@ -4,7 +4,7 @@
   width: 180px;
   height: 180px;
   margin-left: -90px; /* Half the width */
-  margin-top: 22%;
+  margin-top: 22% !important;
 }
 
 @media screen and (min-width: 800px) and (max-height: 1000px) {
@@ -15,7 +15,7 @@
       width: 150px;
       height: 150px;
       margin-left: -70px; /* Half the width */
-      margin-top: 20%;
+      margin-top: 20% !important;
     }
 
 }
@@ -28,7 +28,7 @@
       width: 150px;
       height: 150px;
       margin-left: -65px; /* Half the width */
-      margin-top: 48%;
+      margin-top: 48% !important;
     }
 
 }
@@ -42,7 +42,7 @@
       width: 120px;
       height: 120px;
       margin-left: -55px; /* Half the width */
-      margin-top: 45%;
+      margin-top: 45% !important;
     }
 
 }

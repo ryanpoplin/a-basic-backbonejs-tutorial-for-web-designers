@@ -1,13 +1,15 @@
 'use strict';
 
-(function($) { 
+(function($) {
 
-	// Connect this data to Parse.com with the help of Parsebone...
+	Parse.initialize("4LKnB89wxuXlhXIjYBuRD6xyQEpGeMPuwHpuz9eG", "e9CnKoHkoLODJhm7Kdpq9XqODhPTiXyk7KlGajYc"); 
 
-	// Share data structure with Jake Smith...
+	/*var TestObject = Parse.Object.extend("TestObject");
+	var testObject = new TestObject();
+	testObject.save({foo: "bar"}).then(function(object) {
+  		alert("yay! it worked");
+	});*/
 	
-	// questData needs to be the fetched info from the server...
-
 	var questData = [
 		{
 			hash: 'parkhop',
@@ -134,8 +136,78 @@
 		
 			'click .modal-btn': 'closeModal',
 		
-			'click .overlay': 'closeModal'
+			'click .overlay': 'closeModal',
+
+			'click #parse-sign-up': 'parseSignUp',
+
+			'click #parse-login': 'parseLogin'
 		
+		},
+
+		parseSignUp: function() {
+
+			var username, email, password, user;
+			
+			username = $('#sign-up-username').val();
+			
+			email = $('#sign-up-email').val();
+			
+			password = $('#sign-up-password').val();
+			
+			user = new Parse.User();
+			
+			user.set("username", username);
+			
+			user.set("email", email);
+			
+			user.set("password", password);
+			
+			user.signUp(null, {
+			
+				success: function(user) {
+			
+					alert('Thank you for signing up!');
+			
+					app.navigate('#/load-quests', {trigger: true});
+						
+				},
+			
+				error: function(user, error) {
+			
+					alert("Error: " + error.code + " " + error.message);
+						
+				}
+			
+			});
+
+		},
+
+		parseLogin: function() {
+
+			var username, password;
+			
+			username = $('#login-username').val();
+			
+			password = $('#login-password').val();
+			
+			Parse.User.logIn(username, password, {
+			
+				success: function(user) {
+			
+					alert(user.get("email") + ' you have been logged in...');
+			
+					app.navigate('#/load-quests', {trigger: true});
+						
+				},
+			
+				error: function(user, error) {
+			
+					alert('An error has occured...');
+						
+				}
+			
+			});
+
 		},
 		
 		footerAnimation: function() {
@@ -291,9 +363,7 @@
 			socialFacebookLink: 'https://www.facebook.com',
 	
 			socialFacebookImg: 'social-media-icons/fbook-icon.png',
-	
-			// Why the hell is this not working in the 'img' dir?...
-			
+				
 			logoImg: 'default-logo.png',
 	
 			primaryHeading: 'Explore More',
@@ -307,10 +377,13 @@
 		},
 	
 		initialize: function() {
+		
 		}
 	
 	});
 	
+	// DEFAULT VIEW...
+
 	var DefaultView = Backbone.View.extend({
 		
 		tagName: 'div',
@@ -399,17 +472,21 @@
 
 		events: {
 
-			'click .quest-register-btn': 'changeColor'
+			'click .quest-register-btn': 'changeColor',
+
+			'click #logout': 'logout'
 
 		},
 
-		changeColor: function() {
+		logout: function() {
 
-			// header q links to default...
+			Parse.User.logOut();
+			
+			app.navigate('', {trigger: true});
 
-			// Change text of register btn to 'You are already registered for...'
+		},
 
-			// Make header log out string of text link...
+		/*changeColor: function() {
 
 			$('.quest-register-btn').css('color', '#f5f5f5');
 
@@ -417,7 +494,7 @@
 
 			$('.quest-register-btn').css('cursor', 'none');
 
-		},
+		},*/
 		
 		initialize: function() {
 		
@@ -458,6 +535,18 @@
 		coreRender: function() {
 			
 			this.$el.html(this.template({}));
+
+			var currentUser = Parse.User.current();
+			
+			if (currentUser === null) {
+    			
+    			$('#logout').css('display', 'none');
+
+			} else {
+    	
+    			$('#logout').css('display', 'inline-block');
+
+			}
 
 			var view = this;
 

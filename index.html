@@ -19,12 +19,10 @@
         <script src="bower_components/jquery/dist/jquery.min.js"></script>
         <script src="bower_components/underscore/underscore.js"></script>
         <script src="bower_components/backbone/backbone.js"></script>
-        <!-- ADD PARSEBONE BOILERPLATE STUFF... -->
-        <!-- ADD PARSE SDK... -->
-        <!-- ADD PARSE CLOUD CODE SETUP... -->
+        <script src="//www.parsecdn.com/js/parse-1.2.18.min.js"></script>
     </head>
     <body>
-        <!--[if lt IE 8]>
+        <!--[if lt IE 9]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         
@@ -76,18 +74,24 @@
             
             <div class="overlay display-none"></div>
             
-            <!-- Utlize this for the error or success modal from Parse.com... -->
+            <!-- PARSE MSGS... -->
             
-            <!--<div id="facebook-modal" class="modal display-none">
+            <div id="parse-modal" class="modal display-none">
+               
                 <header class="modal-header">
-                    <button class="modal-btn display-inline-block">Back</button>
+               
+                    <img src="img/back-arrow.png" alt="">
+                
+                    <span class="modal-back">Back<span>
+               
                 </header>
-                <h2 class="modal-heading">Sign Up with Facebook</h2>
-                <input placeholder="Email" type="text">
-                <input placeholder="Password" type="password">
-                <button class="submit-modal-btn">Sign Up</button>
-            </div>-->
+               
+                <p class="modal-heading"></p>
+                                                         
+            </div>
             
+            <!-- SIGN UP MODAL... -->
+
             <div id="email-modal" class="modal display-none">
                 
                 <header class="modal-header">
@@ -98,17 +102,19 @@
                 
                 </header>
                 
-                <h2 class="modal-heading">Create a new account</h2>
+                <h2 class="modal-heading">Create a new account!</h2>
                 
-                <input placeholder="FULL NAME" type="text">
+                <input id="sign-up-username" placeholder="FULL NAME" type="text">
                 
-                <input placeholder="EMAIL" type="text">
+                <input id="sign-up-email" placeholder="EMAIL" type="text">
                 
-                <input placeholder="PASSWORD" type="password">
+                <input id="sign-up-password" placeholder="PASSWORD" type="password">
                 
-                <div class="modal-submit-btn">SIGN UP</div>
+                <div id="parse-sign-up" class="modal-submit-btn">SIGN UP</div>
            
             </div>
+
+            <!-- LOGIN MODAL... -->
             
             <div id="bi-modal" class="modal display-none">
            
@@ -122,13 +128,13 @@
            
                 <h2 class="modal-heading">We're so glad you're back!</h2>
            
-                <input placeholder="Email" type="text">
+                <input id="login-username" placeholder="USERNAME" type="text">
            
-                <input placeholder="Password" type="password">
+                <input id="login-password" placeholder="PASSWORD" type="password">
            
                 <a style="color: #fefefe;" href=""><p class="forgot">Forgot your password?</p></a>
 
-                <div style="margin: 0 auto;" class="modal-submit-btn">LOGIN</div>
+                <div style="margin: 0 auto;" id="parse-login" class="modal-submit-btn">LOGIN</div>
            
             </div>
 
@@ -174,6 +180,12 @@
            
             <header id="quest-list-view-header">
                 
+                <div class="logout" style="float: left; padding: 4px 0 4px 4px;" id="logout">
+                
+                    <span style="color: #fefefe;">Logout...</span>
+
+                </div>
+
                 <a style="cursor: pointer; text-decoration: none;" href="/#"><div class="mini-logo"><img src="img/mini-logo.png" alt="Logo"></div></a>
 
             </header>
