@@ -145,7 +145,7 @@
 			user = new Parse.User();
 			
 			user.set("firstName", firstName);
-			user.set("lastName", firstName);
+			user.set("lastName", lastName);
 			
 			user.set("username", email);
 			user.set("email", email);
