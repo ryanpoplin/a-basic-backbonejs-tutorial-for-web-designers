@@ -1,9 +1,9 @@
 'use strict';
 
 (function($) {
-
-	Parse.initialize("dOXsblWB78isb7UdD3k6xdZ1b1imElPvD5WltH6U", "jMVD9CDx1B4hTvGjsGz2dQeSW3TxCu21gPiqkw6T"); 
-
+	
+	// Private Parse Keys...
+	
 	var app;
 
   var applicationController = new Backbone.Model;
